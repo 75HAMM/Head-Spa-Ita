@@ -58,7 +58,7 @@
 
         p {
             font-size: 1.05rem;
-            color: #666;
+            color:#1a1a1a;
             margin-bottom: 1.2rem;
             line-height: 1.8;
         }
@@ -107,7 +107,7 @@
 
         .hero-subtitle {
             font-size: 1.3rem;
-            color: #666;
+            color:#1a1a1a;
             margin-bottom: 2rem;
             max-width: 700px;
             margin-left: auto;
@@ -187,7 +187,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
+            color:#2a2a2a;
             font-size: 0.9rem;
         }
 
@@ -206,7 +206,7 @@
             padding: 12px 0;
             padding-left: 35px;
             position: relative;
-            color: #666;
+            color:#1a1a1a;
             line-height: 1.7;
         }
 
@@ -275,7 +275,7 @@
 
         .step-card p {
             font-size: 0.95rem;
-            color: #666;
+            color:#1a1a1a;
             line-height: 1.7;
         }
 
@@ -303,7 +303,7 @@
 
         .quote-author {
             font-size: 0.9rem;
-            color: #999;
+            color:#2a2a2a;
             margin-top: 1rem;
             font-style: normal;
         }
@@ -416,10 +416,10 @@
 .navbar-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:70px}
 .navbar-brand{display:flex;align-items:center;text-decoration:none;gap:12px}
 .navbar-logo-text{font-size:20px;font-weight:600;color:#1d1d1d;letter-spacing:-.01em}
-.navbar-logo-text sup{font-size:11px;color:#666}
-.navbar-subtitle{font-size:10px;color:#999;font-weight:400;text-transform:uppercase;letter-spacing:.8px;margin-top:-2px}
+.navbar-logo-text sup{font-size:11px;color:#1a1a1a}
+.navbar-subtitle{font-size:10px;color:#2a2a2a;font-weight:400;text-transform:uppercase;letter-spacing:.8px;margin-top:-2px}
 .navbar-menu{display:flex;list-style:none;gap:35px;align-items:center}
-.navbar-menu li a{text-decoration:none;color:#666;font-size:14px;font-weight:500;transition:color .3s ease;padding:8px 0;position:relative}
+.navbar-menu li a{text-decoration:none;color:#1a1a1a;font-size:14px;font-weight:500;transition:color .3s ease;padding:8px 0;position:relative}
 .navbar-menu li a:hover{color:#1f4e78}
 .navbar-menu li a::after{content:"";position:absolute;bottom:0;left:50%;width:0;height:2px;background-color:#1f4e78;transition:all .3s ease;transform:translateX(-50%)}
 .navbar-menu li a:hover::after{width:100%}
@@ -455,8 +455,66 @@ body { padding-top: 70px; }
 .timeline-marker{transition:transform 0.3s ease}
 .timeline-item:hover .timeline-marker{transform:scale(1.2) rotate(5deg)}
 
+    
+/* Animazione automatica timeline */
+@keyframes float-gentle{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes glow-border{0%,100%{box-shadow:0 4px 15px rgba(31,78,120,0.1)}50%{box-shadow:0 8px 25px rgba(31,78,120,0.2)}}
+.timeline-item.visible{animation:float-gentle 4s ease-in-out infinite,glow-border 4s ease-in-out infinite}
+.timeline-item.visible:nth-child(1){animation-delay:0s}
+.timeline-item.visible:nth-child(2){animation-delay:0.3s}
+.timeline-item.visible:nth-child(3){animation-delay:0.6s}
+.timeline-item.visible .timeline-marker{animation:pulse-icon 3s ease-in-out infinite}
+@keyframes pulse-icon{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+    
+/* Font professionali Google */
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-weight:400;line-height:1.7;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,h4,h5,h6,.navbar-logo-text{font-family:'Outfit','Inter',sans-serif;font-weight:700;letter-spacing:-0.02em;line-height:1.2}
+.hero h1{font-size:56px;font-weight:800;letter-spacing:-0.03em}
+.hero p{font-size:18px;line-height:1.8;font-weight:400;color:#1a1a1a}
+.benefit-card h3,.card h3,.timeline-item h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em;color:#1d1d1d}
+.benefit-card p,.card p,.timeline-item p{font-size:16px;line-height:1.75;font-weight:400;color:#1a1a1a}
+.section-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:42px;letter-spacing:-0.02em;color:#1d1d1d}
+.navbar-menu li a{font-weight:500;letter-spacing:-0.01em}
+p,li,span{color:#1a1a1a;line-height:1.75}
+@media(max-width:768px){.hero h1{font-size:38px}.section-title{font-size:32px}}
+
+    
+/* BOOST Visibilità Testi */
+.hero h1{font-size:62px!important;font-weight:900!important;color:#0a0a0a!important;text-shadow:0 2px 4px rgba(0,0,0,0.03)}
+.hero p{font-size:21px!important;line-height:1.8!important;font-weight:500!important;color:#1a1a1a!important}
+.section-title{font-size:48px!important;font-weight:800!important;color:#0a0a0a!important;margin-bottom:50px!important}
+.benefit-card h3,.card h3,.timeline-item h3{font-size:24px!important;font-weight:700!important;color:#0a0a0a!important;margin-bottom:12px!important}
+.benefit-card p,.card p,.timeline-item p{font-size:17px!important;line-height:1.8!important;font-weight:500!important;color:#2a2a2a!important}
+.benefit-card ul li,.card ul li,.timeline-item ul li{font-size:16px!important;font-weight:500!important;color:#2a2a2a!important;line-height:1.9!important}
+p{font-size:17px!important;color:#2a2a2a!important;font-weight:500!important;line-height:1.8!important}
+.hero-subtitle{font-size:19px!important;font-weight:500!important;color:#1a1a1a!important}
+.cta-button,.btn,.button{font-size:17px!important;font-weight:700!important;padding:14px 32px!important}
+@media(max-width:768px){.hero h1{font-size:42px!important}.section-title{font-size:36px!important}.hero p{font-size:18px!important}}
+
+    
+/* ULTRA CONTRASTO - Tutti i testi più visibili */
+body,p,span,div,li,a,td,th,label{color:#1a1a1a!important;font-weight:500!important}
+h1,h2,h3,h4,h5,h6{color:#000!important;font-weight:800!important}
+.hero p,.hero-subtitle{color:#1a1a1a!important;font-weight:600!important}
+strong,b{color:#000!important;font-weight:700!important}
+ul li,ol li{color:#1a1a1a!important;font-weight:500!important}
+.benefit-card p,.card p,.timeline-item p{color:#1a1a1a!important;font-weight:600!important}
+.section-subtitle{color:#1a1a1a!important;font-weight:600!important}
+
+    
+/* FIX Pulsanti - Testo bianco */
+.cta-button,.btn-primary,.hero-button,button[class*="cta"],a[class*="cta"],.navbar-cta{color:#fff!important;font-weight:700!important}
+.btn,.button,a.btn,a.button{background:#1f4e78!important;color:#fff!important;font-weight:700!important}
+.hero-buttons a,.hero-buttons button{color:#fff!important;font-weight:700!important}
+.btn-secondary,.button-secondary{background:#f5f5f5!important;color:#1f4e78!important;font-weight:700!important}
+
     </style>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    </head>
 <body>
 
 <nav class="navbar">
@@ -586,7 +644,7 @@ body { padding-top: 70px; }
 
         <div style="background-color: #ffffff; border-radius: 16px; padding: 40px; margin-top: 60px; border-left: 4px solid #34c759;">
             <h3 style="color: #1f4e78; margin-bottom: 1rem;">✓ Una Pratica Non Medica</h3>
-            <p style="color: #666;">Il Metodo Head Spa Olistico® non è una pratica medica, terapeutica o diagnostica. I benefici descritti rappresentano esperienze sensoriali e psicologiche comuni a chi pratica il rilassamento consapevole. L'operatore non è un terapeuta, ma un facilitatore consapevole di rilassamento.</p>
+            <p style="color:#1a1a1a;">Il Metodo Head Spa Olistico® non è una pratica medica, terapeutica o diagnostica. I benefici descritti rappresentano esperienze sensoriali e psicologiche comuni a chi pratica il rilassamento consapevole. L'operatore non è un terapeuta, ma un facilitatore consapevole di rilassamento.</p>
         </div>
     </div>
 </section>
@@ -615,7 +673,7 @@ body { padding-top: 70px; }
                     <li><strong>Pettine Medio</strong> – Lavoro principale e stimolazione profonda dei tessuti</li>
                     <li><strong>Pettine Fine</strong> – Lavori di precisione e pressione puntuale su zone specifiche</li>
                 </ul>
-                <p style="margin-top: 20px; font-size: 0.95rem; color: #999;">Ogni pettine è manutenuto con cura, disinfettato con metodi naturali e conservato in spazi asciutti per preservarne l'integrità.</p>
+                <p style="margin-top: 20px; font-size: 0.95rem; color:#2a2a2a;">Ogni pettine è manutenuto con cura, disinfettato con metodi naturali e conservato in spazi asciutti per preservarne l'integrità.</p>
             </div>
         </div>
 
@@ -649,7 +707,7 @@ body { padding-top: 70px; }
                     <li><strong>Essenze naturali</strong> – Per creare un'atmosfera consapevole nello spazio</li>
                     <li><strong>Incensi naturali</strong> – Cedro, sandalo (uso facoltativo e discreto)</li>
                 </ul>
-                <p style="margin-top: 20px; font-size: 0.95rem; color: #999;">L'uso di oli e aromi segue il principio di <strong>minimalismo sensoriale</strong>: non devono essere invasivi, ma semplicemente presenti come supporto sottile all'esperienza consapevole.</p>
+                <p style="margin-top: 20px; font-size: 0.95rem; color:#2a2a2a;">L'uso di oli e aromi segue il principio di <strong>minimalismo sensoriale</strong>: non devono essere invasivi, ma semplicemente presenti come supporto sottile all'esperienza consapevole.</p>
             </div>
             <div>
                 <div class="image-placeholder">
@@ -660,7 +718,7 @@ body { padding-top: 70px; }
 
         <div class="note" style="background-color: #e8f4f8; border-left: 4px solid #1f4e78; padding: 25px; border-radius: 8px; margin-top: 60px;">
             <h4 style="color: #1f4e78;">⚠️ Nota sulla Sicurezza e Sostenibilità</h4>
-            <p style="color: #555; margin: 10px 0;">Tutti gli strumenti devono provenire da fonti sostenibili e certificate. L'operatore è responsabile della manutenzione, igiene e conservazione adeguata degli strumenti. Non deve mai applicare il metodo su soggetti con controindicazioni significative (ferite aperte, infezioni del cuoio capelluto, condizioni mediche gravi).</p>
+            <p style="color:#1a1a1a; margin: 10px 0;">Tutti gli strumenti devono provenire da fonti sostenibili e certificate. L'operatore è responsabile della manutenzione, igiene e conservazione adeguata degli strumenti. Non deve mai applicare il metodo su soggetti con controindicazioni significative (ferite aperte, infezioni del cuoio capelluto, condizioni mediche gravi).</p>
         </div>
     </div>
 </section>
@@ -734,7 +792,7 @@ body { padding-top: 70px; }
                     <h4 style="color: #1f4e78;">Zona Frontale (Tempia e Fronte)</h4>
                     <p><strong>Durata: 6-8 minuti</strong></p>
                     <p>Utilizzando il pettine medio, si eseguono movimenti circolari ampi (Enkan) sulla zona temporale bilaterale. La pressione è calibrata (250-300 grammi) e i movimenti procedono gradualmente verso la fronte. Seguono pressioni puntiformi su punti sensibili specifici.</p>
-                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: rilassamento della zona frontale, riduzione della tensione oculare e della fronte.</em></p>
+                    <p style="font-size: 0.95rem; color:#2a2a2a; margin-top: 15px;"><em>Effetto: rilassamento della zona frontale, riduzione della tensione oculare e della fronte.</em></p>
                 </div>
                 <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
                     <h4 style="color: #1f4e78; margin-bottom: 15px;">Tecniche Utilizzate:</h4>
@@ -751,7 +809,7 @@ body { padding-top: 70px; }
                     <h4 style="color: #1f4e78;">Zona Vertex (Vertice e Occipitale)</h4>
                     <p><strong>Durata: 6-8 minuti</strong></p>
                     <p>Il lavoro si concentra sulla sommità del cranio e sull'area occipitale. Utilizzo del pettine medio con movimenti Enkan ampi (10-12 rotazioni), procedendo progressivamente verso l'occipitale. Seguono pressioni puntiformi lungo la linea nuchale (5-6 punti specifici).</p>
-                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: rilassamento profondo della zona craniale superiore, equilibrio energetico centrale.</em></p>
+                    <p style="font-size: 0.95rem; color:#2a2a2a; margin-top: 15px;"><em>Effetto: rilassamento profondo della zona craniale superiore, equilibrio energetico centrale.</em></p>
                 </div>
                 <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
                     <h4 style="color: #1f4e78; margin-bottom: 15px;">Flusso Energetico:</h4>
@@ -768,11 +826,11 @@ body { padding-top: 70px; }
                     <h4 style="color: #1f4e78;">Zona Parietale (Lato Destro e Sinistro)</h4>
                     <p><strong>Durata: 8-10 minuti</strong></p>
                     <p>Lavoro bilaterale dietro l'orecchio. Utilizzo della spazzola tonda per movimenti circolari dolci (2-3 minuti per lato). Seguono movimenti lineari verticali con il pettine medio (6-8 passaggi per lato) per favorire il drenaggio linfatico.</p>
-                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: drenaggio energetico laterale, rilassamento della zona temporale profonda.</em></p>
+                    <p style="font-size: 0.95rem; color:#2a2a2a; margin-top: 15px;"><em>Effetto: drenaggio energetico laterale, rilassamento della zona temporale profonda.</em></p>
                 </div>
                 <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
                     <h4 style="color: #1f4e78; margin-bottom: 15px;">Attenzione Particolare:</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666;">La zona parietale è particolarmente sensibile. I movimenti devono essere morbidi e rispettosi della soglia di comfort del cliente. La consapevolezza dell'operatore è essenziale.</p>
+                    <p style="margin: 0; font-size: 0.95rem; color:#1a1a1a;">La zona parietale è particolarmente sensibile. I movimenti devono essere morbidi e rispettosi della soglia di comfort del cliente. La consapevolezza dell'operatore è essenziale.</p>
                 </div>
             </div>
 
@@ -781,11 +839,11 @@ body { padding-top: 70px; }
                     <h4 style="color: #1f4e78;">Zona Nuca e Collo</h4>
                     <p><strong>Durata: 4-6 minuti</strong></p>
                     <p>Lavoro sulla linea nuchale inferiore (base del cranio) e sulla zona cervicale superiore. Movimenti Enkan lungo 5-6 zone della nuca, seguiti da delicati movimenti sulla zona retro-cervicale (se consenziente). La spazzola tonda consente movimenti morbidi dall'alto verso il basso.</p>
-                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: liberazione della tensione cervicale cronica, apertura della base cranica.</em></p>
+                    <p style="font-size: 0.95rem; color:#2a2a2a; margin-top: 15px;"><em>Effetto: liberazione della tensione cervicale cronica, apertura della base cranica.</em></p>
                 </div>
                 <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
                     <h4 style="color: #1f4e78; margin-bottom: 15px;">Consapevolezza Corporea:</h4>
-                    <p style="margin: 0; font-size: 0.95rem; color: #666;">L'operatore rimane consapevole della postura del cliente e delle sue microreazioni. La comunicazione silenziosa è cruciale in questa zona delicata.</p>
+                    <p style="margin: 0; font-size: 0.95rem; color:#1a1a1a;">L'operatore rimane consapevole della postura del cliente e delle sue microreazioni. La comunicazione silenziosa è cruciale in questa zona delicata.</p>
                 </div>
             </div>
         </div>
@@ -818,7 +876,7 @@ body { padding-top: 70px; }
 
         <div style="background-color: #f5f5f7; border-radius: 16px; padding: 50px; text-align: center;">
             <h3 style="color: #1f4e78; margin-bottom: 20px;">Richiedi Informazioni</h3>
-            <p style="margin-bottom: 30px; color: #666;">Contatta la Segreteria dell'Academy per scoprire i prossimi corsi, le date di formazione e le modalità di iscrizione.</p>
+            <p style="margin-bottom: 30px; color:#1a1a1a;">Contatta la Segreteria dell'Academy per scoprire i prossimi corsi, le date di formazione e le modalità di iscrizione.</p>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <a href="mailto:academy@headspaitalia.it" class="btn btn-large">📧 academy@headspaitalia.it</a>
                 <a href="tel:+390212345678" class="btn btn-outline btn-large">📞 +39 02 1234 5678</a>

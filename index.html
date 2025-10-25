@@ -21,8 +21,8 @@
             align-items: center;
         }
         .hero h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .hero p { font-size: 1.4rem; color: #666; margin-bottom: 10px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .hero .subtitle { font-size: 1.1rem; color: #999; margin-bottom: 50px; }
+        .hero p { font-size: 1.4rem; color:#1a1a1a; margin-bottom: 10px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero .subtitle { font-size: 1.1rem; color:#2a2a2a; margin-bottom: 50px; }
         
         .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; border: none; cursor: pointer; }
         .btn-primary { background: #1f4e78; color: #fff; }
@@ -37,7 +37,7 @@
         .section { padding: 100px 0; }
         .section-alt { background: #f5f5f7; }
         .section h2 { font-size: 3rem; font-weight: 700; text-align: center; margin-bottom: 60px; letter-spacing: -0.015em; }
-        .section p { font-size: 1.1rem; color: #666; line-height: 1.8; }
+        .section p { font-size: 1.1rem; color:#1a1a1a; line-height: 1.8; }
         
         .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 50px; }
         
@@ -51,7 +51,7 @@
         }
         .card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); border-color: #1f4e78; }
         .card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; color: #1d1d1d; }
-        .card p { font-size: 0.95rem; color: #666; margin-bottom: 20px; }
+        .card p { font-size: 0.95rem; color:#1a1a1a; margin-bottom: 20px; }
         .card-icon { font-size: 3rem; margin-bottom: 15px; }
         
         /* BENEFICI MIGLIORATI */
@@ -117,7 +117,7 @@
 
         .benefit-card p {
             font-size: 0.95rem;
-            color: #666;
+            color:#1a1a1a;
             line-height: 1.7;
             margin-bottom: 20px;
         }
@@ -129,7 +129,7 @@
 
         .benefit-list li {
             font-size: 0.9rem;
-            color: #555;
+            color:#1a1a1a;
             padding: 8px 0;
             border-bottom: 1px solid #f0f0f0;
         }
@@ -175,7 +175,7 @@
 
         .timeline-item p {
             font-size: 0.9rem;
-            color: #666;
+            color:#1a1a1a;
             line-height: 1.6;
         }
         
@@ -203,10 +203,10 @@
 .navbar-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:70px}
 .navbar-brand{display:flex;align-items:center;text-decoration:none;gap:12px}
 .navbar-logo-text{font-size:20px;font-weight:600;color:#1d1d1d;letter-spacing:-.01em}
-.navbar-logo-text sup{font-size:11px;color:#666}
-.navbar-subtitle{font-size:10px;color:#999;font-weight:400;text-transform:uppercase;letter-spacing:.8px;margin-top:-2px}
+.navbar-logo-text sup{font-size:11px;color:#1a1a1a}
+.navbar-subtitle{font-size:10px;color:#2a2a2a;font-weight:400;text-transform:uppercase;letter-spacing:.8px;margin-top:-2px}
 .navbar-menu{display:flex;list-style:none;gap:35px;align-items:center}
-.navbar-menu li a{text-decoration:none;color:#666;font-size:14px;font-weight:500;transition:color .3s ease;padding:8px 0;position:relative}
+.navbar-menu li a{text-decoration:none;color:#1a1a1a;font-size:14px;font-weight:500;transition:color .3s ease;padding:8px 0;position:relative}
 .navbar-menu li a:hover{color:#1f4e78}
 .navbar-menu li a::after{content:"";position:absolute;bottom:0;left:50%;width:0;height:2px;background-color:#1f4e78;transition:all .3s ease;transform:translateX(-50%)}
 .navbar-menu li a:hover::after{width:100%}
@@ -242,8 +242,66 @@ body { padding-top: 70px; }
 .timeline-marker{transition:transform 0.3s ease}
 .timeline-item:hover .timeline-marker{transform:scale(1.2) rotate(5deg)}
 
+    
+/* Animazione automatica timeline */
+@keyframes float-gentle{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes glow-border{0%,100%{box-shadow:0 4px 15px rgba(31,78,120,0.1)}50%{box-shadow:0 8px 25px rgba(31,78,120,0.2)}}
+.timeline-item.visible{animation:float-gentle 4s ease-in-out infinite,glow-border 4s ease-in-out infinite}
+.timeline-item.visible:nth-child(1){animation-delay:0s}
+.timeline-item.visible:nth-child(2){animation-delay:0.3s}
+.timeline-item.visible:nth-child(3){animation-delay:0.6s}
+.timeline-item.visible .timeline-marker{animation:pulse-icon 3s ease-in-out infinite}
+@keyframes pulse-icon{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+    
+/* Font professionali Google */
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-weight:400;line-height:1.7;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,h4,h5,h6,.navbar-logo-text{font-family:'Outfit','Inter',sans-serif;font-weight:700;letter-spacing:-0.02em;line-height:1.2}
+.hero h1{font-size:56px;font-weight:800;letter-spacing:-0.03em}
+.hero p{font-size:18px;line-height:1.8;font-weight:400;color:#1a1a1a}
+.benefit-card h3,.card h3,.timeline-item h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em;color:#1d1d1d}
+.benefit-card p,.card p,.timeline-item p{font-size:16px;line-height:1.75;font-weight:400;color:#1a1a1a}
+.section-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:42px;letter-spacing:-0.02em;color:#1d1d1d}
+.navbar-menu li a{font-weight:500;letter-spacing:-0.01em}
+p,li,span{color:#1a1a1a;line-height:1.75}
+@media(max-width:768px){.hero h1{font-size:38px}.section-title{font-size:32px}}
+
+    
+/* BOOST Visibilità Testi */
+.hero h1{font-size:62px!important;font-weight:900!important;color:#0a0a0a!important;text-shadow:0 2px 4px rgba(0,0,0,0.03)}
+.hero p{font-size:21px!important;line-height:1.8!important;font-weight:500!important;color:#1a1a1a!important}
+.section-title{font-size:48px!important;font-weight:800!important;color:#0a0a0a!important;margin-bottom:50px!important}
+.benefit-card h3,.card h3,.timeline-item h3{font-size:24px!important;font-weight:700!important;color:#0a0a0a!important;margin-bottom:12px!important}
+.benefit-card p,.card p,.timeline-item p{font-size:17px!important;line-height:1.8!important;font-weight:500!important;color:#2a2a2a!important}
+.benefit-card ul li,.card ul li,.timeline-item ul li{font-size:16px!important;font-weight:500!important;color:#2a2a2a!important;line-height:1.9!important}
+p{font-size:17px!important;color:#2a2a2a!important;font-weight:500!important;line-height:1.8!important}
+.hero-subtitle{font-size:19px!important;font-weight:500!important;color:#1a1a1a!important}
+.cta-button,.btn,.button{font-size:17px!important;font-weight:700!important;padding:14px 32px!important}
+@media(max-width:768px){.hero h1{font-size:42px!important}.section-title{font-size:36px!important}.hero p{font-size:18px!important}}
+
+    
+/* ULTRA CONTRASTO - Tutti i testi più visibili */
+body,p,span,div,li,a,td,th,label{color:#1a1a1a!important;font-weight:500!important}
+h1,h2,h3,h4,h5,h6{color:#000!important;font-weight:800!important}
+.hero p,.hero-subtitle{color:#1a1a1a!important;font-weight:600!important}
+strong,b{color:#000!important;font-weight:700!important}
+ul li,ol li{color:#1a1a1a!important;font-weight:500!important}
+.benefit-card p,.card p,.timeline-item p{color:#1a1a1a!important;font-weight:600!important}
+.section-subtitle{color:#1a1a1a!important;font-weight:600!important}
+
+    
+/* FIX Pulsanti - Testo bianco */
+.cta-button,.btn-primary,.hero-button,button[class*="cta"],a[class*="cta"],.navbar-cta{color:#fff!important;font-weight:700!important}
+.btn,.button,a.btn,a.button{background:#1f4e78!important;color:#fff!important;font-weight:700!important}
+.hero-buttons a,.hero-buttons button{color:#fff!important;font-weight:700!important}
+.btn-secondary,.button-secondary{background:#f5f5f5!important;color:#1f4e78!important;font-weight:700!important}
+
     </style>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    </head>
 <body>
 
 <nav class="navbar">
@@ -285,7 +343,7 @@ body { padding-top: 70px; }
 <section class="section">
     <div class="container">
         <h2>Cosa Riceverai da una Sessione</h2>
-        <p style="text-align: center; font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 60px;">Una pratica consapevole che lavora a livello neurobiologico. I benefici si manifestano immediatamente.</p>
+        <p style="text-align: center; font-size: 1.1rem; color:#1a1a1a; max-width: 700px; margin: 0 auto 60px;">Una pratica consapevole che lavora a livello neurobiologico. I benefici si manifestano immediatamente.</p>
         
         <div class="benefits-grid">
             <div class="benefit-card">
@@ -446,7 +504,7 @@ body { padding-top: 70px; }
 <section class="section">
     <div class="container" style="text-align: center;">
         <h2>Pronto per Scoprire il Benessere Autentico?</h2>
-        <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 30px auto 50px;">Il Head Spa non è un lusso. È un'investimento nella tua salute consapevole, nella tua chiarezza mentale e nel tuo benessere integrato.</p>
+        <p style="font-size: 1.1rem; color:#1a1a1a; max-width: 600px; margin: 30px auto 50px;">Il Head Spa non è un lusso. È un'investimento nella tua salute consapevole, nella tua chiarezza mentale e nel tuo benessere integrato.</p>
         <a href="contatti.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Prenota la Tua Sessione Oggi</a>
     </div>
 </section>
