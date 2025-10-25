@@ -3,86 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Head Spa Italia® - Metodo olistico giapponese di rilassamento del cuoio capelluto.">
-    <title>Head Spa Italia® - Metodo Olistico</title>
+    <meta name="description" content="Head Spa Italia® - Metodo olistico giapponese di rilassamento del cuoio capelluto. Scopri la pratica consapevole di profondo benessere.">
+    <title>Head Spa Italia® - Metodo Olistico di Rilassamento Profondo</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1d1d1d; }
-        .hero { text-align: center; padding: 100px 40px; background: linear-gradient(135deg, #f5f5f7, #fff); }
-        h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; }
-        h2 { font-size: 2rem; margin: 40px 0 20px; }
-        .btn { display: inline-block; padding: 12px 24px; background: #1f4e78; color: #fff; border-radius: 8px; text-decoration: none; margin: 8px; }
-        .btn:hover { background: #15365a; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin: 60px 0; }
-        .card { border: 1px solid #e5e5e7; padding: 30px; border-radius: 12px; text-align: center; }
-        footer { background: #1d1d1d; color: #fff; padding: 40px; text-align: center; margin-top: 80px; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; background: #ffffff; color: #1d1d1d; line-height: 1.6; }
+        
+        /* HERO SECTION */
+        .hero { 
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+            padding: 120px 40px;
+            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .hero p { font-size: 1.4rem; color: #666; margin-bottom: 10px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero .subtitle { font-size: 1.1rem; color: #999; margin-bottom: 50px; }
+        
+        /* BUTTONS */
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn-primary { background: #1f4e78; color: #fff; }
+        .btn-primary:hover { background: #15365a; transform: translateY(-2px); box-shadow: 0 10px 40px rgba(31, 78, 120, 0.2); }
+        .btn-secondary { background: #f5f5f7; color: #1f4e78; }
+        .btn-secondary:hover { background: #e8e8ed; transform: translateY(-2px); }
+        
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 80px; }
+        
+        /* CONTAINER */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        
+        /* SECTIONS */
+        .section { padding: 100px 0; }
+        .section-alt { background: #f5f5f7; }
+        .section h2 { font-size: 3rem; font-weight: 700; text-align: center; margin-bottom: 60px; letter-spacing: -0.015em; }
+        .section p { font-size: 1.1rem; color: #666; line-height: 1.8; }
+        
+        /* GRID */
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        
+        /* CARDS */
+        .card { 
+            background: #ffffff;
+            border: 1px solid #e5e5e7;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); border-color: #1f4e78; }
+        .card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; color: #1d1d1d; }
+        .card p { font-size: 0.95rem; color: #666; margin-bottom: 20px; }
+        .card-icon { font-size: 3rem; margin-bottom: 15px; }
+        
+        /* BENEFITS */
+        .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+        .benefit-item { padding: 30px; background: #ffffff; border-radius: 12px; }
+        .benefit-item h4 { font-size: 1.1rem; color: #1f4e78; margin-bottom: 10px; font-weight: 600; }
+        .benefit-item p { font-size: 0.95rem; color: #666; }
+        
+        /* FOOTER */
+        footer { background: #1d1d1d; color: #f5f5f7; padding: 80px 0 40px; }
+        footer .container { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        footer h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.1em; }
+        footer a { display: block; color: #a1a1a6; margin-bottom: 10px; font-size: 0.9rem; transition: color 0.3s; }
+        footer a:hover { color: #ffffff; }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid #424245; color: #a1a1a6; font-size: 0.85rem; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px; min-height: auto; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section h2 { font-size: 2rem; }
+            .container { padding: 0 20px; }
+            .grid-3, .grid-2, .benefits { grid-template-columns: 1fr; }
+            footer .container { grid-template-columns: 1fr 1fr; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <h1>🧘 Head Spa Italia®</h1>
-        <p style="font-size: 1.2rem; margin: 20px 0;">Metodo Olistico di Rilassamento Profondo</p>
-        <div style="margin: 30px 0;">
-            <a href="chi-siamo.html" class="btn">👥 Chi Siamo</a>
-            <a href="blog.html" class="btn">📚 Blog</a>
-            <a href="contatti.html" class="btn">📧 Contatti</a>
-            <a href="area-riservata.html" class="btn">🔐 Area Riservata</a>
-        </div>
-    </section>
 
-    <section class="container">
-        <h2 style="text-align: center;">Scopri Head Spa Italia®</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>📖 Il Metodo</h3>
-                <p>Scopri la pratica olistica basata su tradizioni giapponesi millenarie.</p>
-                <a href="metodo_head_spa_olistico_pagina_ufficiale.html" class="btn">Leggi più →</a>
-            </div>
-            <div class="card">
-                <h3>🎓 Academy</h3>
-                <p>Formazione certificata per diventare operatore Head Spa.</p>
-                <a href="head_spa_academy_corsi.html" class="btn">Scopri Corsi →</a>
-            </div>
-            <div class="card">
-                <h3>🏥 Centri</h3>
-                <p>Trova i centri affiliati più vicini a te.</p>
-                <a href="trova_centro_head_spa_italia.html" class="btn">Trova Centri →</a>
-            </div>
-        </div>
-    </section>
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>🧘 Head Spa Italia®</h1>
+    <p>Ritrova te stesso attraverso il Metodo Olistico Giapponese di Rilassamento Profondo</p>
+    <p class="subtitle">Una pratica consapevole che restituisce equilibrio, chiarezza e benessere autentico</p>
+    <div class="hero-buttons">
+        <a href="metodo_head_spa_olistico_pagina_ufficiale.html" class="btn btn-primary">Scopri il Metodo</a>
+        <a href="contatti.html" class="btn btn-secondary">Prenota Sessione</a>
+    </div>
+</section>
 
-    <section class="container">
-        <h2 style="text-align: center;">Per Operatori</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>📋 Albo</h3>
-                <p>Accedi all'Albo Nazionale degli Operatori.</p>
-                <a href="area-riservata.html" class="btn">Accedi →</a>
+<!-- BENEFICI SECTION -->
+<section class="section">
+    <div class="container">
+        <h2>Cosa Ricevirai da una Sessione</h2>
+        <div class="benefits">
+            <div class="benefit-item">
+                <h4>🧠 Chiarezza Mentale</h4>
+                <p>Riduci lo stress e il brain fog. Accedi a uno stato di consapevolezza profonda e lucidità.</p>
             </div>
-            <div class="card">
-                <h3>🏢 Affiliazione</h3>
-                <p>Apri un centro Head Spa certificato.</p>
-                <a href="apri_centro_head_spa_italia_affiliazione.html" class="btn">Info →</a>
+            <div class="benefit-item">
+                <h4>😴 Sonno Rigenerante</h4>
+                <p>Induzione di onde cerebrali theta. Una sessione equivale a 30 minuti di meditazione.</p>
             </div>
-            <div class="card">
-                <h3>🏅 Attestati</h3>
-                <p>Gestisci certificazioni ufficiali.</p>
-                <a href="attestato_head_spa_ufficiale.html" class="btn">Gestisci →</a>
+            <div class="benefit-item">
+                <h4>💪 Equilibrio Immunitario</h4>
+                <p>Riduzione dell'infiammazione e potenziamento naturale della tua immunità.</p>
+            </div>
+            <div class="benefit-item">
+                <h4>❤️ Connessione Autentica</h4>
+                <p>Un momento di pausa dal rumore. Spazio per semplicemente essere, consapevolmente.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Head Spa Italia®. Tutti i diritti riservati.</p>
-        <p style="margin-top: 20px; font-size: 0.9rem;">
-            <a href="chi-siamo.html" style="color: #fff;">Chi Siamo</a> |
-            <a href="blog.html" style="color: #fff;">Blog</a> |
-            <a href="contatti.html" style="color: #fff;">Contatti</a> |
-            <a href="head_spa_academy_corsi.html" style="color: #fff;">Academy</a> |
-            <a href="trova_centro_head_spa_italia.html" style="color: #fff;">Centri</a>
-        </p>
-    </footer>
+<!-- SEZIONI PRINCIPALI -->
+<section class="section section-alt">
+    <div class="container">
+        <h2>Scopri Head Spa Italia®</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>Il Metodo Olistico</h3>
+                <p>Radici giapponesi millenarie + ricerca scientifica moderna. Scopri come funziona.</p>
+                <a href="metodo_head_spa_olistico_pagina_ufficiale.html" class="btn btn-primary" style="display: inline-block;">Leggi di Più →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>Chi Siamo</h3>
+                <p>La storia di Head Spa Italia® e la missione di restituire autenticità al benessere consapevole.</p>
+                <a href="chi-siamo.html" class="btn btn-primary" style="display: inline-block;">Scopri Più →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Blog & Articoli</h3>
+                <p>Approfondimenti sulla pratica, la filosofia zen, benefici scientifici e guide pratiche.</p>
+                <a href="blog.html" class="btn btn-primary" style="display: inline-block;">Leggi Articoli →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FORMAZIONE & NETWORK -->
+<section class="section">
+    <div class="container">
+        <h2>Per Operatori e Centri Certificati</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>Academy - Corsi</h3>
+                <p>Formazione rigorosa per diventare operatore Head Spa certificato. Scopri i programmi.</p>
+                <a href="head_spa_academy_corsi.html" class="btn btn-primary" style="display: inline-block;">Scopri Corsi →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h3>Trova Centri</h3>
+                <p>Accedi all'Albo Nazionale. Trova i centri certificati più vicini a te.</p>
+                <a href="trova_centro_head_spa_italia.html" class="btn btn-primary" style="display: inline-block;">Trova Centri →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>Area Riservata</h3>
+                <p>Dashboard per operatori. Accedi all'Albo Nazionale e alle risorse esclusive.</p>
+                <a href="area-riservata.html" class="btn btn-primary" style="display: inline-block;">Accedi Albo →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERSHIP & CERTIFICAZIONI -->
+<section class="section section-alt">
+    <div class="container">
+        <h2>Diventa Parte della Community</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h3>Apri un Centro</h3>
+                <p>Affiliati a Head Spa Italia® e diventa partner della rete nazionale certificata.</p>
+                <a href="apri_centro_head_spa_italia_affiliazione.html" class="btn btn-primary" style="display: inline-block;">Info Affiliazione →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏅</div>
+                <h3>Certificazioni</h3>
+                <p>Gestisci e verifica i tuoi attestati ufficiali di certificazione Head Spa Italia®.</p>
+                <a href="attestato_head_spa_ufficiale.html" class="btn btn-primary" style="display: inline-block;">Gestisci Attestati →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">📧</div>
+                <h3>Contattaci</h3>
+                <p>Domande? Supporto? Contattaci tramite il modulo dedicato o ai nostri recapiti.</p>
+                <a href="contatti.html" class="btn btn-primary" style="display: inline-block;">Contatta Noi →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="section">
+    <div class="container" style="text-align: center;">
+        <h2>Pronto per Scoprire il Benessere Autentico?</h2>
+        <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 30px auto 50px;">Il Head Spa non è un lusso. È un'investimento nella tua salute consapevole, nella tua chiarezza mentale e nel tuo benessere integrato.</p>
+        <a href="contatti.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Prenota la Tua Sessione Oggi</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="index.html">Home</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
+        <div>
+            <h4>Scopri</h4>
+            <a href="metodo_head_spa_olistico_pagina_ufficiale.html">Il Metodo</a>
+            <a href="head_spa_academy_corsi.html">Academy</a>
+            <a href="trova_centro_head_spa_italia.html">Centri Affiliati</a>
+            <a href="area-riservata.html">Area Riservata</a>
+        </div>
+        <div>
+            <h4>Partner</h4>
+            <a href="apri_centro_head_spa_italia_affiliazione.html">Apri Centro</a>
+            <a href="attestato_head_spa_ufficiale.html">Certificazioni</a>
+            <a href="#">Albo Operatori</a>
+            <a href="#">Supporto</a>
+        </div>
+        <div>
+            <h4>Informazioni</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Statuto</a>
+            <a href="#">Sostenibilità</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia®. Tutti i diritti riservati. | Pratiche consapevoli per il benessere autentico.</p>
+    </div>
+</footer>
+
 </body>
 </html>
