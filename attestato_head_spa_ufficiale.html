@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attestato di Frequenza - Head Spa Italia® Academy Nazionale</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .attestato-container {
+            background: #ffffff;
+            width: 21cm;
+            height: 29.7cm;
+            padding: 40px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Background Border */
+        .attestato-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid;
+            border-image: linear-gradient(135deg, #1f4e78 0%, #34c759 50%, #1f4e78 100%) 1;
+            pointer-events: none;
+            margin: 15px;
+        }
+
+        .attestato-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid #e5e5e7;
+            pointer-events: none;
+            margin: 20px;
+        }
+
+        .attestato-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header con Logo e Titolo Organizzazione */
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1f4e78;
+            margin-bottom: 30px;
+        }
+
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .org-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .org-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1f4e78;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .org-subtitle {
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+            font-family: 'Arial', sans-serif;
+            font-style: italic;
+        }
+
+        .org-albo {
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Main Title */
+        .main-title {
+            text-align: center;
+            margin: 30px 0;
+            flex-grow: 1;
+        }
+
+        .main-title h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f4e78;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .main-title p {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .registered-mark {
+            font-size: 13px;
+            color: #1f4e78;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        /* Dichiarazione */
+        .declaration {
+            text-align: center;
+            margin: 25px 0;
+            line-height: 1.8;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .declaration p {
+            margin-bottom: 8px;
+        }
+
+        /* Certificato Content */
+        .certificate-body {
+            margin: 25px 0;
+            line-height: 1.8;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .certificate-body p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* Dati Personalizzabili */
+        .data-section {
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            font-size: 12px;
+        }
+
+        .data-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .data-label {
+            font-size: 11px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .data-value {
+            font-size: 14px;
+            color: #1d1d1d;
+            font-weight: 500;
+            border-bottom: 1px solid #999;
+            padding-bottom: 4px;
+            min-height: 20px;
+        }
+
+        .data-value.placeholder {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        /* Firma Section */
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e5e7;
+        }
+
+        .signature-item {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .signature-line {
+            width: 140px;
+            height: 1px;
+            background-color: #333;
+            margin-bottom: 5px;
+        }
+
+        .signature-placeholder {
+            width: 140px;
+            height: 60px;
+            border: 1px solid #e5e5e7;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fafafa;
+            font-size: 11px;
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .signature-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 2px;
+        }
+
+        .signature-title {
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e5e7;
+            font-size: 9px;
+            color: #999;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-item {
+            margin-bottom: 3px;
+        }
+
+        /* Codice Attestato */
+        .code-section {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            text-align: right;
+            font-size: 10px;
+            color: #ccc;
+        }
+
+        .code-label {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            font-weight: 600;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .code-value {
+            font-size: 11px;
+            color: #999;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        /* Utility Print Classes */
+        .no-print {
+            padding: 30px;
+            background: #f5f5f7;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1f4e78;
+            box-shadow: 0 0 0 3px rgba(31, 78, 120, 0.1);
+        }
+
+        .btn {
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(31, 78, 120, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: #f5f5f7;
+            color: #1f4e78;
+            border: 2px solid #1f4e78;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .attestato-container {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+
+            .data-section {
+                grid-template-columns: 1fr;
+            }
+
+            .signature-section {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .signature-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Form di Compilazione (solo web, non stampa) -->
+<div class="no-print">
+    <h2 style="color: #1f4e78; margin-bottom: 20px; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+        Genera Attestato Personalizzato
+    </h2>
+    
+    <form id="attestatoForm" onsubmit="compilaAttestato(event)" style="max-width: 800px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+                <label for="corsista">Nome e Cognome Corsista *</label>
+                <input type="text" id="corsista" placeholder="es. Marco Rossi" required>
+            </div>
+            <div class="form-group">
+                <label for="codice">Codice Attestato *</label>
+                <input type="text" id="codice" placeholder="es. HSO-2024-001234" value="HSO-2024-" required>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+                <label for="corso">Tipo di Corso *</label>
+                <select id="corso" required>
+                    <option value="">Seleziona il corso</option>
+                    <option value="Base">Corso Base Head Spa Olistico® (40 ore)</option>
+                    <option value="Professionale">Corso Professionale Head Spa Olistico® (120 ore)</option>
+                    <option value="Formatore">Corso Formatore Head Spa Italia® (80 ore)</option>
+                    <option value="Specialista">Corso Specialista Head Spa Italia® - Stress Management</option>
+                    <option value="Specialista">Corso Specialista Head Spa Italia® - Terapeutico</option>
+                    <option value="Specialista">Corso Specialista Head Spa Italia® - Business</option>
+                    <option value="Specialista">Corso Specialista Head Spa Italia® - Meditazione</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sede">Sede di Formazione *</label>
+                <input type="text" id="sede" placeholder="es. Milano, Lombardia" required>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+                <label for="dataInizio">Data di Inizio *</label>
+                <input type="date" id="dataInizio" required>
+            </div>
+            <div class="form-group">
+                <label for="dataFine">Data di Fine *</label>
+                <input type="date" id="dataFine" required>
+            </div>
+            <div class="form-group">
+                <label for="ore">Ore di Formazione *</label>
+                <input type="number" id="ore" placeholder="es. 120" min="1" required>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+                <label for="presidente">Firma Presidente (testo)</label>
+                <input type="text" id="presidente" placeholder="es. Dott. Luigi Bianchi">
+            </div>
+            <div class="form-group">
+                <label for="direttore">Firma Direttore Tecnico (testo)</label>
+                <input type="text" id="direttore" placeholder="es. Dott.ssa Maria Rossi">
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 30px;">
+            <button type="submit" class="btn">Genera Attestato</button>
+            <button type="button" class="btn btn-secondary" onclick="window.print()">🖨️ Stampa</button>
+            <button type="reset" class="btn btn-secondary">Cancella</button>
+        </div>
+    </form>
+</div>
+
+<!-- ATTESTATO UFFICIALE -->
+<div class="attestato-container" id="attestato">
+    <!-- Codice Attestato (posizionato in alto a destra) -->
+    <div class="code-section">
+        <div class="code-label">Codice:</div>
+        <div class="code-value" id="displayCodice">HSO-2024-000001</div>
+    </div>
+
+    <!-- Contenuto Attestato -->
+    <div class="attestato-content">
+        <!-- Header con Logo -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">HS</div>
+                <div class="org-title">
+                    <div class="org-name">Head Spa Italia®</div>
+                    <div class="org-subtitle">Academy Nazionale</div>
+                    <div class="org-albo">Albo Nazionale Operatori Head Spa Olistico®</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Titolo Principale -->
+        <div class="main-title">
+            <h1>Attestato di Frequenza</h1>
+            <p>al Corso di Formazione in</p>
+            <p style="font-size: 18px; font-weight: 700; color: #1f4e78;">Metodo Head Spa Olistico®</p>
+            <div class="registered-mark">® Marchio Registrato</div>
+        </div>
+
+        <!-- Dichiarazione -->
+        <div class="declaration">
+            <p>L'Associazione Culturale Head Spa Italia®</p>
+            <p><strong>attesta e certifica che</strong></p>
+        </div>
+
+        <!-- Corpo Certificato -->
+        <div class="certificate-body">
+            <div class="data-section">
+                <div class="data-item">
+                    <span class="data-label">Il/La Sig./Sig.ra</span>
+                    <span class="data-value" id="displayCorsista" style="min-height: 24px;"><em>Nome Corsista</em></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Codice Iscrizione</span>
+                    <span class="data-value" id="displayCodiceCorso" style="min-height: 24px;"><em>HSO-2024-000001</em></span>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px; text-align: justify;">
+                ha completato con <strong>profitto</strong> il corso di formazione professionale in <strong>Metodo Head Spa Olistico®</strong>, 
+                seguendo il programma didattico ufficiale dell'Academy Nazionale, secondo i criteri pedagogici e filosofici dell'Associazione Culturale Head Spa Italia®.
+            </p>
+
+            <div class="data-section" style="margin-top: 25px;">
+                <div class="data-item">
+                    <span class="data-label">Tipologia di Corso</span>
+                    <span class="data-value" id="displayCorso" style="min-height: 24px;"><em>Corso Base</em></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Ore di Formazione</span>
+                    <span class="data-value" id="displayOre" style="min-height: 24px;"><em>40 ore</em></span>
+                </div>
+            </div>
+
+            <div class="data-section" style="margin-top: 15px;">
+                <div class="data-item">
+                    <span class="data-label">Sede di Formazione</span>
+                    <span class="data-value" id="displaySede" style="min-height: 24px;"><em>Milano, Lombardia</em></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Periodo di Frequenza</span>
+                    <span class="data-value" id="displayData" style="min-height: 24px;"><em>da — a —</em></span>
+                </div>
+            </div>
+
+            <p style="margin-top: 25px; text-align: justify; font-size: 12px; line-height: 1.7; color: #555;">
+                Il corsista ha acquisito le competenze teoriche e pratiche del Metodo Head Spa Olistico®, incluse le quattro tecniche fondamentali 
+                (Enkan, Senryoku, Ritmo, Shiatsu Superficiale), la filosofia olistica, l'etica professionale e i principi di consapevolezza e 
+                minimalismo ispirati dalla tradizione giapponese. Ha dimostrato padronanza dei contenuti e idonea capacità di esecuzione pratica.
+            </p>
+
+            <p style="text-align: center; margin-top: 20px; font-style: italic; color: #999; font-size: 12px;">
+                Questo attestato è valido per 3 anni dalla data di rilascio.<br>
+                Per il rinnovo è necessario completare 20 ore di formazione continua accreditata.
+            </p>
+        </div>
+
+        <!-- Sezione Firme -->
+        <div class="signature-section">
+            <div class="signature-item">
+                <div class="signature-placeholder" id="firmaPresidente"></div>
+                <div class="signature-line"></div>
+                <div class="signature-name" id="nomePresidente">Firma Presidente</div>
+                <div class="signature-title">Presidente dell'Associazione</div>
+                <div style="font-size: 10px; color: #ccc; margin-top: 3px;">Head Spa Italia®</div>
+            </div>
+            <div class="signature-item">
+                <div class="signature-placeholder" id="firmaDirettore"></div>
+                <div class="signature-line"></div>
+                <div class="signature-name" id="nomeDirettore">Firma Direttore</div>
+                <div class="signature-title">Direttore Tecnico</div>
+                <div style="font-size: 10px; color: #ccc; margin-top: 3px;">Head Spa Italia® Academy</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-item">
+                <strong>Head Spa Italia® - Associazione Culturale di Promozione Sociale</strong>
+            </div>
+            <div class="footer-item">
+                Albo Nazionale Operatori Head Spa Olistico® | Registro Unico Nazionale Terzo Settore (RUNTS)
+            </div>
+            <div class="footer-item">
+                © 2024 Head Spa Italia®. Tutti i diritti riservati. | www.headspaitalia.it
+            </div>
+            <div class="footer-item" id="footerData" style="margin-top: 8px;">
+                Data di Emissione: —
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function compilaAttestato(event) {
+        event.preventDefault();
+
+        // Raccogliere dati dal form
+        const corsista = document.getElementById('corsista').value || 'Nome Corsista';
+        const codice = document.getElementById('codice').value || 'HSO-2024-000001';
+        const corso = document.getElementById('corso').value || 'Corso Base';
+        const sede = document.getElementById('sede').value || 'Milano, Lombardia';
+        const dataInizio = document.getElementById('dataInizio').value || '—';
+        const dataFine = document.getElementById('dataFine').value || '—';
+        const ore = document.getElementById('ore').value || '40';
+        const presidente = document.getElementById('presidente').value || 'Firma Presidente';
+        const direttore = document.getElementById('direttore').value || 'Firma Direttore Tecnico';
+
+        // Formattare le date
+        let dataInizioFormattata = dataInizio;
+        let dataFineFormattata = dataFine;
+        if (dataInizio !== '—') {
+            const d1 = new Date(dataInizio);
+            dataInizioFormattata = d1.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        if (dataFine !== '—') {
+            const d2 = new Date(dataFine);
+            dataFineFormattata = d2.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // Aggiornare l'attestato
+        document.getElementById('displayCorsista').textContent = corsista;
+        document.getElementById('displayCodiceCorso').textContent = codice;
+        document.getElementById('displayCodice').textContent = codice;
+        document.getElementById('displayCorso').textContent = corso;
+        document.getElementById('displayOre').textContent = ore + ' ore';
+        document.getElementById('displaySede').textContent = sede;
+        document.getElementById('displayData').textContent = 'da ' + dataInizioFormattata + ' a ' + dataFineFormattata;
+        document.getElementById('nomePresidente').textContent = presidente;
+        document.getElementById('nomeDirettore').textContent = direttore;
+
+        // Data emissione (oggi)
+        const oggi = new Date();
+        const dataEmissione = oggi.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('footerData').textContent = 'Data di Emissione: ' + dataEmissione;
+
+        // Aggiornare stili dei dati
+        document.getElementById('displayCorsista').style.color = '#1d1d1d';
+        document.getElementById('displayCorsista').style.fontStyle = 'normal';
+        document.getElementById('displayCodiceCorso').style.color = '#1d1d1d';
+        document.getElementById('displayCodiceCorso').style.fontStyle = 'normal';
+        document.getElementById('displayCorso').style.color = '#1d1d1d';
+        document.getElementById('displayCorso').style.fontStyle = 'normal';
+        document.getElementById('displayOre').style.color = '#1d1d1d';
+        document.getElementById('displayOre').style.fontStyle = 'normal';
+        document.getElementById('displaySede').style.color = '#1d1d1d';
+        document.getElementById('displaySede').style.fontStyle = 'normal';
+        document.getElementById('displayData').style.color = '#1d1d1d';
+        document.getElementById('displayData').style.fontStyle = 'normal';
+        document.getElementById('nomePresidente').style.color = '#1d1d1d';
+        document.getElementById('nomeDirettore').style.color = '#1d1d1d';
+
+        // Scroll all'attestato
+        setTimeout(() => {
+            document.getElementById('attestato').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+
+    // Inizializzare con valori di default
+    window.addEventListener('load', () => {
+        compilaAttestato({ preventDefault: () => {} });
+    });
+</script>
+
+</body>
+</html>

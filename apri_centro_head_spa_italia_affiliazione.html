@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apri il tuo Centro Head Spa Italia® - Partnership di affiliazione certificata. Formazione, branding, supporto marketing e opportunità di business nel benessere olistico.">
+    <meta name="keywords" content="affiliazione head spa, franchise benessere, centro head spa, business olistico, partnership">
+    <meta property="og:title" content="Apri il tuo Centro Head Spa Italia® - Partnership Affiliazione">
+    <meta property="og:description" content="Diventa affiliato Head Spa Italia®. Partnership trasparente con formazione completa, branding riconosciuto e supporto continuo.">
+    <title>Apri il tuo Centro Head Spa Italia® - Partnership di Affiliazione</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1f4e78;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f4e78;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-alt {
+            background-color: #f5f5f7;
+        }
+
+        .section-dark {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .section-dark h2,
+        .section-dark h3 {
+            color: #ffffff;
+        }
+
+        .section-dark p {
+            color: #e8e8ed;
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            color: #ffffff;
+        }
+
+        .hero h1 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #e8e8ed;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #34c759;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Card */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e5e7;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .card-alt {
+            background-color: #f5f5f7;
+            border: none;
+        }
+
+        /* Image Placeholder */
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f4e78;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Partnership Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #e5e5e7;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: #1f4e78;
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h4 {
+            color: #1f4e78;
+            margin-bottom: 1rem;
+        }
+
+        /* Cost Section */
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .cost-table th {
+            background-color: #1f4e78;
+            color: #ffffff;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .cost-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .cost-table tr:hover {
+            background-color: #f5f5f7;
+        }
+
+        .cost-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f4e78;
+        }
+
+        /* Testimonial */
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 35px;
+            border-left: 4px solid #34c759;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 3px;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #1f4e78;
+            text-align: center;
+            padding: 40px;
+            border-left: 4px solid #1f4e78;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #1f4e78;
+            color: #1f4e78;
+        }
+
+        .btn-outline:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .btn-large {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1f4e78;
+            box-shadow: 0 0 0 3px rgba(31, 78, 120, 0.1);
+        }
+
+        /* Highlight */
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .highlight-green {
+            color: #34c759;
+            font-weight: 600;
+        }
+
+        /* Divider */
+        .divider {
+            width: 80px;
+            height: 2px;
+            background-color: #34c759;
+            margin: 40px auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 60px 0;
+            margin-top: 100px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #424245;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        .note {
+            background-color: #e8f4f8;
+            border-left: 4px solid #1f4e78;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .benefit-badge {
+            display: inline-block;
+            background-color: #e8f4f8;
+            color: #1f4e78;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================
+     HERO SECTION
+     ======================================================================== -->
+<section class="hero">
+    <div class="container">
+        <h1>Apri il tuo Centro<br>Head Spa Italia®</h1>
+        <p class="hero-subtitle">Partnership di affiliazione certificata. Diventa parte di un movimento crescente di centri dediti al benessere olistico consapevole.</p>
+        <p class="tagline">"Trasforma la tua passione per il benessere in opportunità di business sostenibile e significativo."</p>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 1: INTRODUZIONE OPPORTUNITÀ
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2>Un'Opportunità di Business nel Benessere Olistico</h2>
+        <p style="margin-bottom: 40px; max-width: 850px;">Il mercato del benessere olistico è in crescita exponenziale. Sempre più persone ricercano pratiche consapevoli che rispondano al bisogno contemporaneo di rallentamento, rigenerazione e equilibrio. Head Spa Italia® offre una partnership solida, trasparente e professionale per operatori e imprenditori che desiderano aprire un centro riconosciuto e certificato.</p>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">2.5B€</div>
+                <div class="stat-label">Mercato benessere olistico in crescita annua</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">+18%</div>
+                <div class="stat-label">Crescita annuale settore wellnes in Italia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">45 min</div>
+                <div class="stat-label">Sessione Head Spa media richiesta</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">€60-120</div>
+                <div class="stat-label">Fascia prezzo medio per sessione</div>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 60px;">
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Centro Head Spa moderno e minimalista]
+                </div>
+            </div>
+            <div>
+                <h3>Perché Affiliarsi a Head Spa Italia®</h3>
+                <p>La partnership Head Spa Italia® non è una semplice licenza commerciale. È una collaborazione strategica che offre:</p>
+                <ul class="feature-list" style="margin-top: 20px;">
+                    <li>Accesso a un <span class="highlight">brand riconosciuto e certificato</span> a livello nazionale</li>
+                    <li><span class="highlight">Formazione professionale completa</span> per te e il tuo team</li>
+                    <li><span class="highlight">Supporto marketing e branding</span> continuativo</li>
+                    <li><span class="highlight">Affiliazione all'Albo Nazionale</span> Operatori Head Spa</li>
+                    <li><span class="highlight">Comunità di centri affiliati</span> con condivisione best practices</li>
+                    <li><span class="highlight">Supporto legale e amministrativo</span> specializzato</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote">
+            "Affiliarsi a Head Spa Italia® significa entrare in un movimento etico e consapevole di professionisti dedicati al benessere olistico autentico. Non è franchising tradizionale, ma partnership di valore condiviso."
+            <div style="font-size: 0.9rem; color: #999; margin-top: 1rem;">— Direttore Sviluppo Partnership, Head Spa Italia®</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 2: COSA INCLUDE LA PARTNERSHIP
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">Cosa Include la Partnership</h2>
+
+        <div class="feature-grid">
+            <!-- Formazione -->
+            <div class="feature-item">
+                <div class="feature-icon">📚</div>
+                <h4>Formazione Completa</h4>
+                <p>Corso professionale certificato di 120 ore per i tuoi operatori. Manualistica ufficiale, webinar mensili di aggiornamento, materiali didattici esclusivi, certificazione internazionale riconosciuta dall'Albo Nazionale.</p>
+            </div>
+
+            <!-- Branding -->
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <h4>Branding e Identità</h4>
+                <p>Logo, linee guida visive, template per social media, materiali di comunicazione professionale. Il tuo centro avrà identità visual coerente con lo standard Head Spa Italia® pur mantenendo personalità locale.</p>
+            </div>
+
+            <!-- Marketing -->
+            <div class="feature-item">
+                <div class="feature-icon">📢</div>
+                <h4>Supporto Marketing</h4>
+                <p>Strategia marketing personalizzata, template social media, copywriting, consulenza SEO, accesso a piattaforma pubblicitaria centralizzata, directory online con visibilità nazionale.</p>
+            </div>
+
+            <!-- Supporto Tecnico -->
+            <div class="feature-item">
+                <div class="feature-icon">🤝</div>
+                <h4>Supporto Operativo</h4>
+                <p>Consulenza su setup dello spazio, selezione strumenti, proceduri operative, gestione cliente, tecniche di accoglienza. Supporto via email/telefono per problematiche operative quotidiane.</p>
+            </div>
+
+            <!-- Software -->
+            <div class="feature-item">
+                <div class="feature-icon">💻</div>
+                <h4>Strumenti Digitali</h4>
+                <p>Sistema di prenotazione online integrato, gestione clienti (CRM), fatturazione automatizzata, reportistica, accesso all'Albo Nazionale per verifiche clienti.</p>
+            </div>
+
+            <!-- Comunità -->
+            <div class="feature-item">
+                <div class="feature-icon">👥</div>
+                <h4>Comunità di Affiliati</h4>
+                <p>Accesso a comunità privata di gestori, webinar settimanali, condivisione best practices, networking, workshop periodici, mentoring da centri senior.</p>
+            </div>
+
+            <!-- Qualità -->
+            <div class="feature-item">
+                <div class="feature-icon">✅</div>
+                <h4>Monitoraggio Qualità</h4>
+                <p>Standard qualitativi certificati, ispezioni periodiche (non punitivi ma formativi), supporto continuo per mantenere eccellenza, feedback e miglioramenti.</p>
+            </div>
+
+            <!-- Certificazione -->
+            <div class="feature-item">
+                <div class="feature-icon">🏆</div>
+                <h4>Certificazione Ufficiale</h4>
+                <p>Adesione all'Albo Nazionale, iscrizione nel database pubblico, attestato di affiliazione, diritto di utilizzo del marchio Head Spa Italia®.</p>
+            </div>
+        </div>
+
+        <div class="note" style="margin-top: 60px;">
+            <strong>📌 Trasparenza Totale:</strong> La partnership è basata su contratti chiari e trasparenti. Nessun costo nascosto, nessuna richiesta di quota iniziale sproporzionata, percentuali di royalty eque e comunicate in anticipo.
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 3: COSTI E REQUISITI
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2>Costi di Affiliazione e Requisiti Minimi</h2>
+        <p style="margin-bottom: 40px; max-width: 850px;">Trasparenza è il fondamento della nostra partnership. Ecco un'analisi completa dei costi e dei requisiti per aprire un centro affiliato Head Spa Italia®.</p>
+
+        <!-- COSTI -->
+        <h3 style="margin-top: 60px; margin-bottom: 30px;">Struttura dei Costi</h3>
+
+        <table class="cost-table">
+            <thead>
+                <tr>
+                    <th>Voce</th>
+                    <th>Importo</th>
+                    <th>Frequenza</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Quota di Affiliazione Iniziale</strong></td>
+                    <td class="price-highlight">€3.500</td>
+                    <td>Una tantum</td>
+                    <td>Include kit branding, contratto, setup iniziale</td>
+                </tr>
+                <tr>
+                    <td><strong>Formazione Operatori (per persona)</strong></td>
+                    <td class="price-highlight">€1.290</td>
+                    <td>Una tantum</td>
+                    <td>120 ore di corso professionale certificato</td>
+                </tr>
+                <tr>
+                    <td><strong>Canone Mensile di Affiliazione</strong></td>
+                    <td class="price-highlight">€350-500</td>
+                    <td>Mensile</td>
+                    <td>Basato su dimensione centro e numero operatori</td>
+                </tr>
+                <tr>
+                    <td><strong>Royalty su Ricavi</strong></td>
+                    <td class="price-highlight">5%</td>
+                    <td>Mensile</td>
+                    <td>Calcolata su ricavi netti da sessioni Head Spa</td>
+                </tr>
+                <tr>
+                    <td><strong>Aggiornamenti e Formazione Continua</strong></td>
+                    <td class="price-highlight">Incluso</td>
+                    <td>Annuale</td>
+                    <td>Webinar, workshop, nuove linee guida</td>
+                </tr>
+                <tr>
+                    <td><strong>Supporto Tecnico e Operativo</strong></td>
+                    <td class="price-highlight">Incluso</td>
+                    <td>Continuo</td>
+                    <td>Email, telefono, chat dedicata</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note" style="margin-top: 40px;">
+            <strong>💡 Esempio di Calcolo Economico:</strong><br>
+            Centro con 2 operatori, 40 sessioni mensili a €80/sessione:<br>
+            • Ricavi mensili: €3.200<br>
+            • Canone affiliazione: €400<br>
+            • Royalty (5%): €160<br>
+            • Costo totale partnership: €560/mese (17.5% ricavi)<br>
+            • ROI stimato: rientro quota iniziale in 6-8 mesi
+        </div>
+
+        <!-- REQUISITI -->
+        <h3 style="margin-top: 60px; margin-bottom: 30px;">Requisiti Minimi per l'Affiliazione</h3>
+
+        <div class="grid-2">
+            <div class="card card-alt">
+                <h4>Requisiti Professionali</h4>
+                <ul class="feature-list">
+                    <li>Proprietario/gestore con <strong>esperienza nel benessere</strong> (opzionale ma consigliato)</li>
+                    <li>Impegno a completare <strong>formazione certificata</strong> (120 ore minime)</li>
+                    <li>Sottoscrizione al <strong>Codice Deontologico</strong> Head Spa Italia®</li>
+                    <li>Iscrizione all'<strong>Albo Nazionale Operatori</strong></li>
+                    <li>Disponibilità per <strong>almeno 2 operatori</strong> dedicati</li>
+                    <li>Impegno a <strong>manutenzione standard qualitativi</strong></li>
+                </ul>
+            </div>
+
+            <div class="card card-alt">
+                <h4>Requisiti Strutturali</h4>
+                <ul class="feature-list">
+                    <li>Spazio minimo di <strong>60-80 m²</strong> (o accordo specifico)</li>
+                    <li>Almeno <strong>2-3 spazi dedicati</strong> per sessioni</li>
+                    <li>Ambiente <strong>minimalista, sereno, pulito</strong></li>
+                    <li>Conformità alle <strong>norme igienico-sanitarie</strong></li>
+                    <li>Ricezione clienti <strong>confortevole e accogliente</strong></li>
+                    <li>Accesso a <strong>internet stabile</strong> per sistemi digitali</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 40px;">
+            <div class="card card-alt">
+                <h4>Requisiti Legali e Amministrativi</h4>
+                <ul class="feature-list">
+                    <li>Apertura di <strong>attività legale</strong> (ditta individuale, SRL, associazione, etc.)</li>
+                    <li><strong>Partita IVA</strong> italiana</li>
+                    <li>Sottoscrizione di <strong>contratto di affiliazione</strong> ufficiale</li>
+                    <li><strong>Assicurazione di responsabilità civile</strong> professionale</li>
+                    <li>Conformità alle <strong>norme sulla privacy</strong> (GDPR)</li>
+                    <li>Rispetto delle <strong>normative locali</strong> sul benessere</li>
+                </ul>
+            </div>
+
+            <div class="card card-alt">
+                <h4>Requisiti Finanziari</h4>
+                <ul class="feature-list">
+                    <li>Capacità di versare <strong>quota affiliazione iniziale</strong> (€3.500)</li>
+                    <li>Finanziamento per <strong>formazione operatori</strong> (€2.580 minimo per 2 persone)</li>
+                    <li>Budget per <strong>allestimento spazi</strong> (€5.000-15.000 indicativi)</li>
+                    <li>Liquidità per <strong>operatività iniziale</strong> (3-6 mesi)</li>
+                    <li>Capacità di pagare <strong>canone mensile e royalty</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="note" style="margin-top: 40px;">
+            <strong>⏱️ Timeline Tipica:</strong><br>
+            • Mese 1: Affiliazione, setup, avvio formazione<br>
+            • Mese 2-3: Completamento formazione, allestimento spazi<br>
+            • Mese 4: Opening ufficiale centro<br>
+            • Mese 5-6: Ramp-up operativo, costruzione clientela<br>
+            • Mese 8-12: Stabilizzazione e profittabilità
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 4: TESTIMONIANZE AFFILIATI
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">Testimonianze dei Nostri Affiliati</h2>
+
+        <div class="testimonial-container">
+            <!-- Testimonianza 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Affiliarsi a Head Spa Italia® è stata la miglior decisione imprenditoriale della mia vita. Il supporto è straordinario: dalla formazione al marketing, dal supporto tecnico alla comunità di affiliati. In 8 mesi ho raggiunto la profittabilità. Consiglio vivamente."
+                </p>
+                <div class="testimonial-author">Elena Marchi</div>
+                <div class="testimonial-role">Gestore Centro, Milano</div>
+            </div>
+
+            <!-- Testimonianza 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Come yoga teacher, volevo offrire ai miei clienti qualcosa di complementare. Head Spa Italia® mi ha fornito tutto ciò che serviva: brand riconosciuto, operatori formati, clientela crescente. Oggi il 40% dei miei ricavi viene da Head Spa."
+                </p>
+                <div class="testimonial-author">Marco Rossini</div>
+                <div class="testimonial-role">Proprietario Studio Yoga + Centro Head Spa, Roma</div>
+            </div>
+
+            <!-- Testimonianza 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Trasparenza totale sui costi, niente sorprese. Il team di Head Spa Italia® è sempre disponibile per supporto. I clienti apprezzano il brand certificato e la qualità standardizzata. Partnership seria e affidabile."
+                </p>
+                <div class="testimonial-author">Giulia Verdi</div>
+                <div class="testimonial-role">Gestore Centro, Firenze</div>
+            </div>
+
+            <!-- Testimonianza 4 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Ho aperto il centro 10 mesi fa. Le prime 3 sessioni al mese nei mesi 1-2, ora siamo a 60+ sessioni mensili. La comunità di affiliati mi ha insegnato strategie di marketing che hanno accelerato la crescita enormemente."
+                </p>
+                <div class="testimonial-author">Luca Bianchi</div>
+                <div class="testimonial-role">Imprenditore Benessere, Torino</div>
+            </div>
+
+            <!-- Testimonianza 5 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Non solo business. Affiliarsi a Head Spa Italia® significa far parte di un movimento etico dedicato al vero benessere. I miei clienti sentono questa autenticità. Per me è la combinazione perfetta di profitto e proposito."
+                </p>
+                <div class="testimonial-author">Francesca De Luca</div>
+                <div class="testimonial-role">Gestore Centro, Napoli</div>
+            </div>
+
+            <!-- Testimonianza 6 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Inizialmente avevo dubbi su una nuova affiliazione. Ma Head Spa Italia® è diversa: formazione eccellente, ROI realistico, supporto genuino. I miei operatori sono formati alle stelle, i clienti sono fedeli. Vale ogni euro investito."
+                </p>
+                <div class="testimonial-author">Roberto Conti</div>
+                <div class="testimonial-role">Gestore Centro, Palermo</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background-color: #ffffff; border-radius: 16px;">
+            <h3 style="color: #1f4e78; margin-bottom: 1rem;">Numeri dei Nostri Affiliati</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-top: 30px;">
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; color: #1f4e78;">25+</div>
+                    <p style="color: #666;">Centri affiliati in Italia</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; color: #34c759;">92%</div>
+                    <p style="color: #666;">Soddisfazione affiliati</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 700; color: #1f4e78;">8 mesi</div>
+                    <p style="color: #666;">ROI medio iniziale</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 5: CTA FINALE
+     ======================================================================== -->
+<section class="section">
+    <div class="container text-center">
+        <h2>Richiedi Informazioni per Affiliarti</h2>
+        <p style="margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
+            Sei interessato ad aprire un centro Head Spa Italia®? Compila il form qui sotto oppure contattaci direttamente. Un membro del nostro team Partnership ti contatterà entro 24 ore.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; margin-bottom: 60px;">
+            <!-- Form -->
+            <div style="background-color: #f5f5f7; padding: 40px; border-radius: 16px;">
+                <h3 style="color: #1f4e78; margin-bottom: 25px;">Contattaci</h3>
+                <form id="affiliazioneForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Telefono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="citta">Città/Provincia di Interesse *</label>
+                        <input type="text" id="citta" name="citta" placeholder="es. Milano, Lombardia" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="background">Tuo Background Professionale</label>
+                        <select id="background" name="background">
+                            <option value="">Seleziona...</option>
+                            <option value="benessere">Settore benessere/olistico</option>
+                            <option value="imprenditoriale">Esperienza imprenditoriale</option>
+                            <option value="retail">Retail/Commercio</option>
+                            <option value="sanitario">Settore sanitario</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messaggio">Messaggio/Domande (opzionale)</label>
+                        <textarea id="messaggio" name="messaggio" style="min-height: 100px; resize: vertical;"></textarea>
+                    </div>
+
+                    <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; cursor: pointer; font-size: 0.9rem; color: #666;">
+                        <input type="checkbox" required style="margin-top: 3px;">
+                        <span>Acconsento a ricevere comunicazioni da Head Spa Italia® riguardanti la partnership. *</span>
+                    </label>
+
+                    <button type="submit" class="btn btn-large">Invia Richiesta</button>
+                </form>
+            </div>
+
+            <!-- Info Contatti -->
+            <div style="background-color: #1f4e78; color: #ffffff; padding: 40px; border-radius: 16px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: #ffffff; margin-bottom: 25px;">Contatti Diretti</h3>
+
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #e8e8ed; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Email Partnership</h4>
+                    <a href="mailto:partnership@headspaitalia.it" style="color: #34c759; font-size: 1.1rem; font-weight: 600; text-decoration: none;">partnership@headspaitalia.it</a>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #e8e8ed; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Telefono</h4>
+                    <a href="tel:+390212345678" style="color: #34c759; font-size: 1.1rem; font-weight: 600; text-decoration: none;">+39 02 1234 5678</a>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: #e8e8ed; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Orari Ufficio</h4>
+                    <p style="color: #e8e8ed; margin: 0;">Lunedì-Venerdì: 9:00-18:00<br>Sabato: 10:00-14:00</p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 25px; margin-top: 25px;">
+                    <h4 style="color: #e8e8ed; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Team Partnership</h4>
+                    <p style="color: #e8e8ed; margin: 0; font-size: 0.95rem;">Rispondiamo a tutte le richieste entro 24 ore<br>Consulenze iniziali gratuite e senza impegno</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote">
+            "Aprire un centro Head Spa Italia® non è semplicemente avviare un'attività commerciale. È diventare parte di un movimento di professionisti dedicati al vero benessere consapevole. Se condividi i nostri valori e la nostra visione, ti aspettiamo."
+            <div style="font-size: 0.9rem; color: #999; margin-top: 1rem;">— Team Partnership, Head Spa Italia®</div>
+        </div>
+
+        <div style="background-color: #e8f4f8; border-radius: 12px; padding: 30px; margin-top: 60px; text-align: left;">
+            <h4 style="color: #1f4e78; margin-bottom: 15px;">✓ I Tuoi Prossimi Step</h4>
+            <ol style="color: #666; line-height: 2; margin-left: 20px;">
+                <li><strong>Compila il form</strong> di contatto oppure <strong>chiama direttamente</strong></li>
+                <li>Ricevi <strong>consulenza personalizzata</strong> su fattibilità e opportunità</li>
+                <li>Ricevi <strong>proposte di affiliazione adattate</strong> al tuo progetto</li>
+                <li>Accedi a <strong>webinar informativo</strong> senza impegno</li>
+                <li>Vedi <strong>casi studio e business plan</strong> di altri affiliati</li>
+                <li>Sottoscrivi il <strong>contratto di affiliazione</strong> se interessato</li>
+                <li>Inizia il <strong>viaggio verso il tuo centro Head Spa</strong></li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     FOOTER
+     ======================================================================== -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="#">Metodo</a>
+            <a href="#">Academy</a>
+            <a href="#">Albo Nazionale</a>
+            <a href="#">Affiliazione</a>
+        </div>
+        <div>
+            <h4>Partnership</h4>
+            <a href="#">Contatti Partnership</a>
+            <a href="#">FAQ Affiliati</a>
+            <a href="#">Case Study</a>
+            <a href="#">Supporto Operativo</a>
+        </div>
+        <div>
+            <h4>Risorse</h4>
+            <a href="#">Statuto Associazione</a>
+            <a href="#">Codice Deontologico</a>
+            <a href="#">Blog</a>
+            <a href="#">Contatti</a>
+        </div>
+        <div>
+            <h4>Seguici</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia®. Tutti i diritti riservati. | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+    </div>
+</footer>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        alert('Grazie per la tua richiesta! Ti contatteremo entro 24 ore.');
+        document.getElementById('affiliazioneForm').reset();
+    }
+</script>
+
+</body>
+</html>

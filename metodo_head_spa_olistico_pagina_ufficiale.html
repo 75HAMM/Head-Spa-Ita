@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metodo Head Spa Olistico® - Pratica consapevole di rilassamento profondo. Scopri la filosofia, i benefici, gli strumenti e la sequenza del rituale.">
+    <meta name="keywords" content="head spa olistico, metodo, rilassamento, consapevolezza, benessere olistico, rituale giapponese">
+    <meta property="og:title" content="Metodo Head Spa Olistico® - Pratica di Consapevolezza">
+    <meta property="og:description" content="Scopri la filosofia, i benefici e la pratica del Metodo Head Spa Olistico®. Una tradizione giapponese di equilibrio e consapevolezza.">
+    <title>Metodo Head Spa Olistico® - Pratica di Consapevolezza e Rilassamento</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #ffffff;
+        }
+
+        /* Tipografia */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1f4e78;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: #1f4e78;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-alt {
+            background-color: #f5f5f7;
+        }
+
+        .section-dark {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .section-dark h2,
+        .section-dark h3 {
+            color: #ffffff;
+        }
+
+        .section-dark p {
+            color: #e8e8ed;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            color: #1d1d1d;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #1f4e78;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Card */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e5e7;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .card-alt {
+            background-color: #f5f5f7;
+            border: none;
+        }
+
+        /* Image Placeholder */
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Highlight */
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Benefit Badges */
+        .benefit-badge {
+            display: inline-block;
+            background-color: #e8f4f8;
+            color: #1f4e78;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Sequenza Step */
+        .step-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .step-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #e5e5e7;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step-card:hover {
+            border-color: #1f4e78;
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.15);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .step-card h4 {
+            color: #1f4e78;
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Timeline Connector */
+        .step-connector {
+            text-align: center;
+            font-size: 2rem;
+            color: #1f4e78;
+            margin: 20px 0;
+            font-weight: 300;
+        }
+
+        /* Quote Section */
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #1f4e78;
+            text-align: center;
+            padding: 40px;
+            border-left: 4px solid #1f4e78;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .quote-author {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 1rem;
+            font-style: normal;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #1f4e78;
+            color: #1f4e78;
+        }
+
+        .btn-outline:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .btn-large {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 60px 0;
+            margin-top: 100px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #424245;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
+        }
+
+        /* Utility */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-40 {
+            margin-top: 40px;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            background-color: #34c759;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================
+     HERO SECTION
+     ======================================================================== -->
+<section class="hero">
+    <div class="container">
+        <h1>Metodo Head Spa<br>Olistico®</h1>
+        <p class="hero-subtitle">Una pratica consapevole di rilassamento profondo, ispirata dalla tradizione giapponese e fondata sui principi di equilibrio, armonia e consapevolezza.</p>
+        <p class="tagline">"Lo spazio vuoto è il centro della pratica. Nel silenzio consapevole, l'essere si rigenera."</p>
+        <div class="image-placeholder" style="margin-top: 60px;">
+            [Immagine: Operatore Head Spa in ambiente minimalista sereno]
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 1: INTRODUZIONE E FILOSOFIA
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2>Fondamenti Filosofici</h2>
+        <p style="margin-bottom: 40px; max-width: 850px;">Il Metodo Head Spa Olistico® affonda le radici nella saggezza orientale, in particolare nei principi giapponesi di armonia tra corpo, mente e spirito. Non è una pratica medica o terapeutica, ma una ricerca consapevole di equilibrio personale attraverso il contatto umano consapevole e la stimolazione delicata del cuoio capelluto.</p>
+
+        <div class="grid-2" style="margin-top: 60px;">
+            <div>
+                <h3>Ispirazione Giapponese</h3>
+                <p>La tradizione giapponese riconosce da millenni il valore della consapevolezza e dell'armonia. Concetti come <span class="highlight">Ma</span> (lo spazio vuoto), <span class="highlight">Zen</span> (semplicità consapevole) e <span class="highlight">Yōjō</span> (coltivazione della vita) costituiscono il fondamento filosofico del nostro metodo.</p>
+                <p>Il Head Spa moderno reinterpreta questi insegnamenti ancestrali nel contesto contemporaneo, creando uno spazio di pausa dal ritmo frenetico della vita ordinaria. È una pratica che ricerca il valore dell'assenza di affettazione e della semplicità.</p>
+            </div>
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Giardino zen giapponese minimalista]
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grid-2" style="margin-top: 60px; flex-direction: row-reverse;">
+            <div>
+                <h3>Equilibrio Corpo-Mente-Spirito</h3>
+                <p>L'approccio olistico del Metodo Head Spa riconosce l'interconnessione profonda tra:</p>
+                <ul class="feature-list" style="margin-top: 20px;">
+                    <li><span class="highlight">Il corpo fisico</span> – i muscoli, il sistema nervoso, la circolazione</li>
+                    <li><span class="highlight">La mente consapevole</span> – lo stato cognitivo, le emozioni, la chiarezza mentale</li>
+                    <li><span class="highlight">Lo spirito</span> – il senso di connessione, presenza e consapevolezza profonda</li>
+                </ul>
+                <p style="margin-top: 20px;">Il Head Spa non agisce su uno solo di questi aspetti, ma sulla loro integrazione armoniosa. La stimolazione consapevole del cuoio capelluto favorisce il rilassamento simultaneo a questi tre livelli.</p>
+            </div>
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Simbolo dell'armonia corpo-mente-spirito]
+                </div>
+            </div>
+        </div>
+
+        <div class="quote">
+            "Non cerchiamo di guarire ciò che non è malato. Cerchiamo di coltivare equilibrio dove esiste resistenza, chiarezza dove esiste confusione, e consapevolezza dove esiste automatismo."
+            <div class="quote-author">— Principio Fondante del Metodo Head Spa Olistico®</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 2: BENEFICI
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">Benefici del Rilassamento Profondo</h2>
+
+        <div class="grid-3">
+            <div class="card">
+                <h3 style="font-size: 1.3rem;">Rilassamento del Sistema Nervoso</h3>
+                <p>La pratica consapevole del Head Spa favorisce l'attivazione naturale del sistema nervoso parasimpatico – lo stato di "riposo e rigenerazione" del corpo. Questa attivazione è accompagnata da una naturale riduzione della tensione e da un profondo senso di calma.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="font-size: 1.3rem;">Liberazione della Tensione Cronica</h3>
+                <p>La tensione accumulata nel cuoio capelluto e nella zona cervicale viene delicatamente sciolta attraverso movimenti consapevoli e pressioni calibrate. Molti praticanti sperimentano un rilascio spontaneo di tensione muscolare.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="font-size: 1.3rem;">Chiarezza Mentale</h3>
+                <p>Lo stato meditativo indotto dal Head Spa favorisce una naturale clarità mentale e una riduzione del "rumore mentale". La mente giunge a uno stato di quiete consapevole simile a quella raggiunta in meditazione profonda.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="font-size: 1.3rem;">Miglioramento del Sonno</h3>
+                <p>Molti praticanti riferiscono di dormire più profondamente e consapevolmente nelle notti seguenti una sessione. Lo stato di rilassamento profondo indotto rimane nel corpo per ore dopo la pratica.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="font-size: 1.3rem;">Equilibrio Emotivo</h3>
+                <p>La pratica consapevole favorisce uno stato di equilibrio emotivo naturale. Il rilassamento del sistema nervoso consente alle emozioni di fluire in modo più armonico, senza blocchi o resistenze.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="font-size: 1.3rem;">Consapevolezza Presenziale</h3>
+                <p>Attraverso il contatto umano consapevole e il focus sensoriale, la pratica riporta naturalmente l'attenzione al momento presente. Lo stato di "qui e ora" – la consapevolezza meditativa – emerge spontaneamente.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #ffffff; border-radius: 16px; padding: 40px; margin-top: 60px; border-left: 4px solid #34c759;">
+            <h3 style="color: #1f4e78; margin-bottom: 1rem;">✓ Una Pratica Non Medica</h3>
+            <p style="color: #666;">Il Metodo Head Spa Olistico® non è una pratica medica, terapeutica o diagnostica. I benefici descritti rappresentano esperienze sensoriali e psicologiche comuni a chi pratica il rilassamento consapevole. L'operatore non è un terapeuta, ma un facilitatore consapevole di rilassamento.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 3: GLI STRUMENTI
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2>Gli Strumenti della Pratica</h2>
+        <p style="margin-bottom: 60px; max-width: 850px;">Il Metodo Head Spa utilizza strumenti naturali e consapevolmente selezionati. Ogni elemento ha uno scopo preciso nel rituale e riflette i principi di semplicità e armonia della tradizione giapponese.</p>
+
+        <!-- Pettini e Spazzole -->
+        <div class="grid-2" style="margin-bottom: 80px;">
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Pettini e spazzole in legno naturale]
+                </div>
+            </div>
+            <div>
+                <h3>Pettini in Legno Naturale</h3>
+                <p>I pettini sono l'elemento centrale della pratica. Realizzati in legno naturale (bambù, betulla o legno di faggio), posseggono proprietà di morbidezza e calore che favoriscono il contatto consapevole.</p>
+                <p><span class="highlight">Tre varianti di pettini:</span></p>
+                <ul class="feature-list">
+                    <li><strong>Pettine a Denti Larghi</strong> – Scollatura iniziale e finale, preparazione delicata</li>
+                    <li><strong>Pettine Medio</strong> – Lavoro principale e stimolazione profonda dei tessuti</li>
+                    <li><strong>Pettine Fine</strong> – Lavori di precisione e pressione puntuale su zone specifiche</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 0.95rem; color: #999;">Ogni pettine è manutenuto con cura, disinfettato con metodi naturali e conservato in spazi asciutti per preservarne l'integrità.</p>
+            </div>
+        </div>
+
+        <!-- Spazzole -->
+        <div class="grid-2" style="margin-bottom: 80px; flex-direction: row-reverse;">
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Spazzole con setole naturali]
+                </div>
+            </div>
+            <div>
+                <h3>Spazzole con Setole Naturali</h3>
+                <p>Le spazzole complementari, realizzate con setole naturali provenienti da fonti sostenibili, consentono una stimolazione più dolce e diffusa.</p>
+                <p><span class="highlight">Due tipologie:</span></p>
+                <ul class="feature-list">
+                    <li><strong>Spazzola Tonda</strong> – Movimenti circolari per stimolazione armonicae diffusa</li>
+                    <li><strong>Spazzola Paddle</strong> – Lavori ampi per il drenaggio energetico e la stimolazione laterale</li>
+                </ul>
+                <p style="margin-top: 20px;">Le setole naturali mantengono una qualità elastica e delicata che consente di operare senza irritazione, anche su sessioni prolungate.</p>
+            </div>
+        </div>
+
+        <!-- Oli e Aromaterapia -->
+        <div class="grid-2">
+            <div>
+                <h3>Oli Naturali e Aromaterapia Sottile</h3>
+                <p>Sebbene il Metodo Head Spa Olistico® sia basato primariamente sulla stimolazione del cuoio capelluto attraverso contatto diretto e consapevole, alcuni operatori possono integrare elementi di aromaterapia naturale.</p>
+                <p><span class="highlight">Oli e aromi utilizzabili:</span></p>
+                <ul class="feature-list">
+                    <li><strong>Oli essenziali naturali</strong> – Lavanda, camomilla, bergamotto (uso minimalista)</li>
+                    <li><strong>Essenze naturali</strong> – Per creare un'atmosfera consapevole nello spazio</li>
+                    <li><strong>Incensi naturali</strong> – Cedro, sandalo (uso facoltativo e discreto)</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 0.95rem; color: #999;">L'uso di oli e aromi segue il principio di <strong>minimalismo sensoriale</strong>: non devono essere invasivi, ma semplicemente presenti come supporto sottile all'esperienza consapevole.</p>
+            </div>
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Oli essenziali naturali e profumatori minimalisti]
+                </div>
+            </div>
+        </div>
+
+        <div class="note" style="background-color: #e8f4f8; border-left: 4px solid #1f4e78; padding: 25px; border-radius: 8px; margin-top: 60px;">
+            <h4 style="color: #1f4e78;">⚠️ Nota sulla Sicurezza e Sostenibilità</h4>
+            <p style="color: #555; margin: 10px 0;">Tutti gli strumenti devono provenire da fonti sostenibili e certificate. L'operatore è responsabile della manutenzione, igiene e conservazione adeguata degli strumenti. Non deve mai applicare il metodo su soggetti con controindicazioni significative (ferite aperte, infezioni del cuoio capelluto, condizioni mediche gravi).</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 4: SEQUENZA COMPLETA DEL RITUALE
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 20px;">La Sequenza Completa del Rituale</h2>
+        <p style="text-align: center; margin-bottom: 60px; max-width: 850px; margin-left: auto; margin-right: auto;">
+            Una sessione di Head Spa Olistico® dura 45-50 minuti ed è articolata in cinque fasi consapevoli. Ogni fase ha uno scopo preciso nel percorso verso il rilassamento profondo.
+        </p>
+
+        <div class="step-container">
+            <!-- FASE 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>Accoglienza Consapevole</h4>
+                <p><strong>Durata: 5 minuti</strong></p>
+                <p>L'operatore accoglie il cliente in spazio tranquillo esterno, stabilendo un contatto umano autentico. L'accoglienza consapevole pone le fondamenta per l'intera sessione: l'operatore è completamente presente, senza distrazioni. Il cliente è invitato a sedersi comodamente, regolando l'altezza della poltrona. Non ci sono chiacchiere inutili: il silenzio consapevole è il primo elemento della pratica.</p>
+            </div>
+
+            <div class="step-connector">↓</div>
+
+            <!-- FASE 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>Scollatura Iniziale</h4>
+                <p><strong>Durata: 3-4 minuti</strong></p>
+                <p>Utilizzando un pettine a denti larghi, l'operatore effettua movimenti lineari delicati dall'attaccatura dei capelli verso la nuca. Questa fase prepara il cuoio capelluto e informa il corpo che la pratica consapevole sta per iniziare. I movimenti sono lenti, ritmici e intenzionali. Seguono 3 movimenti lineari sulla base del cranio (linea nuchale) per attivare delicatamente la zona cervicale.</p>
+            </div>
+
+            <div class="step-connector">↓</div>
+
+            <!-- FASE 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>Trattamento Principale (Quattro Zone)</h4>
+                <p><strong>Durata: 30-35 minuti</strong></p>
+                <p>La pratica si articola in quattro zone del cranio, ognuna ricevendo 6-8 minuti di lavoro consapevole:</p>
+            </div>
+
+            <div class="step-connector">↓</div>
+
+            <!-- FASE 4 -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h4>Picchiettamento Ritmico Finale</h4>
+                <p><strong>Durata: 3-5 minuti</strong></p>
+                <p>Utilizzando un pettine fine, l'operatore effettua piccoli colpi ritmici leggeri su tutto il cuoio capelluto (120-140 colpi al minuto). Questo riattiva delicatamente il sistema dopo il lavoro profondo, facilitando la transizione verso lo stato conscio pieno.</p>
+            </div>
+
+            <div class="step-connector">↓</div>
+
+            <!-- FASE 5 -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h4>Chiusura Rituale e Ritorno</h4>
+                <p><strong>Durata: 2-3 minuti</strong></p>
+                <p>Con il pettine a denti larghi, 3-4 passaggi finali lineari concludono la sessione. L'operatore raccoglie consapevolezza del lavoro completato. Il cliente rimane seduto in silenzio per 30-60 secondi. L'operatore accompagna il cliente verso lo stato conscio pieno con voce calma e presente.</p>
+            </div>
+        </div>
+
+        <!-- Dettaglio Zone Principali -->
+        <div style="margin-top: 80px; background-color: #ffffff; border-radius: 16px; padding: 40px;">
+            <h3 style="color: #1f4e78; margin-bottom: 30px; text-align: center;">Dettaglio delle Quattro Zone del Trattamento Principale</h3>
+
+            <div class="grid-2" style="margin-bottom: 40px;">
+                <div>
+                    <h4 style="color: #1f4e78;">Zona Frontale (Tempia e Fronte)</h4>
+                    <p><strong>Durata: 6-8 minuti</strong></p>
+                    <p>Utilizzando il pettine medio, si eseguono movimenti circolari ampi (Enkan) sulla zona temporale bilaterale. La pressione è calibrata (250-300 grammi) e i movimenti procedono gradualmente verso la fronte. Seguono pressioni puntiformi su punti sensibili specifici.</p>
+                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: rilassamento della zona frontale, riduzione della tensione oculare e della fronte.</em></p>
+                </div>
+                <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: #1f4e78; margin-bottom: 15px;">Tecniche Utilizzate:</h4>
+                    <ul class="feature-list" style="list-style: none;">
+                        <li style="padding: 8px 0; padding-left: 0;"><strong>Enkan</strong> (Circolare) – 8-10 rotazioni per zona</li>
+                        <li style="padding: 8px 0; padding-left: 0;"><strong>Senryoku</strong> (Lineare) – Movimenti verticali dall'alto verso il basso</li>
+                        <li style="padding: 8px 0; padding-left: 0;"><strong>Shiatsu Superficiale</strong> – Pressioni puntiformi su punti chiave</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 40px; flex-direction: row-reverse;">
+                <div>
+                    <h4 style="color: #1f4e78;">Zona Vertex (Vertice e Occipitale)</h4>
+                    <p><strong>Durata: 6-8 minuti</strong></p>
+                    <p>Il lavoro si concentra sulla sommità del cranio e sull'area occipitale. Utilizzo del pettine medio con movimenti Enkan ampi (10-12 rotazioni), procedendo progressivamente verso l'occipitale. Seguono pressioni puntiformi lungo la linea nuchale (5-6 punti specifici).</p>
+                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: rilassamento profondo della zona craniale superiore, equilibrio energetico centrale.</em></p>
+                </div>
+                <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: #1f4e78; margin-bottom: 15px;">Flusso Energetico:</h4>
+                    <ul class="feature-list" style="list-style: none;">
+                        <li style="padding: 8px 0; padding-left: 0;">✓ Dalla fronte al vertex</li>
+                        <li style="padding: 8px 0; padding-left: 0;">✓ Dal vertex all'occipitale</li>
+                        <li style="padding: 8px 0; padding-left: 0;">✓ Discesa verso la base del cranio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 40px;">
+                <div>
+                    <h4 style="color: #1f4e78;">Zona Parietale (Lato Destro e Sinistro)</h4>
+                    <p><strong>Durata: 8-10 minuti</strong></p>
+                    <p>Lavoro bilaterale dietro l'orecchio. Utilizzo della spazzola tonda per movimenti circolari dolci (2-3 minuti per lato). Seguono movimenti lineari verticali con il pettine medio (6-8 passaggi per lato) per favorire il drenaggio linfatico.</p>
+                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: drenaggio energetico laterale, rilassamento della zona temporale profonda.</em></p>
+                </div>
+                <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: #1f4e78; margin-bottom: 15px;">Attenzione Particolare:</h4>
+                    <p style="margin: 0; font-size: 0.95rem; color: #666;">La zona parietale è particolarmente sensibile. I movimenti devono essere morbidi e rispettosi della soglia di comfort del cliente. La consapevolezza dell'operatore è essenziale.</p>
+                </div>
+            </div>
+
+            <div class="grid-2" style="flex-direction: row-reverse;">
+                <div>
+                    <h4 style="color: #1f4e78;">Zona Nuca e Collo</h4>
+                    <p><strong>Durata: 4-6 minuti</strong></p>
+                    <p>Lavoro sulla linea nuchale inferiore (base del cranio) e sulla zona cervicale superiore. Movimenti Enkan lungo 5-6 zone della nuca, seguiti da delicati movimenti sulla zona retro-cervicale (se consenziente). La spazzola tonda consente movimenti morbidi dall'alto verso il basso.</p>
+                    <p style="font-size: 0.95rem; color: #999; margin-top: 15px;"><em>Effetto: liberazione della tensione cervicale cronica, apertura della base cranica.</em></p>
+                </div>
+                <div style="background-color: #f5f5f7; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: #1f4e78; margin-bottom: 15px;">Consapevolezza Corporea:</h4>
+                    <p style="margin: 0; font-size: 0.95rem; color: #666;">L'operatore rimane consapevole della postura del cliente e delle sue microreazioni. La comunicazione silenziosa è cruciale in questa zona delicata.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 5: CTA FINALE
+     ======================================================================== -->
+<section class="section">
+    <div class="container text-center">
+        <h2>Diventa Operatore Certificato</h2>
+        <p style="margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
+            Se senti il richiamo verso questa pratica consapevole, l'Academy Head Spa Italia® offre percorsi formativi professionali per diventare operatore certificato del Metodo Head Spa Olistico®.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 60px;">
+            <div class="card">
+                <h4 style="color: #1f4e78;">Percorso Base</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 20px;">40 ore di formazione. Ideale per chi desira imparare il metodo per sé stesso o come fondamento iniziale.</p>
+                <a href="/academy#base" class="btn">Scopri il Corso Base</a>
+            </div>
+
+            <div class="card">
+                <h4 style="color: #1f4e78;">Percorso Professionale</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 20px;">120 ore di formazione. Qualificazione completa per esercitare professionalmente e iscriversi all'Albo Nazionale.</p>
+                <a href="/academy#professionale" class="btn">Scopri il Corso Professionale</a>
+            </div>
+        </div>
+
+        <div style="background-color: #f5f5f7; border-radius: 16px; padding: 50px; text-align: center;">
+            <h3 style="color: #1f4e78; margin-bottom: 20px;">Richiedi Informazioni</h3>
+            <p style="margin-bottom: 30px; color: #666;">Contatta la Segreteria dell'Academy per scoprire i prossimi corsi, le date di formazione e le modalità di iscrizione.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:academy@headspaitalia.it" class="btn btn-large">📧 academy@headspaitalia.it</a>
+                <a href="tel:+390212345678" class="btn btn-outline btn-large">📞 +39 02 1234 5678</a>
+            </div>
+        </div>
+
+        <div class="quote" style="margin-top: 60px;">
+            "La pratica consapevole del Head Spa Olistico® è un'invito a rallentare, ad ascoltare, e a riconoscere il valore della quiete. Se sentiamo questo richiamo, la formazione ti permette di trasformare questa pratica in servizio consapevole per gli altri."
+            <div class="quote-author">— Head Spa Italia® Academy</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     FOOTER
+     ======================================================================== -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="#">Metodo</a>
+            <a href="#">Academy</a>
+            <a href="#">Albo Nazionale</a>
+            <a href="#">Centri Affiliati</a>
+        </div>
+        <div>
+            <h4>Informazioni</h4>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Statuto Associazione</a>
+            <a href="#">Codice Deontologico</a>
+            <a href="#">Contatti</a>
+        </div>
+        <div>
+            <h4>Risorse</h4>
+            <a href="#">Guida per Operatori</a>
+            <a href="#">FAQ Clienti</a>
+            <a href="#">Blog</a>
+            <a href="#">Supporto</a>
+        </div>
+        <div>
+            <h4>Seguici</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia®. Tutti i diritti riservati. | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

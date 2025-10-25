@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Corsi di formazione Head Spa Italia Academy® - Diventa Operatore certificato. Corsi Base, Professionale, Formatore e Specialista.">
+    <meta name="keywords" content="corso head spa, formazione operatore, academy, certificazione, benessere olistico">
+    <title>Corsi Head Spa Italia Academy® - Formazione Professionale Certificata</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f4e78;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .header h1 {
+            color: #1d1d1d;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background-color: #f5f5f7;
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        /* Course Card */
+        .course-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 0;
+            border: 1px solid #e5e5e7;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            color: #ffffff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .course-header h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-level {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .course-body {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f4e78;
+        }
+
+        .course-section {
+            margin-bottom: 25px;
+        }
+
+        .course-section h4 {
+            color: #1f4e78;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-section h4:before {
+            content: "•";
+            color: #34c759;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .course-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: 700;
+        }
+
+        .course-bottom {
+            margin-top: auto;
+            padding-top: 30px;
+            border-top: 1px solid #e5e5e7;
+        }
+
+        .course-attestato {
+            background-color: #e8f4f8;
+            border-left: 4px solid #1f4e78;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .course-attestato strong {
+            color: #1f4e78;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: #f5f5f7;
+            color: #1f4e78;
+            border: 2px solid #1f4e78;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        /* Detailed Course Pages */
+        .course-detail {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin: 60px 0;
+        }
+
+        .course-detail-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-detail-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .course-sidebar {
+            position: sticky;
+            top: 40px;
+        }
+
+        .sidebar-card {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 1.5rem;
+            color: #1d1d1d;
+        }
+
+        .sidebar-item {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f4e78;
+        }
+
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #34c759;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-alt {
+            background-color: #1f4e78;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 60px 0;
+            margin-top: 100px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #424245;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .course-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .course-sidebar {
+                position: static;
+            }
+
+            .course-info {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-list {
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .benefit-list li {
+            list-style: none;
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            color: #856404;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="container">
+        <h1>Head Spa Italia Academy®</h1>
+        <p>Corsi di Formazione Professionale per Operatori Certificati</p>
+    </div>
+</div>
+
+<!-- Sezione di Introduzione -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Quattro Percorsi Formativi per Professionisti di Tutti i Livelli</h2>
+            <p>Scegli il corso che fa per te e inizia il tuo viaggio nel Metodo Head Spa Olistico®</p>
+        </div>
+
+        <div class="courses-grid">
+            <!-- CORSO 1: BASE -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Introduttivo</span>
+                    <h3>Corso Base<br>Head Spa</h3>
+                </div>
+                <div class="course-body">
+                    <div class="course-info">
+                        <div class="info-item">
+                            <span class="info-label">Durata</span>
+                            <span class="info-value">40 ore</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modalità</span>
+                            <span class="info-value">In Aula</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Frequenza</span>
+                            <span class="info-value">Weekend / 2 settimane</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Costo Indicativo</span>
+                            <span class="info-value">€ 490</span>
+                        </div>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Contenuti Principali</h4>
+                        <ul class="course-list">
+                            <li>Filosofia e principi del Metodo Head Spa</li>
+                            <li>Fondamenti di anatomia del cuoio capelluto</li>
+                            <li>Introduzione alle 4 tecniche base (Enkan, Senryoku, Ritmo, Shiatsu)</li>
+                            <li>Postura e consapevolezza dell'operatore</li>
+                            <li>Pratica guidata su modelli</li>
+                            <li>Etica professionale e gestione cliente</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Obiettivi</h4>
+                        <ul class="course-list">
+                            <li>Acquisire competenze base del metodo</li>
+                            <li>Eseguire una sessione completa di 45 minuti</li>
+                            <li>Comprendere i principi filosofici</li>
+                            <li>Iniziare una pratica consapevole</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-bottom">
+                        <div class="course-attestato">
+                            <strong>Attestato Rilasciato:</strong> Certificato di Formazione Base Head Spa Italia® (privato, uso personale)
+                        </div>
+                        <a href="#iscrizione" class="btn">Iscriviti al Corso Base</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORSO 2: PROFESSIONALE -->
+            <div class="course-card" style="border: 2px solid #1f4e78;">
+                <div class="course-header" style="background: linear-gradient(135deg, #2d5a8c 0%, #1f4e78 100%);">
+                    <span class="course-level">⭐ Consigliato</span>
+                    <h3>Corso Professionale<br>Head Spa</h3>
+                </div>
+                <div class="course-body">
+                    <div class="course-info">
+                        <div class="info-item">
+                            <span class="info-label">Durata</span>
+                            <span class="info-value">120 ore</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modalità</span>
+                            <span class="info-value">In Aula + Pratica</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Frequenza</span>
+                            <span class="info-value">2-3 mesi (1-2 giorni/settimana)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Costo Indicativo</span>
+                            <span class="info-value">€ 1.290</span>
+                        </div>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Contenuti Principali</h4>
+                        <ul class="course-list">
+                            <li>Approfondimento completo della teoria e della pratica</li>
+                            <li>Anatomia avanzata: cuoio capelluto, sistema nervoso, linfatico</li>
+                            <li>Perfezionamento delle 4 tecniche con varianti avanzate</li>
+                            <li>Sequenze personalizzate per diverse esigenze</li>
+                            <li>Pratica supervisionata con feedback continuo</li>
+                            <li>Gestione avanzata del cliente e problematiche comuni</li>
+                            <li>Studio del Codice Deontologico</li>
+                            <li>Sviluppo della consapevolezza e della presenza</li>
+                            <li>Esame pratico e teorico finale</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Obiettivi</h4>
+                        <ul class="course-list">
+                            <li>Diventare Operatore certificato professionista</li>
+                            <li>Iscriversi all'Albo Nazionale</li>
+                            <li>Offrire sessioni di alta qualità con sicurezza</li>
+                            <li>Gestire clienti complessi e specifiche esigenze</li>
+                            <li>Sviluppare pratica indipendente o affiliata</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-bottom">
+                        <div class="course-attestato">
+                            <strong>Attestato Rilasciato:</strong> Certificato di Operatore Head Spa Olistico® Professionista (valido per iscrizione Albo Nazionale)
+                        </div>
+                        <a href="#iscrizione" class="btn">Iscriviti al Corso Professionale</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORSO 3: FORMATORE -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Avanzato</span>
+                    <h3>Corso Formatore<br>Head Spa</h3>
+                </div>
+                <div class="course-body">
+                    <div class="course-info">
+                        <div class="info-item">
+                            <span class="info-label">Durata</span>
+                            <span class="info-value">80 ore</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modalità</span>
+                            <span class="info-value">In Aula + Progettazione</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Frequenza</span>
+                            <span class="info-value">6-8 settimane</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Costo Indicativo</span>
+                            <span class="info-value">€ 1.790</span>
+                        </div>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Contenuti Principali</h4>
+                        <ul class="course-list">
+                            <li>Approfondimento pedagogico e didattico</li>
+                            <li>Metodologie di insegnamento del Metodo Head Spa</li>
+                            <li>Supervisione e feedback professionale</li>
+                            <li>Creazione di programmi formativi personalizzati</li>
+                            <li>Tecniche di presentazione e comunicazione</li>
+                            <li>Gestione della classe e dinamiche di gruppo</li>
+                            <li>Etica della docenza e responsabilità professionale</li>
+                            <li>Progettazione di corsi: Base, Professionale, Specializzati</li>
+                            <li>Pratica didattica con supervisione</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Obiettivi</h4>
+                        <ul class="course-list">
+                            <li>Diventare Formatore certificato dell'Academy</li>
+                            <li>Insegnare il Metodo Head Spa Olistico®</li>
+                            <li>Guidare candidati verso l'eccellenza</li>
+                            <li>Supervisore di pratica per operatori</li>
+                            <li>Contribuire allo sviluppo del metodo</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-bottom">
+                        <div class="course-attestato">
+                            <strong>Attestato Rilasciato:</strong> Certificato di Formatore Head Spa Italia® (abilitazione insegnamento)
+                        </div>
+                        <a href="#iscrizione" class="btn">Iscriviti al Corso Formatore</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORSO 4: SPECIALISTA -->
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-level">Specializzazione</span>
+                    <h3>Corso Specialista<br>Head Spa</h3>
+                </div>
+                <div class="course-body">
+                    <div class="course-info">
+                        <div class="info-item">
+                            <span class="info-label">Durata</span>
+                            <span class="info-value">40-60 ore</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modalità</span>
+                            <span class="info-value">In Aula + Pratica</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Frequenza</span>
+                            <span class="info-value">4-6 settimane</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Costo Indicativo</span>
+                            <span class="info-value">€ 890</span>
+                        </div>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Opzioni di Specializzazione</h4>
+                        <ul class="course-list">
+                            <li><strong>Stress Management & Rilassamento Profondo</strong> - Tecniche avanzate per ansia e burnout</li>
+                            <li><strong>Head Spa Terapeutico</strong> - Applicazioni specifiche per problematiche craniche</li>
+                            <li><strong>Business & Marketing</strong> - Come offrire servizi Head Spa in centro/autonomo</li>
+                            <li><strong>Meditazione Guidata & Consapevolezza</strong> - Integrare pratiche meditative</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-section">
+                        <h4>Obiettivi</h4>
+                        <ul class="course-list">
+                            <li>Sviluppare competenza specializzata in un ambito specifico</li>
+                            <li>Differenziarti come operatore esperto</li>
+                            <li>Offrire programmi personalizzati e mirati</li>
+                            <li>Aumentare credibilità e clientela</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-bottom">
+                        <div class="course-attestato">
+                            <strong>Attestato Rilasciato:</strong> Certificato di Specialista Head Spa Italia® (tema specifico - privato)
+                        </div>
+                        <a href="#iscrizione" class="btn">Scegli la Tua Specializzazione</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sezione Prerequisiti Consigliati -->
+<section class="section section-alt">
+    <div class="container">
+        <h2>Prerequisiti Consigliati per Ogni Corso</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 30px; margin-top: 50px;">
+            <div style="background-color: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e5e5e7;">
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem;">Corso Base</h3>
+                <ul class="benefit-list" style="background-color: transparent; padding: 0;">
+                    <li>Nessun prerequisito formale</li>
+                    <li>Curiosità e apertura mentale</li>
+                    <li>Disponibilità a 40 ore di formazione</li>
+                    <li>Interesse per il benessere olistico</li>
+                    <li>Consigliato: esperienza yoga o massaggio</li>
+                </ul>
+            </div>
+
+            <div style="background-color: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e5e5e7;">
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem;">Corso Professionale</h3>
+                <ul class="benefit-list" style="background-color: transparent; padding: 0;">
+                    <li><strong>Prerequisito:</strong> Corso Base completato</li>
+                    <li>Pratica autonoma di 20+ ore</li>
+                    <li>Impegno professionale serio</li>
+                    <li>Idoneità psico-fisica</li>
+                    <li>Sottoscrizione Codice Deontologico</li>
+                </ul>
+            </div>
+
+            <div style="background-color: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e5e5e7;">
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem;">Corso Formatore</h3>
+                <ul class="benefit-list" style="background-color: transparent; padding: 0;">
+                    <li><strong>Prerequisito:</strong> Certificato Professionale</li>
+                    <li>Minimo 1 anno di pratica professionale</li>
+                    <li>10+ sessioni al mese dimostrabilmente svolte</li>
+                    <li>Attitudini relazionali e comunicative</li>
+                    <li>Portafoglio clienti positivi</li>
+                </ul>
+            </div>
+
+            <div style="background-color: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e5e5e7;">
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem;">Corso Specialista</h3>
+                <ul class="benefit-list" style="background-color: transparent; padding: 0;">
+                    <li><strong>Prerequisito:</strong> Certificato Professionale</li>
+                    <li>Pratica autonoma di 3-6 mesi</li>
+                    <li>Interesse specifico nell'area di specializzazione</li>
+                    <li>Impegno nella continuità didattica</li>
+                    <li>Per Business: esperienza imprenditoriale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="note" style="margin-top: 50px;">
+            <strong>📌 Nota Importante:</strong> Valutazione individuale dei prerequisiti tramite colloquio preliminare con la Segreteria Academy. La selezione garantisce la qualità dei corsi e il benessere di insegnanti e candidati.
+        </div>
+    </div>
+</section>
+
+<!-- Sezione Dettagli Attestati -->
+<section class="section">
+    <div class="container">
+        <h2>Attestati Rilasciati</h2>
+        <p style="margin-bottom: 40px; color: #666;">Tutti gli attestati di Head Spa Italia Academy® sono certificati privati, riconosciuti dall'Associazione Culturale Head Spa Italia® e dall'Albo Nazionale Operatori.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div style="background-color: #f5f5f7; padding: 30px; border-radius: 16px;">
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem;">Attestati per Uso Personale</h3>
+                <p style="margin-bottom: 1.5rem;"><strong>Corso Base</strong> e <strong>Specialista</strong></p>
+                <ul class="benefit-list" style="background-color: transparent; padding: 0;">
+                    <li>Documento cartaceo con firma del Direttore</li>
+                    <li>Numero di iscrizione privato</li>
+                    <li>Data di rilascio e scadenza</li>
+                    <li>Descrizione contenuti e ore di formazione</li>
+                    <li>Uso personale, presso centri privati, o come fondamento per altri corsi</li>
+                </ul>
+            </div>
+
+            <div style="background-color: #f5f5f7; padding: 30px; border-radius: 16px;">
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem;">Attestati per Iscrizione Albo</h3>
+                <p style="margin-bottom: 1.5rem;"><strong>Corso Professionale</strong></p>
+                <ul class="benefit-list" style="background-color: transparent; padding: 0;">
+                    <li>Documento ufficiale riconosciuto dall'Albo Nazionale</li>
+                    <li>ID univoco di certificazione professionale</li>
+                    <li>Valido per iscrizione come Operatore qualificato</li>
+                    <li>Registrazione permanente nell'Albo pubblico</li>
+                    <li>Verificabile dai clienti online</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background-color: #e8f4f8; border-left: 4px solid #1f4e78; padding: 30px; border-radius: 8px; margin-top: 40px;">
+            <h4 style="color: #1f4e78; margin-bottom: 1rem;">✓ Validità e Rinnovo</h4>
+            <p style="color: #333; margin-bottom: 1rem;">Tutti gli attestati professionali hanno validità <strong>triennale</strong>. Per mantenere la certificazione e figurare attivamente nell'Albo è necessario:</p>
+            <ul style="list-style: none; padding: 0; margin-left: 20px;">
+                <li>✓ Partecipare a minimo 20 ore di formazione continua ogni 3 anni</li>
+                <li>✓ Versare la quota associativa annuale</li>
+                <li>✓ Sottoscrivere il Codice Deontologico annualmente</li>
+                <li>✓ Completare il rinnovo entro 30 giorni dalla scadenza</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Sezione Vantaggi dell'Academy -->
+<section class="section section-alt">
+    <div class="container">
+        <h2>Perché Scegliere Head Spa Italia Academy®</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px;">
+            <div>
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <span style="background-color: #34c759; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700;">1</span>
+                    Formazione Autentica
+                </h3>
+                <p>Non è semplice addestramento tecnico. Integriamo la filosofia giapponese, l'etica olistica e la ricerca contemporanea per formare operatori consapevoli, non solo competenti.</p>
+            </div>
+
+            <div>
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <span style="background-color: #34c759; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700;">2</span>
+                    Docenti Esperti
+                </h3>
+                <p>Insegnanti certificati con anni di pratica e dedizione. Non teorici lontani, ma operatori che vivono il metodo quotidianamente.</p>
+            </div>
+
+            <div>
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <span style="background-color: #34c759; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700;">3</span>
+                    Certificazione Nazionale
+                </h3>
+                <p>Attestati riconosciuti dall'Albo Nazionale. La tua qualificazione è verificabile, tracciabile e trasparente verso i clienti.</p>
+            </div>
+
+            <div>
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <span style="background-color: #34c759; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700;">4</span>
+                    Supporto Continuativo
+                </h3>
+                <p>Dopo il corso: aggiornamenti, mentoring, ricerca scientifica, comunità di operatori, opportunità di collaborazione.</p>
+            </div>
+
+            <div>
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <span style="background-color: #34c759; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700;">5</span>
+                    Ambiente Sereno
+                </h3>
+                <p>Le lezioni si tengono in spazi minimali e consapevoli, che riflettono i valori del metodo. L'ambiente stesso è parte della formazione.</p>
+            </div>
+
+            <div>
+                <h3 style="color: #1f4e78; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <span style="background-color: #34c759; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700;">6</span>
+                    Opportunità Professionali
+                </h3>
+                <p>Dalla semplice pratica personale alla carriera di operatore professionista, formatore o specialista. Molteplici sentieri di evoluzione.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sezione CTA Finale -->
+<section class="section">
+    <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2>Inizia il Tuo Percorso Oggi</h2>
+        <p style="margin-bottom: 40px; font-size: 1.1rem; color: #666;">
+            Che tu voglia imparare il Metodo Head Spa Olistico® per te stesso, per offrirlo professionalmente o per insegnarlo ad altri, c'è un corso perfetto per te.
+        </p>
+        <p style="margin-bottom: 50px; font-size: 1rem; color: #999;">
+            Contatta la Segreteria per informazioni dettagliate, date di prossimi corsi, sessioni di prova gratuite e consulenza personalizzata sul percorso migliore.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;">
+            <a href="mailto:academy@headspaitalia.it" class="btn" style="background-color: #1f4e78;">
+                📧 Contatta la Segreteria
+            </a>
+            <a href="tel:+390212345678" class="btn btn-secondary">
+                📞 Richiedi Consulenza
+            </a>
+        </div>
+
+        <div id="iscrizione" style="background-color: #f5f5f7; padding: 40px; border-radius: 20px;">
+            <h3 style="color: #1d1d1d; margin-bottom: 2rem;">Iscriviti Ora all'Academy</h3>
+            <form style="max-width: 500px; margin: 0 auto;">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Nome completo *" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" placeholder="Email *" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="tel" placeholder="Telefono" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
+                        <option value="">Scegli il corso di interesse *</option>
+                        <option value="base">Corso Base Head Spa (40 ore)</option>
+                        <option value="prof">Corso Professionale (120 ore)</option>
+                        <option value="form">Corso Formatore (80 ore)</option>
+                        <option value="spec">Corso Specialista (40-60 ore)</option>
+                        <option value="info">Voglio ricevere informazioni generali</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <textarea placeholder="Note o domande (opzionale)" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; min-height: 100px; resize: vertical;"></textarea>
+                </div>
+                <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; cursor: pointer; color: #666; font-size: 0.9rem;">
+                    <input type="checkbox" required style="margin-top: 3px;">
+                    <span>Accetto di ricevere comunicazioni da Head Spa Italia Academy® riguardanti corsi, aggiornamenti e opportunità professionali. *</span>
+                </label>
+                <button type="submit" class="btn" style="width: 100%; padding: 16px;">Iscriviti all'Academy</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Riceverai risposta entro 24 ore negli orari di ufficio.</p>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 0.9rem; color: #999;">
+            <strong>Head Spa Italia Academy®</strong> | Affiliata all'Associazione Culturale Head Spa Italia® | Albo Nazionale Operatori Head Spa Olistico®
+        </p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="#">Academy</a>
+            <a href="#">Albo Nazionale</a>
+            <a href="#">Centri Affiliati</a>
+            <a href="#">Blog</a>
+        </div>
+        <div>
+            <h4>Informazioni</h4>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Statuto Associazione</a>
+            <a href="#">Codice Deontologico</a>
+            <a href="#">Contatti</a>
+        </div>
+        <div>
+            <h4>Academy</h4>
+            <a href="#">Corsi Disponibili</a>
+            <a href="#">Docenti</a>
+            <a href="#">FAQ</a>
+            <a href="#">Supporto</a>
+        </div>
+        <div>
+            <h4>Seguici</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia® - Tutti i diritti riservati. | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

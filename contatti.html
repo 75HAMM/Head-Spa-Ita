@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contatti Head Spa Italia® - Domande, supporto, partnership. Compila il modulo di contatto oppure scrivici direttamente. Siamo qui per aiutarti.">
+    <meta name="keywords" content="contatti head spa, supporto, email, partnership, affiliate">
+    <meta property="og:title" content="Contatti - Head Spa Italia®">
+    <meta property="og:description" content="Contattaci per domande, supporto o partnership. Siamo lieti di rispondere a tutte le tue richieste.">
+    <title>Contatti - Head Spa Italia®</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1f4e78;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f4e78;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background-color: #f5f5f7;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .hero h1 {
+            color: #1d1d1d;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Modulo Contatto */
+        .contact-form-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #e5e5e7;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #1f4e78;
+            box-shadow: 0 0 0 4px rgba(31, 78, 120, 0.1);
+            background-color: #ffffff;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 140px;
+            font-family: inherit;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .form-checkbox input {
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .form-checkbox-label {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .form-checkbox-label a {
+            color: #1f4e78;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-checkbox-label a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background-color: #f5f5f7;
+            color: #1f4e78;
+            border: 2px solid #1f4e78;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: #f5f5f7;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #1f4e78;
+        }
+
+        .info-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: #1f4e78;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #15365a;
+            text-decoration: underline;
+        }
+
+        .contact-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        /* Card */
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #e5e5e7;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .card h4 {
+            color: #1f4e78;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Message Success */
+        .message-alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .message-success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            color: #155724;
+            display: none;
+        }
+
+        .message-error {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+            display: none;
+        }
+
+        /* Highlight */
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #1f4e78;
+            text-align: center;
+            padding: 30px;
+            background-color: #f5f5f7;
+            border-left: 4px solid #1f4e78;
+            border-radius: 8px;
+            margin: 40px 0;
+            line-height: 1.6;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-box h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: #e8e8ed;
+            margin-bottom: 25px;
+        }
+
+        .cta-box .btn {
+            background-color: #34c759;
+            color: #1f4e78;
+            font-weight: 700;
+        }
+
+        .cta-box .btn:hover {
+            background-color: #2ab347;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 60px 0;
+            margin-top: 100px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #424245;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        /* Response Time */
+        .response-time {
+            background-color: #e8f4f8;
+            border-left: 4px solid #1f4e78;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================
+     HERO SECTION
+     ======================================================================== -->
+<section class="hero">
+    <div class="container">
+        <h1>Contatti</h1>
+        <p class="hero-subtitle">Siamo lieti di rispondere alle tue domande e di supportarti nel tuo percorso nel mondo Head Spa Italia®</p>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE PRINCIPALE: MODULO E CONTATTI
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="grid-2">
+            <!-- COLONNA 1: MODULO CONTATTO -->
+            <div>
+                <h2 style="margin-top: 0;">Compila il Modulo</h2>
+                <p style="margin-bottom: 30px;">
+                    Raccontaci come possiamo aiutarti. Che tu abbia domande sul Metodo Head Spa, desideri informazioni sulla formazione Academy, o sei interessato ad affiliarti, siamo qui per ascoltare.
+                </p>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div id="successMessage" class="message-alert message-success">
+                            ✓ Messaggio inviato con successo! Ti contatteremo entro 24 ore.
+                        </div>
+                        <div id="errorMessage" class="message-alert message-error">
+                            ✗ Si è verificato un errore. Riprova o contattaci direttamente.
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Nome Completo
+                                    <span class="form-required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    class="form-input" 
+                                    id="nome" 
+                                    name="nome" 
+                                    placeholder="es. Marco Rossi" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Email
+                                    <span class="form-required">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    class="form-input" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="es. marco@example.com" 
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Telefono
+                            </label>
+                            <input 
+                                type="tel" 
+                                class="form-input" 
+                                id="telefono" 
+                                name="telefono" 
+                                placeholder="es. +39 02 1234 5678"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Argomento di Contatto
+                                <span class="form-required">*</span>
+                            </label>
+                            <select class="form-select" id="argomento" name="argomento" required>
+                                <option value="">Seleziona un argomento...</option>
+                                <option value="domanda-metodo">Domande sul Metodo Head Spa</option>
+                                <option value="corsi-academy">Informazioni Corsi Academy</option>
+                                <option value="affiliazione">Opportunità di Affiliazione</option>
+                                <option value="supporto-centro">Supporto Centro Affiliato</option>
+                                <option value="partnership">Partnership e Collaborazioni</option>
+                                <option value="press">Richiesta Stampa/Media</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Messaggio
+                                <span class="form-required">*</span>
+                            </label>
+                            <textarea 
+                                class="form-textarea" 
+                                id="messaggio" 
+                                name="messaggio" 
+                                placeholder="Descrivi brevemente il tuo messaggio, domanda o richiesta..." 
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input 
+                                type="checkbox" 
+                                id="privacy" 
+                                name="privacy" 
+                                required
+                            >
+                            <label class="form-checkbox-label" for="privacy">
+                                Acconsento al trattamento dei miei dati personali secondo la <a href="/privacy">Privacy Policy</a> di Head Spa Italia®. <span class="form-required">*</span>
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input 
+                                type="checkbox" 
+                                id="newsletter" 
+                                name="newsletter"
+                            >
+                            <label class="form-checkbox-label" for="newsletter">
+                                Desidero ricevere aggiornamenti su corsi, centri e opportunità da Head Spa Italia®
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn">Invia Messaggio</button>
+                        
+                        <div class="response-time">
+                            <strong>⏱️ Tempo di Risposta:</strong> Rispondiamo a tutte le richieste entro 24 ore negli orari di ufficio (lunedì-venerdì 9:00-18:00).
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- COLONNA 2: CONTATTI DIRETTI -->
+            <div>
+                <h2 style="margin-top: 0;">Contatti Diretti</h2>
+                <p style="margin-bottom: 30px;">
+                    Preferisci contattarci direttamente? Abbiamo diversi canali di comunicazione per rispondere alle tue esigenze specifiche.
+                </p>
+
+                <div class="info-card">
+                    <!-- Email Principale -->
+                    <div class="contact-item">
+                        <div class="contact-label">📧 Email Principale</div>
+                        <div class="contact-value">
+                            <a href="mailto:info@headspaitalia.it">info@headspaitalia.it</a>
+                        </div>
+                        <div class="contact-desc">Domande generali, informazioni su corsi e centri</div>
+                    </div>
+
+                    <!-- Email Academy -->
+                    <div class="contact-item">
+                        <div class="contact-label">🎓 Email Academy</div>
+                        <div class="contact-value">
+                            <a href="mailto:academy@headspaitalia.it">academy@headspaitalia.it</a>
+                        </div>
+                        <div class="contact-desc">Richieste informazioni formazione, iscrizioni corsi</div>
+                    </div>
+
+                    <!-- Email Partnership -->
+                    <div class="contact-item">
+                        <div class="contact-label">💼 Email Partnership</div>
+                        <div class="contact-value">
+                            <a href="mailto:partnership@headspaitalia.it">partnership@headspaitalia.it</a>
+                        </div>
+                        <div class="contact-desc">Opportunità di affiliazione e partnership commerciali</div>
+                    </div>
+
+                    <!-- PEC -->
+                    <div class="contact-item">
+                        <div class="contact-label">📋 Posta Elettronica Certificata (PEC)</div>
+                        <div class="contact-value">
+                            <a href="mailto:headspaitalia@pec.it">headspaitalia@pec.it</a>
+                        </div>
+                        <div class="contact-desc">Per comunicazioni legali e ufficiali</div>
+                    </div>
+
+                    <!-- Telefono -->
+                    <div class="contact-item">
+                        <div class="contact-label">☎️ Telefono</div>
+                        <div class="contact-value">
+                            <a href="tel:+390212345678">+39 02 1234 5678</a>
+                        </div>
+                        <div class="contact-desc">Lun-Ven 9:00-18:00 | Sab 10:00-14:00 (CET)</div>
+                    </div>
+
+                    <!-- Indirizzo -->
+                    <div class="contact-item">
+                        <div class="contact-label">📍 Sede Principale</div>
+                        <div class="contact-value">
+                            Milano, Lombardia
+                        </div>
+                        <div class="contact-desc">Via Montenapoleone 8 | 20121 Milano (MI) | Italia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE: DEPARTMENTI E RESPONSABILITÀ
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">A Chi Rivolgersi</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+            Per assicurarti una risposta rapida e accurata, ti aiutiamo a identificare il dipartimento di competenza della tua richiesta.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h4>Domande sul Metodo</h4>
+                <p>
+                    Hai curiosità sul Metodo Head Spa Olistico®, desideri scoprire come funziona, o vuoi saperne di più sulla pratica?
+                </p>
+                <p style="margin-top: 15px; font-weight: 600;">
+                    <strong>Contatta:</strong> <a href="mailto:info@headspaitalia.it">info@headspaitalia.it</a>
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h4>Corsi e Formazione</h4>
+                <p>
+                    Sei interessato ai corsi Academy? Desideri informazioni su programmi, date, costi, o prerequisiti?
+                </p>
+                <p style="margin-top: 15px; font-weight: 600;">
+                    <strong>Contatta:</strong> <a href="mailto:academy@headspaitalia.it">academy@headspaitalia.it</a>
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💼</div>
+                <h4>Affiliazione e Partnership</h4>
+                <p>
+                    Vuoi aprire un centro, diventare affiliato, o esplorare opportunità di partnership strategiche?
+                </p>
+                <p style="margin-top: 15px; font-weight: 600;">
+                    <strong>Contatta:</strong> <a href="mailto:partnership@headspaitalia.it">partnership@headspaitalia.it</a>
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🆘</div>
+                <h4>Supporto Centro Affiliato</h4>
+                <p>
+                    Sei un centro affiliato e hai bisogno di supporto operativo, consulenza, o risoluzione problematiche?
+                </p>
+                <p style="margin-top: 15px; font-weight: 600;">
+                    <strong>Contatta:</strong> <a href="mailto:support@headspaitalia.it">support@headspaitalia.it</a> (Area privata)
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🗞️</div>
+                <h4>Stampa e Media</h4>
+                <p>
+                    Sei un giornalista o rappresentante media? Desideri informazioni, interviste, o materiale per articoli?
+                </p>
+                <p style="margin-top: 15px; font-weight: 600;">
+                    <strong>Contatta:</strong> <a href="mailto:press@headspaitalia.it">press@headspaitalia.it</a>
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <h4>Questioni Legali</h4>
+                <p>
+                    Hai necessità di comunicazioni legali, contatti amministrativi, o questioni formali?
+                </p>
+                <p style="margin-top: 15px; font-weight: 600;">
+                    <strong>Contatta (PEC):</strong> <a href="mailto:headspaitalia@pec.it">headspaitalia@pec.it</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE: ORARI E DISPONIBILITÀ
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Orari di Ufficio</h2>
+
+        <div style="max-width: 600px; margin: 0 auto; background-color: #f5f5f7; border-radius: 12px; padding: 40px; text-align: center;">
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #1f4e78;">Lunedì - Venerdì</h4>
+                <p style="font-size: 1.2rem; color: #1f4e78; font-weight: 600;">09:00 - 18:00</p>
+                <p style="color: #999; font-size: 0.9rem;">Risposte via email e telefono</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h4 style="color: #1f4e78;">Sabato</h4>
+                <p style="font-size: 1.2rem; color: #1f4e78; font-weight: 600;">10:00 - 14:00</p>
+                <p style="color: #999; font-size: 0.9rem;">Supporto limitato (solo email)</p>
+            </div>
+
+            <div>
+                <h4 style="color: #1f4e78;">Domenica e Festivi</h4>
+                <p style="font-size: 1.2rem; color: #1f4e78; font-weight: 600;">Chiuso</p>
+                <p style="color: #999; font-size: 0.9rem;">Risponderemo al tuo messaggio il primo giorno lavorativo utile</p>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #e5e5e7;">
+                <p style="font-size: 0.9rem; color: #999;">
+                    <strong>Fuso Orario:</strong> CET (Central European Time) – GMT+1 (inverno) / GMT+2 (estate)
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE: CTA - DIVENTA OPERATORE
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="cta-box">
+            <h3>Affascinato dal Mondo Head Spa?</h3>
+            <p>
+                Se desideri apprendere il Metodo Head Spa Olistico® e diventare un operatore certificato, l'Academy Head Spa Italia® ti aspetta. Scopri i nostri corsi di formazione professionale.
+            </p>
+            <a href="/academy" class="btn">📚 Scopri i Corsi dell'Academy</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE: DOMANDE FREQUENTI BREVE
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 50px;">Domande Frequenti</h2>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="card" style="margin-bottom: 20px;">
+                <h4>Qual è il tempo di risposta medio?</h4>
+                <p style="margin-bottom: 0;">
+                    Rispondiamo a tutte le richieste entro 24 ore negli orari di ufficio. I messaggi ricevuti nel fine settimana saranno processati il lunedì successivo.
+                </p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4>Posso avere informazioni su orari e giorni di chiusura?</h4>
+                <p style="margin-bottom: 0;">
+                    Siamo operativi lunedì-venerdì 9:00-18:00 e sabato mattina 10:00-14:00. Chiuso domenica e giorni festivi italiani. Messaggi ricevuti in questi giorni riceveranno risposta al primo giorno lavorativo.
+                </p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4>Qual è la differenza tra le varie email di contatto?</h4>
+                <p style="margin-bottom: 0;">
+                    Ogni email è gestita dal dipartimento competente: <strong>info@</strong> domande generali, <strong>academy@</strong> corsi, <strong>partnership@</strong> affiliazioni, <strong>support@</strong> centri affiliati, <strong>press@</strong> media, <strong>pec@</strong> questioni legali.
+                </p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4>Posso contattarvi per una consulenza gratuita?</h4>
+                <p style="margin-bottom: 0;">
+                    Sì! Offriamo consulenze iniziali gratuite e senza impegno. Contatta <strong>partnership@headspaitalia.it</strong> per affiliazioni, o <strong>academy@headspaitalia.it</strong> per percorsi formativi.
+                </p>
+            </div>
+
+            <div class="card">
+                <h4>La mia richiesta è privata/confidenziale?</h4>
+                <p style="margin-bottom: 0;">
+                    Tutte le comunicazioni sono trattate in conformità con la nostra <a href="/privacy" style="color: #1f4e78; font-weight: 600;">Privacy Policy</a>. Per questioni particolarmente sensibili, usa la <strong>PEC</strong> (Posta Elettronica Certificata): <a href="mailto:headspaitalia@pec.it" style="color: #1f4e78; font-weight: 600;">headspaitalia@pec.it</a>
+                </p>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; color: #999; font-size: 0.9rem;">
+            Non hai trovato la risposta? <a href="mailto:info@headspaitalia.it" style="color: #1f4e78; font-weight: 600;">Contattaci direttamente</a>
+        </p>
+    </div>
+</section>
+
+<!-- ========================================================================
+     FOOTER
+     ======================================================================== -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="/">Home</a>
+            <a href="/chi-siamo">Chi Siamo</a>
+            <a href="/metodo">Metodo</a>
+            <a href="/academy">Academy</a>
+        </div>
+        <div>
+            <h4>Scopri</h4>
+            <a href="/centri">Trova un Centro</a>
+            <a href="/affiliazione">Diventa Affiliato</a>
+            <a href="/blog">Blog</a>
+            <a href="/albo-nazionale">Albo Nazionale</a>
+        </div>
+        <div>
+            <h4>Informazioni</h4>
+            <a href="/statuto">Statuto Associazione</a>
+            <a href="/codice-deontologico">Codice Deontologico</a>
+            <a href="/contatti">Contatti</a>
+            <a href="/privacy">Privacy Policy</a>
+        </div>
+        <div>
+            <h4>Connetti</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Newsletter</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia® - Associazione Culturale di Promozione Sociale | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a> | <a href="#">Contatti</a></p>
+    </div>
+</footer>
+
+<!-- ========================================================================
+     JAVASCRIPT: GESTIONE FORM
+     ======================================================================== -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Raccogliere dati
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const argomento = document.getElementById('argomento').value;
+        const messaggio = document.getElementById('messaggio').value;
+        const privacy = document.getElementById('privacy').checked;
+
+        // Validazione privacy
+        if (!privacy) {
+            alert('Devi accettare la Privacy Policy per procedere.');
+            return;
+        }
+
+        // Simulazione invio (in produzione, integrerebbe con backend/email service)
+        console.log('Form Data:', {
+            nome, email, telefono, argomento, messaggio
+        });
+
+        // Mostra messaggio di successo
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+        
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+
+        // Reset form
+        this.reset();
+
+        // Nascondi messaggio dopo 5 secondi
+        setTimeout(() => {
+            successMsg.style.display = 'none';
+        }, 5000);
+
+        // Scroll a inizio modulo
+        document.querySelector('.contact-form-wrapper').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Validazione email in tempo reale
+    document.getElementById('email').addEventListener('blur', function() {
+        const email = this.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (email && !emailRegex.test(email)) {
+            this.style.borderColor = '#e74c3c';
+        } else {
+            this.style.borderColor = '#ddd';
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trova un Centro Head Spa Italia® vicino a te. Elenco completo di centri certificati con indirizzo, orari, contatti e prenotazioni online. Scopri l'esperienza Head Spa Olistico® a Milano, Roma, Torino, Napoli, Bologna, Firenze, Padova e altre città.">
+    <meta name="keywords" content="head spa Milano, head spa Roma, head spa Torino, head spa Napoli, head spa Bologna, head spa Firenze, head spa Padova, head spa Italia, centro benessere olistico, rilassamento consapevole">
+    <meta property="og:title" content="Trova un Centro Head Spa Italia® - Locator Centri Certificati">
+    <meta property="og:description" content="Cerca il centro Head Spa Olistico® più vicino a te. Filtri per città e regione, orari, contatti e prenotazioni dirette.">
+    <meta property="og:type" content="website">
+    <title>Trova un Centro Head Spa Italia® - Locator Centri Certificati Benessere</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 1rem;
+            color: #1f4e78;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #1f4e78;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .hero h1 {
+            color: #1d1d1d;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Filtri */
+        .filters-section {
+            background-color: #f5f5f7;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .filters-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .filter-input,
+        .filter-select {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background-color: #ffffff;
+        }
+
+        .filter-select {
+            cursor: pointer;
+        }
+
+        .filter-input:focus,
+        .filter-select:focus {
+            outline: none;
+            border-color: #1f4e78;
+            box-shadow: 0 0 0 3px rgba(31, 78, 120, 0.1);
+        }
+
+        /* Search Button */
+        .search-btn {
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-end;
+            margin-top: 24px;
+        }
+
+        .search-btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(31, 78, 120, 0.2);
+        }
+
+        /* Results Info */
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+        }
+
+        .results-count {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .results-count strong {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .sort-select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* Centro Card */
+        .centri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .centro-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e5e7;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .centro-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+        }
+
+        .centro-image {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+
+        .centro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .centro-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #34c759;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .centro-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .centro-header {
+            margin-bottom: 10px;
+        }
+
+        .centro-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 4px;
+        }
+
+        .centro-location {
+            font-size: 0.9rem;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .centro-location::before {
+            content: "📍";
+            font-size: 1rem;
+        }
+
+        .centro-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .centro-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e5e7;
+            font-size: 0.85rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .info-icon {
+            font-size: 1rem;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .info-text {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #1f4e78;
+        }
+
+        .centro-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #f5f5f7;
+            color: #1f4e78;
+            border: 2px solid #1f4e78;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f5f5f7;
+            border-radius: 12px;
+        }
+
+        .empty-state h3 {
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        /* Sidebar Info */
+        .sidebar-info {
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .sidebar-info h3 {
+            margin-bottom: 15px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 10px 0;
+            color: #666;
+            line-height: 1.6;
+            border-bottom: 1px solid #e5e5e7;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list strong {
+            color: #1f4e78;
+        }
+
+        /* SEO Content Sections */
+        .seo-section {
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #f5f5f7;
+            border-radius: 12px;
+        }
+
+        .seo-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .seo-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .city-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1f4e78;
+        }
+
+        .city-card h4 {
+            color: #1f4e78;
+            margin-bottom: 8px;
+        }
+
+        .city-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .city-card a {
+            color: #1f4e78;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .city-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 60px 0;
+            margin-top: 80px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #424245;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .centro-card {
+                grid-column: span 1;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-info {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .sort-select {
+                align-self: flex-start;
+            }
+        }
+
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .badge-new {
+            background-color: #34c759;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================
+     HERO SECTION
+     ======================================================================== -->
+<section class="hero">
+    <div class="container">
+        <h1>Trova un Centro Head Spa Italia®</h1>
+        <p class="hero-subtitle">Cerca l'esperienza Head Spa Olistico® più vicina a te. Scopri i nostri centri certificati su tutto il territorio italiano.</p>
+    </div>
+</section>
+
+<!-- ========================================================================
+     FILTRI E RICERCA
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <!-- Filtri -->
+        <div class="filters-section">
+            <div class="filters-title">Ricerca per Città o Regione</div>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label class="filter-label">Regione</label>
+                    <select class="filter-select" id="filterRegione" onchange="filterCentri()">
+                        <option value="">Tutte le regioni</option>
+                        <option value="lombardia">Lombardia</option>
+                        <option value="lazio">Lazio</option>
+                        <option value="piemonte">Piemonte</option>
+                        <option value="campania">Campania</option>
+                        <option value="emilia-romagna">Emilia-Romagna</option>
+                        <option value="toscana">Toscana</option>
+                        <option value="veneto">Veneto</option>
+                        <option value="liguria">Liguria</option>
+                        <option value="marche">Marche</option>
+                        <option value="sicilia">Sicilia</option>
+                        <option value="calabria">Calabria</option>
+                        <option value="sardegna">Sardegna</option>
+                        <option value="abruzzo">Abruzzo</option>
+                        <option value="molise">Molise</option>
+                        <option value="campania">Campania</option>
+                        <option value="basilicata">Basilicata</option>
+                        <option value="puglia">Puglia</option>
+                        <option value="umbria">Umbria</option>
+                        <option value="friuli">Friuli-Venezia Giulia</option>
+                        <option value="trentino">Trentino-Alto Adige</option>
+                        <option value="valle">Valle d'Aosta</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Città</label>
+                    <input type="text" class="filter-input" id="filterCitta" placeholder="es. Milano, Roma, Torino..." onkeyup="filterCentri()">
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Raggio di Ricerca (km)</label>
+                    <select class="filter-select" id="filterRaggio">
+                        <option value="">Qualsiasi distanza</option>
+                        <option value="5">Entro 5 km</option>
+                        <option value="10">Entro 10 km</option>
+                        <option value="25">Entro 25 km</option>
+                        <option value="50">Entro 50 km</option>
+                    </select>
+                </div>
+            </div>
+            <button class="search-btn" onclick="filterCentri()">🔍 Cerca Centri</button>
+        </div>
+
+        <!-- Info Risultati -->
+        <div class="results-info">
+            <div class="results-count">
+                Trovati <strong id="countCentri">0</strong> centri affiliati
+            </div>
+            <select class="sort-select" id="sortSelect" onchange="sortCentri()">
+                <option value="default">Ordina per: Rilevanza</option>
+                <option value="nome">Nome A-Z</option>
+                <option value="regione">Regione</option>
+                <option value="recente">Più Recente</option>
+            </select>
+        </div>
+
+        <!-- Griglia Centri -->
+        <div class="centri-grid" id="centriContainer">
+            <!-- I centri verranno inseriti qui dinamicamente -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <h3>Nessun centro trovato</h3>
+            <p>Prova a modificare i filtri di ricerca o seleziona una regione diversa.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SIDEBAR INFO
+     ======================================================================== -->
+<section class="section" style="padding-top: 40px;">
+    <div class="container">
+        <div class="sidebar-info">
+            <h3>ℹ️ Come Prenotare una Sessione</h3>
+            <ul class="info-list">
+                <li>1. <strong>Seleziona un centro</strong> dalla lista qui sopra</li>
+                <li>2. <strong>Clicca "Prenota Ora"</strong> per accedere al sistema online</li>
+                <li>3. <strong>Scegli data e ora</strong> disponibili per la sessione</li>
+                <li>4. <strong>Completa i dati</strong> personali e conferma la prenotazione</li>
+                <li>5. <strong>Riceverai conferma via email</strong> con tutti i dettagli della sessione</li>
+                <li style="border-bottom: none;"><strong>Nota:</strong> La sessione standard dura 45 minuti. Alcuni centri offrono anche percorsi personalizzati.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE SEO: RICERCHE LOCALI
+     ======================================================================== -->
+<section class="section seo-section">
+    <div class="container">
+        <h2>Head Spa Olistico® nelle Principali Città Italiane</h2>
+        <p>Scopri i nostri centri certificati nelle principali città d'Italia. Ogni centro è affiliato a Head Spa Italia® Academy e opera secondo gli standard qualitativi più elevati del Metodo Head Spa Olistico®.</p>
+
+        <div class="city-grid">
+            <div class="city-card">
+                <h4>🏙️ Head Spa a Milano</h4>
+                <p>Esperienza Head Spa Olistico® nel cuore della Lombardia. Centri specializzati in rilassamento consapevole e rigenerazione mentale. Scopri i nostri affiliati a Milano.</p>
+                <a href="#?citta=Milano&regione=lombardia">Visualizza Centri a Milano →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>🏛️ Head Spa a Roma</h4>
+                <p>Centri Head Spa certificati nel Lazio. Pratica del Metodo Head Spa Olistico® con operatori professionisti e ambienti minimalisti sereni. Prenota la tua sessione a Roma.</p>
+                <a href="#?citta=Roma&regione=lazio">Visualizza Centri a Roma →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>🗻 Head Spa a Torino</h4>
+                <p>Scopri il benessere olistico con il Metodo Head Spa Olistico® a Torino. Centri affiliati in Piemonte con operatori certificati e sessioni personalizzate. Prenota ora.</p>
+                <a href="#?citta=Torino&regione=piemonte">Visualizza Centri a Torino →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>🌋 Head Spa a Napoli</h4>
+                <p>Esperienza Head Spa Olistico® in Campania. Centri specializzati nel Metodo Head Spa con professionisti certificati. Raggiungi il rilassamento profondo a Napoli.</p>
+                <a href="#?citta=Napoli&regione=campania">Visualizza Centri a Napoli →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>📚 Head Spa a Bologna</h4>
+                <p>Centri Head Spa certificati in Emilia-Romagna. Scopri il benessere consapevole con il Metodo Head Spa Olistico® e operatori professionali altamente formati.</p>
+                <a href="#?citta=Bologna&regione=emilia-romagna">Visualizza Centri a Bologna →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>🌺 Head Spa a Firenze</h4>
+                <p>Pratica del Metodo Head Spa Olistico® a Firenze, Toscana. Ambienti eleganti e minimalisti con operatori specializzati in rilassamento profondo e rigenerazione mentale.</p>
+                <a href="#?citta=Firenze&regione=toscana">Visualizza Centri a Firenze →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>🌊 Head Spa a Padova</h4>
+                <p>Centri Head Spa nel Veneto specializzati in benessere olistico. Operatori certificati che offrono l'autentica esperienza Head Spa Olistico® con sessioni personalizzate.</p>
+                <a href="#?citta=Padova&regione=veneto">Visualizza Centri a Padova →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>⛵ Head Spa a Genova</h4>
+                <p>Scopri il rilassamento consapevole con il Metodo Head Spa Olistico® a Genova, Liguria. Centri affiliati con operatori professionali e ambienti sereni.</p>
+                <a href="#?citta=Genova&regione=liguria">Visualizza Centri a Genova →</a>
+            </div>
+
+            <div class="city-card">
+                <h4>🎭 Head Spa a Palermo</h4>
+                <p>Esperienza Head Spa Olistico® in Sicilia. Centri certificati con operatori specializzati in rigenerazione mentale e rilassamento profondo secondo il Metodo Head Spa.</p>
+                <a href="#?citta=Palermo&regione=sicilia">Visualizza Centri a Palermo →</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #e5e5e7; font-size: 0.95rem; color: #999;">
+            <strong>Non trovi il tuo centro?</strong> Se sei un operatore certificato Head Spa Italia® e desideri essere aggiunto al nostro directory nazionale, contatta la segreteria dell'Academy.
+        </p>
+    </div>
+</section>
+
+<!-- ========================================================================
+     FOOTER
+     ======================================================================== -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="#">Metodo</a>
+            <a href="#">Academy</a>
+            <a href="#">Albo Nazionale</a>
+            <a href="#">Affiliazione</a>
+        </div>
+        <div>
+            <h4>Centri</h4>
+            <a href="#">Trova un Centro</a>
+            <a href="#">Città Principali</a>
+            <a href="#">Affiliati Nuovi</a>
+            <a href="#">Diventa Affiliato</a>
+        </div>
+        <div>
+            <h4>Risorse</h4>
+            <a href="#">Codice Deontologico</a>
+            <a href="#">Statuto Associazione</a>
+            <a href="#">Blog</a>
+            <a href="#">Supporto</a>
+        </div>
+        <div>
+            <h4>Seguici</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia®. Tutti i diritti riservati. | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
+    </div>
+</footer>
+
+<!-- ========================================================================
+     DATI CENTRI (Database Esempio)
+     ======================================================================== -->
+<script>
+    // Database dei centri affiliati
+    const centriDatabase = [
+        // LOMBARDIA - MILANO
+        {
+            id: 1,
+            nome: "Head Spa Milano Centro",
+            regione: "lombardia",
+            provincia: "MI",
+            citta: "Milano",
+            indirizzo: "Via Montenapoleone 8, 20121 Milano",
+            telefono: "+39 02 7234 5678",
+            email: "info@headspamilano.it",
+            website: "www.headspamilano.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Milano+Via+Montenapoleone",
+            orari: "Lunedì-Venerdì 10:00-20:00, Sabato 10:00-18:00",
+            descrizione: "Centro specializzato in Head Spa Olistico® nel cuore di Milano. Operatori certificati, ambiente minimalista e sereno. Sessioni personalizzate e corsi di formazione.",
+            operatori: 3,
+            fondazione: "2023",
+            immagine: "centro-milano-1.jpg",
+            servizi: ["Head Spa 45 min", "Head Spa Signature 60 min", "Corsi Aziendali"]
+        },
+        {
+            id: 2,
+            nome: "Serenity Head Spa Milano",
+            regione: "lombardia",
+            provincia: "MI",
+            citta: "Milano",
+            indirizzo: "Corso Garibaldi 115, 20154 Milano",
+            telefono: "+39 02 3456 7890",
+            email: "info@serenityheadspa.it",
+            website: "www.serenityheadspa.it",
+            mappa: "https://maps.google.com/?q=Serenity+Head+Spa+Milano",
+            orari: "Lunedì-Domenica 9:00-21:00",
+            descrizione: "Studio olistico con specializzazione Head Spa Olistico®. Ambienti rigenerativi, operatori esperti, atmosfera consapevole. Prenota online facilmente.",
+            operatori: 2,
+            fondazione: "2023",
+            immagine: "centro-milano-2.jpg",
+            servizi: ["Head Spa Essenziale", "Head Spa Meditativa", "Pacchetti Abbonamento"]
+        },
+
+        // LAZIO - ROMA
+        {
+            id: 3,
+            nome: "Head Spa Roma Trastevere",
+            regione: "lazio",
+            provincia: "RM",
+            citta: "Roma",
+            indirizzo: "Via dei Vascellari 12, 00153 Roma",
+            telefono: "+39 06 5812 3456",
+            email: "info@headsparoma.it",
+            website: "www.headsparoma.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Roma+Trastevere",
+            orari: "Martedì-Domenica 10:00-20:00, Lunedì Chiuso",
+            descrizione: "Centro esclusivo nel suggestivo quartiere di Trastevere. Metodo Head Spa Olistico® con vista sulla città. Operatori certificati, atmosfera contemperativa.",
+            operatori: 4,
+            fondazione: "2022",
+            immagine: "centro-roma-1.jpg",
+            servizi: ["Head Spa Classica", "Head Spa + Aromaterapia", "Workshop Meditazione"]
+        },
+        {
+            id: 4,
+            nome: "Zen Head Spa Roma Centro Storico",
+            regione: "lazio",
+            provincia: "RM",
+            citta: "Roma",
+            indirizzo: "Via della Scrofa 48, 00186 Roma",
+            telefono: "+39 06 6879 0123",
+            email: "contact@zenheadsparoma.it",
+            website: "www.zenheadsparoma.it",
+            mappa: "https://maps.google.com/?q=Zen+Head+Spa+Roma",
+            orari: "Lunedì-Sabato 10:00-19:00, Domenica 11:00-18:00",
+            descrizione: "Studio affusolato nel cuore della Roma storica. Head Spa Olistico® con approccio minimalista e consapevole. Operatori con esperienza pluriennale.",
+            operatori: 3,
+            fondazione: "2023",
+            immagine: "centro-roma-2.jpg",
+            servizi: ["Head Spa Standard", "Sessioni Private", "Corsi di Formazione Base"]
+        },
+
+        // PIEMONTE - TORINO
+        {
+            id: 5,
+            nome: "Head Spa Torino Crocetta",
+            regione: "piemonte",
+            provincia: "TO",
+            citta: "Torino",
+            indirizzo: "Via Pietro Micca 25, 10121 Torino",
+            telefono: "+39 011 5612 345",
+            email: "info@headspatorino.it",
+            website: "www.headspatorino.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Torino+Crocetta",
+            orari: "Lunedì-Venerdì 9:30-20:00, Sabato-Domenica 10:00-18:00",
+            descrizione: "Centro moderno specializzato in benessere olistico. Metodo Head Spa Olistico® con tecnologie innovative. Operatori certificati, ambiente sereno e rigenerativo.",
+            operatori: 2,
+            fondazione: "2023",
+            immagine: "centro-torino-1.jpg",
+            servizi: ["Head Spa Essenziale", "Head Spa Premium", "Pacchetti Aziendali"]
+        },
+
+        // CAMPANIA - NAPOLI
+        {
+            id: 6,
+            nome: "Head Spa Napoli Chiaia",
+            regione: "campania",
+            provincia: "NA",
+            citta: "Napoli",
+            indirizzo: "Via Chiaia 254, 80121 Napoli",
+            telefono: "+39 081 4123 567",
+            email: "info@headspanapolsi.it",
+            website: "www.headspanapolit.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Napoli+Chiaia",
+            orari: "Lunedì-Sabato 10:00-20:00, Domenica 11:00-18:00",
+            descrizione: "Oasi di serenità nel vivace quartiere di Chiaia. Head Spa Olistico® autentico con operatori formati. Ambiente minimalista, sessioni trasformative.",
+            operatori: 2,
+            fondazione: "2023",
+            immagine: "centro-napoli-1.jpg",
+            servizi: ["Head Spa Classica", "Sessioni Personalizzate"]
+        },
+
+        // VENETO - PADOVA
+        {
+            id: 7,
+            nome: "Head Spa Padova Centro",
+            regione: "veneto",
+            provincia: "PD",
+            citta: "Padova",
+            indirizzo: "Via Daniele Manin 18, 35137 Padova",
+            telefono: "+39 049 8765 432",
+            email: "info@headspapadova.it",
+            website: "www.headspapadova.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Padova",
+            orari: "Lunedì-Venerdì 10:00-20:00, Sabato 10:00-18:00, Domenica Chiuso",
+            descrizione: "Centro certificato Head Spa Italia® nel cuore di Padova. Operatori professionali, metodologia autentica, ambiente consapevole. Prenota la tua sessione.",
+            operatori: 2,
+            fondazione: "2024",
+            immagine: "centro-padova-1.jpg",
+            servizi: ["Head Spa Essenziale", "Head Spa Meditativa"],
+            badge: "Nuovo"
+        },
+
+        // EMILIA-ROMAGNA - BOLOGNA
+        {
+            id: 8,
+            nome: "Head Spa Bologna Centro",
+            regione: "emilia-romagna",
+            provincia: "BO",
+            citta: "Bologna",
+            indirizzo: "Via Rizzoli 8, 40125 Bologna",
+            telefono: "+39 051 2345 678",
+            email: "info@headspabenlogna.it",
+            website: "www.headspabologna.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Bologna",
+            orari: "Lunedì-Sabato 10:00-19:00, Domenica 11:00-17:00",
+            descrizione: "Studio specializzato in Metodo Head Spa Olistico® nel cuore di Bologna. Operatori certificati, sessioni personalizzate, ambiente rigenerativo.",
+            operatori: 3,
+            fondazione: "2023",
+            immagine: "centro-bologna-1.jpg",
+            servizi: ["Head Spa Standard", "Head Spa Premium", "Workshop"]
+        },
+
+        // TOSCANA - FIRENZE
+        {
+            id: 9,
+            nome: "Head Spa Firenze Oltrarno",
+            regione: "toscana",
+            provincia: "FI",
+            citta: "Firenze",
+            indirizzo: "Via Guicciardini 11, 50125 Firenze",
+            telefono: "+39 055 2987 654",
+            email: "info@headspapirenze.it",
+            website: "www.headspapirenze.it",
+            mappa: "https://maps.google.com/?q=Head+Spa+Firenze",
+            orari: "Lunedì-Sabato 11:00-20:00, Domenica 14:00-19:00",
+            descrizione: "Esclusivo centro nel quartiere Oltrarno. Head Spa Olistico® con vista panoramica. Operatori esperti, atmosfera consapevole, sessioni trasformative.",
+            operatori: 2,
+            fondazione: "2023",
+            immagine: "centro-firenze-1.jpg",
+            servizi: ["Head Spa Classica", "Head Spa + Aromaterapia"]
+        }
+    ];
+
+    // Funzione per renderizzare i centri
+    function renderCentri(centri) {
+        const container = document.getElementById('centriContainer');
+        const emptyState = document.getElementById('emptyState');
+        const countCentri = document.getElementById('countCentri');
+
+        if (centri.length === 0) {
+            container.innerHTML = '';
+            emptyState.style.display = 'block';
+            countCentri.textContent = '0';
+            return;
+        }
+
+        emptyState.style.display = 'none';
+        countCentri.textContent = centri.length;
+
+        container.innerHTML = centri.map(centro => `
+            <div class="centro-card">
+                <div class="centro-image">
+                    ${centro.badge ? `<div class="centro-badge">${centro.badge}</div>` : ''}
+                    [Immagine Centro]
+                </div>
+                <div class="centro-content">
+                    <div class="centro-header">
+                        <div class="centro-name">${centro.nome}</div>
+                        <div class="centro-location">${centro.citta} (${centro.provincia.toUpperCase()})</div>
+                    </div>
+                    
+                    <p class="centro-description">${centro.descrizione}</p>
+
+                    <div class="centro-info">
+                        <div class="info-item">
+                            <div class="info-icon">👥</div>
+                            <div class="info-text">
+                                <div class="info-label">${centro.operatori} Operatori</div>
+                                <div style="font-size: 0.75rem; color: #999;">Certificati</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">⏰</div>
+                            <div class="info-text">
+                                <div class="info-label">Orari</div>
+                                <div style="font-size: 0.75rem; color: #999;">${centro.orari.split(',')[0]}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="centro-info">
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-text">
+                                <div class="info-label">Contatti</div>
+                                <div style="font-size: 0.75rem; color: #999;">
+                                    <a href="tel:${centro.telefono}" style="color: #1f4e78; text-decoration: none;">${centro.telefono}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-text">
+                                <div class="info-label">Indirizzo</div>
+                                <div style="font-size: 0.75rem; color: #999;">${centro.indirizzo}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="centro-actions">
+                        <button class="btn btn-primary" onclick="window.open('${centro.mappa}', '_blank')">📍 Mappa</button>
+                        <a href="tel:${centro.telefono}" class="btn btn-secondary">☎️ Chiama</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Funzione per filtrare i centri
+    function filterCentri() {
+        const regione = document.getElementById('filterRegione').value.toLowerCase();
+        const citta = document.getElementById('filterCitta').value.toLowerCase();
+
+        const centrifiltrati = centriDatabase.filter(centro => {
+            const regMatch = !regione || centro.regione.includes(regione);
+            const citaMatch = !citta || centro.citta.toLowerCase().includes(citta) || centro.provincia.toLowerCase().includes(citta);
+            return regMatch && citaMatch;
+        });
+
+        renderCentri(centrifiltrati);
+    }
+
+    // Funzione per ordinare
+    function sortCentri() {
+        const sortValue = document.getElementById('sortSelect').value;
+        let centri = [...centriDatabase];
+
+        if (sortValue === 'nome') {
+            centri.sort((a, b) => a.nome.localeCompare(b.nome));
+        } else if (sortValue === 'regione') {
+            centri.sort((a, b) => a.regione.localeCompare(b.regione));
+        } else if (sortValue === 'recente') {
+            centri.sort((a, b) => parseInt(b.fondazione) - parseInt(a.fondazione));
+        }
+
+        renderCentri(centri);
+    }
+
+    // Inizializza con tutti i centri
+    window.addEventListener('load', () => {
+        renderCentri(centriDatabase);
+    });
+</script>
+
+</body>
+</html>

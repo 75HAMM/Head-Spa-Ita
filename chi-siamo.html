@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi Siamo - Head Spa Italia®. Scopri la nostra missione, visione e valori. Una rete nazionale di operatori certificati dedicata al benessere olistico consapevole.">
+    <meta name="keywords" content="Head Spa Italia, chi siamo, missione, valori, benessere olistico, academy">
+    <meta property="og:title" content="Chi Siamo - Head Spa Italia® - Missione, Visione, Valori">
+    <meta property="og:description" content="Scopri la storia, i valori e la visione di Head Spa Italia®. Una comunità di professionisti dedicati al benessere olistico consapevole.">
+    <title>Chi Siamo - Head Spa Italia® - Missione, Visione e Valori</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1f4e78;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f4e78;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-alt {
+            background-color: #f5f5f7;
+        }
+
+        .section-dark {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .section-dark h2,
+        .section-dark h3 {
+            color: #ffffff;
+        }
+
+        .section-dark p {
+            color: #e8e8ed;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            color: #ffffff;
+        }
+
+        .hero h1 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #e8e8ed;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Card */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e5e7;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .card-alt {
+            background-color: #f5f5f7;
+            border: none;
+        }
+
+        .card-dark {
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+        }
+
+        .card-dark h4 {
+            color: #34c759;
+        }
+
+        .card-dark p {
+            color: #e8e8ed;
+        }
+
+        /* Image Placeholder */
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* Values Grid */
+        .value-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #e5e5e7;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: #1f4e78;
+            box-shadow: 0 15px 40px rgba(31, 78, 120, 0.15);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .value-card h4 {
+            color: #1f4e78;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Founder Cards */
+        .founder-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #e5e5e7;
+            transition: all 0.3s ease;
+        }
+
+        .founder-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+        }
+
+        .founder-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #1f4e78 0%, #34c759 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 2rem;
+        }
+
+        .founder-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f4e78;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            font-size: 0.9rem;
+            color: #999;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .founder-bio {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #34c759;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+            width: 48%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            width: 48%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #1f4e78;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #34c759;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: #f5f5f7;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1f4e78;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                width: calc(100% - 80px);
+                text-align: left;
+            }
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #1f4e78;
+            text-align: center;
+            padding: 40px;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            margin: 40px 0;
+            line-height: 1.6;
+            border-left: 4px solid #1f4e78;
+        }
+
+        .quote-author {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 1rem;
+            font-style: normal;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(31, 78, 120, 0.2);
+        }
+
+        .btn-large {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #1f4e78;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-white:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        /* Highlight */
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .highlight-green {
+            color: #34c759;
+            font-weight: 600;
+        }
+
+        /* Divider */
+        .divider {
+            width: 80px;
+            height: 2px;
+            background-color: #34c759;
+            margin: 40px auto;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f4e78;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 60px 0;
+            margin-top: 100px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #424245;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            grid-column: 1 / -1;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        .note {
+            background-color: #e8f4f8;
+            border-left: 4px solid #1f4e78;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 0.95rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================
+     HERO SECTION
+     ======================================================================== -->
+<section class="hero">
+    <div class="container">
+        <h1>Chi Siamo</h1>
+        <p class="hero-subtitle">Head Spa Italia® è un'associazione culturale dedicata alla diffusione del Metodo Head Spa Olistico® e alla creazione di una rete nazionale di operatori certificati. Siamo una comunità di professionisti consapevoli, impegnati a portare il benessere olistico autentico in Italia.</p>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 1: MISSIONE
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">La Nostra Missione</h2>
+
+        <div class="grid-2">
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Spazi di pratica minimalisti, operatori in sessione]
+                </div>
+            </div>
+            <div>
+                <h3>Diffondere la Cultura Olistica Giapponese in Italia</h3>
+                <p>
+                    La missione di Head Spa Italia® è <span class="highlight">riportare in Italia la ricca tradizione giapponese di consapevolezza e armonia</span>, reinterpretandola attraverso il Metodo Head Spa Olistico®.
+                </p>
+                <p>
+                    In un'epoca di velocità, frammentazione e iperconnessione digitale, crediamo fermamente che il benessere autentico nasca dal <span class="highlight">rallentamento consapevole, dal contatto umano autentico e dalla ricerca di equilibrio</span>.
+                </p>
+                <p>
+                    Non promuoviamo una pratica medica o terapeutica, ma una <span class="highlight">pratica consapevole di rigenerazione personale</span> fondata su principi filosofici millenni e supportata dalla ricerca contemporanea sul rilassamento e il benessere olistico.
+                </p>
+
+                <ul class="feature-list" style="margin-top: 30px;">
+                    <li>Fornire formazione professionale certificata a operatori e centri</li>
+                    <li>Creare standard qualitativi riconosciuti a livello nazionale</li>
+                    <li>Costruire una comunità etica di professionisti consapevoli</li>
+                    <li>Rendere il benessere olistico accessibile e autentico</li>
+                    <li>Supportare ricerca e innovazione nel settore</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote">
+            "La nostra missione non è vendere un servizio, ma coltivare una cultura di consapevolezza. Ogni operatore formato, ogni centro aperto, ogni persona che vive l'esperienza Head Spa contribuisce a questa trasformazione collettiva."
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 2: VISIONE
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">La Nostra Visione</h2>
+
+        <div class="grid-2">
+            <div>
+                <h3>Una Rete Nazionale di Operatori Certificati</h3>
+                <p>
+                    Entro il 2027, Head Spa Italia® intende creare una <span class="highlight">rete diffusa di centri e operatori certificati in tutto il territorio italiano</span>, dal Nord al Sud, dalle grandi metropoli alle realtà più piccole.
+                </p>
+                <p>
+                    La visione è quella di un'Italia dove:
+                </p>
+
+                <ul class="feature-list">
+                    <li><strong>Il Metodo Head Spa Olistico®</strong> sia conosciuto come pratica professionale riconosciuta e certificata</li>
+                    <li><strong>I centri affiliati</strong> offrano standard di eccellenza uniformi e coerenti con la mission</li>
+                    <li><strong>Gli operatori certificati</strong> siano professionisti formati eticamente e tecnicamente</li>
+                    <li><strong>L'Albo Nazionale</strong> garantisca trasparenza e qualità verificabile</li>
+                    <li><strong>La comunità</strong> sia interconnessa, supportata e in continua crescita</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-placeholder">
+                    [Immagine: Mappa Italia con punti di centri affiliati, rete nazionale]
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Centri Affiliati Oggi</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Operatori Certificati</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Persone Hanno Sperimentato</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">92%</div>
+                <div class="stat-label">Soddisfazione Praticanti</div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>📌 Verso il 2027:</strong> La nostra visione è ambiziosa ma realistica. Miriamo a un raddoppio dei centri, una triplicazione degli operatori certificati e una penetrazione nazionale del Metodo Head Spa Olistico®. Tutto mantenendo l'autenticità e la qualità che ci caratterizzano.
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 3: VALORI FONDANTI
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">I Nostri Quattro Valori Fondanti</h2>
+
+        <div class="grid-3">
+            <!-- Valore 1: Armonia -->
+            <div class="value-card">
+                <div class="value-icon">⚖️</div>
+                <h4>Armonia</h4>
+                <p>
+                    Cerchiamo l'equilibrio tra corpo, mente e spirito. Tra tradizione e innovazione. Tra professionalità e consapevolezza. Tra individuo e comunità. L'armonia è il nostro nord.
+                </p>
+            </div>
+
+            <!-- Valore 2: Formazione -->
+            <div class="value-card">
+                <div class="value-icon">📚</div>
+                <h4>Formazione Consapevole</h4>
+                <p>
+                    Crediamo nella formazione non solo tecnica, ma etica e consapevole. Un operatore Head Spa non è semplicemente "addestrato", ma formato come professionista consapevole e responsabile.
+                </p>
+            </div>
+
+            <!-- Valore 3: Autenticità -->
+            <div class="value-card">
+                <div class="value-icon">✨</div>
+                <h4>Autenticità</h4>
+                <p>
+                    Rifiutiamo commercializzazione superficiale e promesse mediche fasulle. Head Spa Olistico® è una pratica autentica, radicata nella tradizione giapponese, offerta con integrità.
+                </p>
+            </div>
+
+            <!-- Valore 4: Professionalità -->
+            <div class="value-card">
+                <div class="value-icon">🏆</div>
+                <h4>Eccellenza Professionale</h4>
+                <p>
+                    Standard qualitativi rigorosi, trasparenza totale, supporto continuo ai centri. Siamo professionisti dediti all'eccellenza in ogni aspetto della pratica e della gestione.
+                </p>
+            </div>
+
+            <!-- Valore 5: Consapevolezza -->
+            <div class="value-card">
+                <div class="value-icon">🧘</div>
+                <h4>Consapevolezza Continua</h4>
+                <p>
+                    Non cerchiamo di guarire ciò che non è malato. Cerchiamo di coltivare consapevolezza. Sia negli operatori che nei praticanti, la consapevolezza è il fondamento di tutto.
+                </p>
+            </div>
+
+            <!-- Valore 6: Comunità -->
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h4>Comunità e Condivisione</h4>
+                <p>
+                    Siamo una comunità. Comunità di operatori, di centri, di praticanti. Condividiamo conoscenze, best practices, sfide. Insieme siamo più forti e consapevoli.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 4: I FONDATORI E IL RUOLO DELL'ACADEMY
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">I Fondatori e l'Academy</h2>
+
+        <h3 style="text-align: center; margin-bottom: 40px;">Visioni che Si Incontrano</h3>
+
+        <div style="max-width: 800px; margin: 0 auto; margin-bottom: 60px;">
+            <p>
+                Head Spa Italia® è nata dall'incontro di quattro professionisti con visioni complementari: due operatori Head Spa con esperienza decennale in Giappone, un educatore specializzato in formazione consapevole, e un imprenditore del settore wellness con visione strategica.
+            </p>
+
+            <p>
+                Quello che li univa era una convinzione comune: <span class="highlight">il Metodo Head Spa Olistico® meritava di essere diffuso in Italia non come moda passeggera, ma come pratica autentica, professionale e radicata in principi etici</span>.
+            </p>
+        </div>
+
+        <!-- Fondatori -->
+        <div class="grid-3" style="margin-bottom: 60px;">
+            <div class="founder-card">
+                <div class="founder-image">
+                    🧘‍♀️
+                </div>
+                <div class="founder-name">Yuki Tanaka</div>
+                <div class="founder-title">Co-Fondatrice & Direttore Metodo</div>
+                <div class="founder-bio">
+                    Operatrice Head Spa con 15 anni di pratica in Giappone. Esperta di filosofia olistica e tradizione giapponese. Responsabile della fedeltà metodologica del sistema Head Spa Italia®.
+                </div>
+            </div>
+
+            <div class="founder-card">
+                <div class="founder-image">
+                    🎓
+                </div>
+                <div class="founder-name">Marco Rossi</div>
+                <div class="founder-title">Co-Fondatore & Direttore Academy</div>
+                <div class="founder-bio">
+                    Educatore specializzato in formazione consapevole e sviluppo personale. Ha progettato il curriculum Academy integrando metodologia giapponese con approcci educativi moderni.
+                </div>
+            </div>
+
+            <div class="founder-card">
+                <div class="founder-image">
+                    💼
+                </div>
+                <div class="founder-name">Elena Moretti</div>
+                <div class="founder-title">Co-Fondatrice & Direttore Strategico</div>
+                <div class="founder-bio">
+                    Imprenditrice nel settore wellness con esperienza nella creazione di reti professionali. Guida la visione strategica e lo sviluppo della rete nazionale.
+                </div>
+            </div>
+        </div>
+
+        <!-- Ruolo Academy -->
+        <div class="card card-alt" style="margin-top: 60px;">
+            <h3>Il Ruolo di Head Spa Italia® Academy</h3>
+            <p>
+                L'Academy è il <span class="highlight">cuore formativo e innovativo</span> di Head Spa Italia®. Non è una semplice scuola di insegnamento tecnico, ma un'istituzione dedicata alla coltivazione di professionisti consapevoli e etici.
+            </p>
+
+            <p style="margin-top: 20px;"><strong>La mission dell'Academy:</strong></p>
+            <ul class="feature-list" style="margin-top: 15px;">
+                <li>Fornire formazione certificata nel Metodo Head Spa Olistico® a tutti i livelli</li>
+                <li>Sviluppare curriculum consapevoli che integrano tecnica e filosofia</li>
+                <li>Selezionare, formare e certificare operatori professionali</li>
+                <li>Monitorare e supportare la qualità nei centri affiliati</li>
+                <li>Promuovere ricerca e innovazione nel metodo</li>
+                <li>Creare comunità di apprendimento tra operatori</li>
+                <li>Offrire specializzazioni e percorsi avanzati</li>
+            </ul>
+
+            <p style="margin-top: 20px;">
+                <strong>Modello Educativo:</strong> L'Academy utilizza un modello blended che combina lezione frontale in aula, pratica supervisionata, apprendimento experienziale, e mentoring individuale. Ogni operatore acquisisce non solo competenza tecnica, ma consapevolezza etica e professionale.
+            </p>
+
+            <p style="margin-top: 20px;">
+                <strong>Certificazione e Continuità:</strong> La certificazione Academy è riconosciuta a livello nazionale e consente l'iscrizione all'Albo Nazionale Operatori. La formazione non finisce con il corso: offriamo aggiornamenti continui, webinar mensili, e accesso a una comunità globale di operatori certificati.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 5: TIMELINE DELLA STORIA
+     ======================================================================== -->
+<section class="section">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">La Nostra Storia</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-desc">
+                        I fondatori si incontrano a Tokyo durante una conferenza internazionale sul benessere olistico. Emerge la visione condivisa di portare il Metodo Head Spa Olistico® in Italia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-desc">
+                        Fondazione ufficiale di Head Spa Italia® come Associazione Culturale di Promozione Sociale. Inizio della progettazione del curriculum Academy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-desc">
+                        Lancio di Head Spa Italia® Academy con primo corso pilota. Formazione dei 12 operatori fondatori. Creazione del Codice Deontologico.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-desc">
+                        Apertura dei primi 5 centri affiliati a Milano, Roma, Torino, Bologna e Firenze. Fondazione dell'Albo Nazionale Operatori Head Spa Olistico®.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-desc">
+                        Espansione a 15 centri affiliati. Formazione di 100+ operatori certificati. Primo convegno nazionale Head Spa Italia®.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-desc">
+                        Raggiunti 25+ centri affiliati. 150+ operatori certificati. Lancio di corsi specializzati (Business, Terapeutico, Meditazione). Partnership con università italiane per ricerca.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2025+</div>
+                    <div class="timeline-desc">
+                        Visione: 50+ centri, 250+ operatori certificati, diffusione nazionale completa del Metodo Head Spa Olistico® come pratica riconosciuta e prestigiosa.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 6: L'IMPEGNO VERSO LA QUALITÀ
+     ======================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 60px;">Il Nostro Impegno Verso la Qualità</h2>
+
+        <div class="grid-2">
+            <div class="card card-alt">
+                <h4 style="color: #1f4e78;">Standard Rigorosi</h4>
+                <p>
+                    Ogni centro affiliato deve rispettare standard qualitativi rigidi: spazi adeguati, operatori certificati, proceduri di igiene, etica professionale. Monitoriamo con ispezioni periodiche formative.
+                </p>
+            </div>
+
+            <div class="card card-alt">
+                <h4 style="color: #1f4e78;">Trasparenza Totale</h4>
+                <p>
+                    L'Albo Nazionale è pubblico e verificabile. Ogni operatore certificato è tracciabile. Nessun costo nascosto, nessuna promessa medica fasulle. Trasparenza completa verso clienti e partner.
+                </p>
+            </div>
+
+            <div class="card card-alt">
+                <h4 style="color: #1f4e78;">Formazione Continua</h4>
+                <p>
+                    Gli operatori certificati accedono a webinar mensili, workshop annuali, e aggiornamenti continui. La formazione non finisce, si evolve con la ricerca e l'esperienza.
+                </p>
+            </div>
+
+            <div class="card card-alt">
+                <h4 style="color: #1f4e78;">Comunità Supportata</h4>
+                <p>
+                    Offriamo supporto continuo ai centri: consulenza operativa, strategie marketing, mentoring, risoluzione problematiche. Nessuno è lasciato solo.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     SEZIONE 7: CTA FINALE
+     ======================================================================== -->
+<section class="section">
+    <div class="container text-center">
+        <h2 style="margin-bottom: 30px;">Entra nel Mondo Head Spa Italia®</h2>
+        <p style="max-width: 700px; margin: 0 auto 50px; font-size: 1.15rem; line-height: 1.8;">
+            Che tu sia un praticante curioso, un operatore desideroso di formazione, o un imprenditore interessato ad affiliarsi, c'è un percorso Head Spa Italia® per te. Siamo una comunità aperta, accogliente e dedita all'autenticità.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
+            <a href="/centri" class="btn btn-large">🔍 Trova un Centro</a>
+            <a href="/academy" class="btn btn-large">📚 Scopri i Corsi</a>
+            <a href="/affiliazione" class="btn btn-large">💼 Diventa Affiliato</a>
+            <a href="/contatti" class="btn btn-large">📧 Contattaci</a>
+        </div>
+
+        <div class="quote" style="margin-top: 60px;">
+            "Head Spa Italia® non è solo un brand o un'organizzazione. È una comunità di persone consapevoli, impegnate a portare equilibrio, armonia e consapevolezza nella vita di altri. Se condividi questa visione, il nostro mondo è il tuo mondo."
+            <div class="quote-author">— Il Team Head Spa Italia®</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================
+     FOOTER
+     ======================================================================== -->
+<footer>
+    <div class="container">
+        <div>
+            <h4>Head Spa Italia®</h4>
+            <a href="/">Home</a>
+            <a href="/metodo">Metodo</a>
+            <a href="/academy">Academy</a>
+            <a href="/centri">Centri</a>
+        </div>
+        <div>
+            <h4>Affiliate</h4>
+            <a href="/affiliazione">Diventa Affiliato</a>
+            <a href="/partnership">Opportunità Partnership</a>
+            <a href="/supporto">Supporto Affiliati</a>
+            <a href="/faq">FAQ</a>
+        </div>
+        <div>
+            <h4>Organizzazione</h4>
+            <a href="/chi-siamo">Chi Siamo</a>
+            <a href="/statuto">Statuto Associazione</a>
+            <a href="/codice-deontologico">Codice Deontologico</a>
+            <a href="/albo-nazionale">Albo Nazionale</a>
+        </div>
+        <div>
+            <h4>Connetti</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Newsletter</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Head Spa Italia® - Associazione Culturale di Promozione Sociale | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a> | <a href="#">Contatti</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

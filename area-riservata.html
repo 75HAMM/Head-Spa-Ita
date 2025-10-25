@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Area Riservata Operatori Head Spa Italia® - Dashboard, materiali didattici, attestati, quote associative e notifiche eventi.">
+    <title>Area Riservata Operatori - Head Spa Italia®</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1d;
+            background-color: #f8f9fa;
+        }
+
+        /* HEADER AREA RISERVATA */
+        .reserved-header {
+            background: linear-gradient(135deg, #1f4e78 0%, #2d5a8c 100%);
+            color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .user-status {
+            font-size: 0.8rem;
+            color: #e8e8ed;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-logout {
+            background-color: #e74c3c;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-logout:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* MAIN CONTAINER */
+        .reserved-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .reserved-container {
+                grid-template-columns: 200px 1fr;
+                padding: 30px;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reserved-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+
+        /* SIDEBAR NAVIGATION */
+        .sidebar-nav {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 16px 20px;
+            color: #666;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-item:hover {
+            background-color: #f9f9f9;
+            color: #1f4e78;
+            border-left-color: #34c759;
+        }
+
+        .nav-item.active {
+            background-color: #e8f4f8;
+            color: #1f4e78;
+            border-left-color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .nav-icon {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1d1d1d;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #34c759;
+            padding-bottom: 15px;
+        }
+
+        /* CARD GRID */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid #1f4e78;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .info-card-title {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .info-card-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f4e78;
+        }
+
+        .info-card-desc {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .info-card.warning {
+            border-left-color: #f39c12;
+            background-color: #fffbf0;
+        }
+
+        .info-card.warning .info-card-value {
+            color: #f39c12;
+        }
+
+        .info-card.success {
+            border-left-color: #27ae60;
+            background-color: #f0fff4;
+        }
+
+        .info-card.success .info-card-value {
+            color: #27ae60;
+        }
+
+        /* TABBED SECTION */
+        .tabs-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .tabs-nav {
+            display: flex;
+            border-bottom: 1px solid #e5e5e7;
+            background-color: #f9f9f9;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tab-button:hover {
+            background-color: #ffffff;
+            color: #1f4e78;
+        }
+
+        .tab-button.active {
+            color: #1f4e78;
+            border-bottom-color: #1f4e78;
+            background-color: #ffffff;
+        }
+
+        .tab-content {
+            padding: 30px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* TABLE */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .data-table thead {
+            background-color: #f5f5f7;
+        }
+
+        .data-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 14px 15px;
+            border-bottom: 1px solid #e5e5e7;
+            font-size: 0.95rem;
+        }
+
+        .data-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-active {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .badge-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-expired {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            background-color: #1f4e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #15365a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(31, 78, 120, 0.2);
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+        }
+
+        .btn-secondary {
+            background-color: #e8e8ed;
+            color: #1f4e78;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+        }
+
+        .btn-success:hover {
+            background-color: #229954;
+        }
+
+        /* NOTIFICATION PANEL */
+        .notifications-panel {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .notification-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border-left: 4px solid #1f4e78;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .notification-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .notification-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 4px;
+        }
+
+        .notification-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .notification-date {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .notification-item.important {
+            border-left-color: #e74c3c;
+            background-color: #fff5f5;
+        }
+
+        .notification-item.event {
+            border-left-color: #3498db;
+            background-color: #f0f8ff;
+        }
+
+        /* FORM */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #1f4e78;
+            box-shadow: 0 0 0 3px rgba(31, 78, 120, 0.1);
+        }
+
+        /* FILE DOWNLOAD */
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #e5e5e7;
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover {
+            background-color: #f0f0f0;
+            border-color: #1f4e78;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .file-icon {
+            font-size: 2rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .file-details h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 3px;
+        }
+
+        .file-details p {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .file-action {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* PAGINATION */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+
+        .pagination a,
+        .pagination span {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #1f4e78;
+            color: #ffffff;
+            border-color: #1f4e78;
+        }
+
+        .pagination .current {
+            background-color: #1f4e78;
+            color: #ffffff;
+            border-color: #1f4e78;
+        }
+
+        /* FOOTER */
+        .reserved-footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 0.85rem;
+            border-top: 1px solid #e5e5e7;
+            margin-top: 60px;
+        }
+
+        .reserved-footer a {
+            color: #1f4e78;
+            text-decoration: none;
+        }
+
+        .reserved-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ALERT */
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .alert-icon {
+            font-size: 1.3rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            color: #0c5460;
+        }
+
+        @media (max-width: 768px) {
+            .reserved-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            .user-menu {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .sidebar-nav {
+                position: static;
+            }
+
+            .tabs-nav {
+                overflow-x: auto;
+            }
+
+            .tab-button {
+                white-space: nowrap;
+                font-size: 0.85rem;
+            }
+
+            .data-table {
+                font-size: 0.85rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 10px;
+            }
+        }
+
+        .highlight {
+            color: #1f4e78;
+            font-weight: 600;
+        }
+
+        .mt-40 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================
+     HEADER AREA RISERVATA
+     ======================================================================== -->
+<div class="reserved-header">
+    <div class="logo-area">
+        <span>🔐</span>
+        <span>Head Spa Italia® - Area Riservata Operatori</span>
+    </div>
+    <div class="user-menu">
+        <div class="user-info">
+            <div class="user-name">Marco Rossi</div>
+            <div class="user-status">Operatore Certificato</div>
+        </div>
+        <button class="btn-logout">Esci</button>
+    </div>
+</div>
+
+<!-- ========================================================================
+     MAIN CONTAINER
+     ======================================================================== -->
+<div class="reserved-container">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar-nav">
+        <a href="#dashboard" class="nav-item active">
+            <span class="nav-icon">📊</span>Dashboard
+        </a>
+        <a href="#profilo" class="nav-item">
+            <span class="nav-icon">👤</span>Il Mio Profilo
+        </a>
+        <a href="#materiali" class="nav-item">
+            <span class="nav-icon">📚</span>Materiali Didattici
+        </a>
+        <a href="#attestati" class="nav-item">
+            <span class="nav-icon">🏆</span>Attestati
+        </a>
+        <a href="#quote" class="nav-item">
+            <span class="nav-icon">💳</span>Quote Associative
+        </a>
+        <a href="#eventi" class="nav-item">
+            <span class="nav-icon">📅</span>Eventi e Corsi
+        </a>
+        <a href="#notifiche" class="nav-item">
+            <span class="nav-icon">🔔</span>Notifiche
+        </a>
+        <a href="#supporto" class="nav-item">
+            <span class="nav-icon">❓</span>Supporto
+        </a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- ========================================================================
+             SEZIONE 1: DASHBOARD
+             ======================================================================== -->
+        <section id="dashboard">
+            <h2 class="section-title">Dashboard Personale</h2>
+
+            <!-- Alert/Notification -->
+            <div class="alert alert-info">
+                <div class="alert-icon">ℹ️</div>
+                <div>
+                    <strong>Benvenuto!</strong> La tua quota associativa 2024 è scaduta il 31/12/2024. 
+                    <a href="#quote" style="color: inherit; text-decoration: underline;">Rinnova ora</a>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="card-grid">
+                <div class="info-card success">
+                    <div class="info-card-title">Stato Certificazione</div>
+                    <div class="info-card-value">✓ Attivo</div>
+                    <div class="info-card-desc">Certificazione scade il 15/11/2025</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-title">Quote Associative</div>
+                    <div class="info-card-value">€350</div>
+                    <div class="info-card-desc">Prossima scadenza: 31/12/2024</div>
+                </div>
+                <div class="info-card warning">
+                    <div class="info-card-title">Formazione Continua</div>
+                    <div class="info-card-value">12/20 ore</div>
+                    <div class="info-card-desc">Ore completate su 20 richieste</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-title">Ultimo Accesso</div>
+                    <div class="info-card-value">Oggi</div>
+                    <div class="info-card-desc">14:32 - Milano</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 50px; margin-bottom: 20px; color: #1f4e78;">Azioni Rapide</h3>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <button class="btn">📥 Scarica Attestato</button>
+                <button class="btn btn-secondary">📅 Iscriviti a Corso</button>
+                <button class="btn btn-secondary">📚 Accedi Materiali</button>
+                <button class="btn btn-secondary">💳 Rinnova Quota</button>
+            </div>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 2: IL MIO PROFILO
+             ======================================================================== -->
+        <section id="profilo" style="display: none;">
+            <h2 class="section-title">Il Mio Profilo</h2>
+
+            <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <div>
+                        <h3 style="color: #1f4e78; margin-bottom: 20px;">Informazioni Personali</h3>
+                        <div class="form-group">
+                            <label class="form-label">Nome Completo</label>
+                            <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">Marco Rossi</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">marco.rossi@example.com</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Telefono</label>
+                            <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">+39 02 1234 5678</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="color: #1f4e78; margin-bottom: 20px;">Informazioni Professionali</h3>
+                        <div class="form-group">
+                            <label class="form-label">Stato Certificazione</label>
+                            <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">
+                                <span class="badge badge-active">Attivo</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Data Certificazione</label>
+                            <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">15/11/2022</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Numero Iscrizione Albo</label>
+                            <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">HSO-2022-0854</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn">✏️ Modifica Profilo</button>
+            </div>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 3: MATERIALI DIDATTICI
+             ======================================================================== -->
+        <section id="materiali" style="display: none;">
+            <h2 class="section-title">Materiali Didattici e Risorse</h2>
+
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-button active">Tutti i Materiali</button>
+                    <button class="tab-button">Manuali</button>
+                    <button class="tab-button">Video Tutorial</button>
+                    <button class="tab-button">Linee Guida</button>
+                    <button class="tab-button">Aggiornamenti</button>
+                </div>
+
+                <div class="tab-content active">
+                    <h3 style="margin-bottom: 20px; color: #1f4e78;">Materiali Disponibili</h3>
+                    <div class="file-list">
+                        <div class="file-item">
+                            <div class="file-info">
+                                <div class="file-icon">📄</div>
+                                <div class="file-details">
+                                    <h4>Manuale Completo Head Spa Olistico® v2.1</h4>
+                                    <p>PDF • 45 MB • Aggiornato: 15 novembre 2024</p>
+                                </div>
+                            </div>
+                            <div class="file-action">
+                                <button class="btn btn-small">📥 Scarica</button>
+                                <button class="btn btn-small btn-secondary">👁️ Anteprima</button>
+                            </div>
+                        </div>
+
+                        <div class="file-item">
+                            <div class="file-info">
+                                <div class="file-icon">📋</div>
+                                <div class="file-details">
+                                    <h4>Linee Guida Gestione Cliente 2024</h4>
+                                    <p>PDF • 8 MB • Aggiornato: 10 novembre 2024</p>
+                                </div>
+                            </div>
+                            <div class="file-action">
+                                <button class="btn btn-small">📥 Scarica</button>
+                                <button class="btn btn-small btn-secondary">👁️ Anteprima</button>
+                            </div>
+                        </div>
+
+                        <div class="file-item">
+                            <div class="file-info">
+                                <div class="file-icon">🎥</div>
+                                <div class="file-details">
+                                    <h4>Video Tutorial: Le 4 Tecniche Base</h4>
+                                    <p>MP4 • 520 MB • Durata: 45 minuti • Aggiornato: 5 novembre 2024</p>
+                                </div>
+                            </div>
+                            <div class="file-action">
+                                <button class="btn btn-small">▶️ Riproduci</button>
+                                <button class="btn btn-small btn-secondary">📥 Scarica</button>
+                            </div>
+                        </div>
+
+                        <div class="file-item">
+                            <div class="file-info">
+                                <div class="file-icon">📚</div>
+                                <div class="file-details">
+                                    <h4>Codice Deontologico Operatori 2024</h4>
+                                    <p>PDF • 2 MB • Aggiornato: 1 gennaio 2024</p>
+                                </div>
+                            </div>
+                            <div class="file-action">
+                                <button class="btn btn-small">📥 Scarica</button>
+                                <button class="btn btn-small btn-secondary">👁️ Anteprima</button>
+                            </div>
+                        </div>
+
+                        <div class="file-item">
+                            <div class="file-info">
+                                <div class="file-icon">📊</div>
+                                <div class="file-details">
+                                    <h4>Template Gestione Clientela e CRM</h4>
+                                    <p>XLSX • 1.2 MB • Aggiornato: 20 ottobre 2024</p>
+                                </div>
+                            </div>
+                            <div class="file-action">
+                                <button class="btn btn-small">📥 Scarica</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" style="display: none;">
+                    <p>Sezione Manuali - Ulteriori 3 manuali specializzati disponibili</p>
+                </div>
+
+                <div class="tab-content" style="display: none;">
+                    <p>Sezione Video Tutorial - Raccolta di 12 video formativi</p>
+                </div>
+
+                <div class="tab-content" style="display: none;">
+                    <p>Sezione Linee Guida - Linee guida operative aggiornate</p>
+                </div>
+
+                <div class="tab-content" style="display: none;">
+                    <p>Sezione Aggiornamenti - Ultimi aggiornamenti metodo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 4: ATTESTATI
+             ======================================================================== -->
+        <section id="attestati" style="display: none;">
+            <h2 class="section-title">I Miei Attestati</h2>
+
+            <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo Attestato</th>
+                            <th>Data Rilascio</th>
+                            <th>Data Scadenza</th>
+                            <th>Stato</th>
+                            <th>Azioni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Certificato Operatore Head Spa Olistico®</strong></td>
+                            <td>15 novembre 2022</td>
+                            <td>15 novembre 2025</td>
+                            <td><span class="badge badge-active">Attivo</span></td>
+                            <td>
+                                <button class="btn btn-small">📥 Scarica</button>
+                                <button class="btn btn-small btn-secondary">👁️ Visualizza</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corso Specialista: Stress Management</strong></td>
+                            <td>20 marzo 2024</td>
+                            <td>20 marzo 2027</td>
+                            <td><span class="badge badge-active">Attivo</span></td>
+                            <td>
+                                <button class="btn btn-small">📥 Scarica</button>
+                                <button class="btn btn-small btn-secondary">👁️ Visualizza</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Corso Aggiornamento: Linee Guida 2024</strong></td>
+                            <td>5 novembre 2024</td>
+                            <td>Permanente</td>
+                            <td><span class="badge badge-active">Attivo</span></td>
+                            <td>
+                                <button class="btn btn-small">📥 Scarica</button>
+                                <button class="btn btn-small btn-secondary">👁️ Visualizza</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 25px; color: #666; font-size: 0.9rem;">
+                <strong>Nota:</strong> Gli attestati sono disponibili per il download in formato PDF. Puoi stamparli su carta intestata della tua struttura.
+            </p>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 5: QUOTE ASSOCIATIVE
+             ======================================================================== -->
+        <section id="quote" style="display: none;">
+            <h2 class="section-title">Quote Associative</h2>
+
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <strong>Azione Richiesta:</strong> La tua quota associativa per il 2024 è scaduta (31 dicembre 2024). 
+                    Rinnova entro 30 giorni per mantenere la certificazione attiva.
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+                <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+                    <h3 style="color: #1f4e78; margin-bottom: 20px;">Ultimo Pagamento</h3>
+                    <div class="form-group">
+                        <label class="form-label">Anno</label>
+                        <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">2024</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Importo</label>
+                        <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">€350,00</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Data Pagamento</label>
+                        <div style="padding: 12px; background-color: #f9f9f9; border-radius: 6px;">5 gennaio 2024</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ricevuta</label>
+                        <button class="btn btn-small">📥 Scarica Ricevuta</button>
+                    </div>
+                </div>
+
+                <div style="background: #e8f4f8; border-radius: 12px; padding: 30px; border-left: 4px solid #1f4e78;">
+                    <h3 style="color: #1f4e78; margin-bottom: 20px;">Rinnovo 2025</h3>
+                    <div class="form-group">
+                        <label class="form-label">Importo Annuale</label>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: #1f4e78; padding: 12px;">€350,00</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Scadenza</label>
+                        <div style="padding: 12px; background-color: #ffffff; border-radius: 6px; border-left: 3px solid #f39c12;">
+                            31 dicembre 2025
+                        </div>
+                    </div>
+                    <button class="btn btn-success" style="width: 100%; margin-top: 20px; background-color: #27ae60;">💳 Procedi al Pagamento</button>
+                </div>
+            </div>
+
+            <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+                <h3 style="color: #1f4e78; margin-bottom: 20px;">Storico Pagamenti</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Anno</th>
+                            <th>Importo</th>
+                            <th>Data Pagamento</th>
+                            <th>Metodo</th>
+                            <th>Ricevuta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024</td>
+                            <td>€350,00</td>
+                            <td>5 gennaio 2024</td>
+                            <td>Bonifico Bancario</td>
+                            <td><button class="btn btn-small">📥 Scarica</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>€350,00</td>
+                            <td>10 gennaio 2023</td>
+                            <td>Carta di Credito</td>
+                            <td><button class="btn btn-small">📥 Scarica</button></td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td>€350,00</td>
+                            <td>15 novembre 2022</td>
+                            <td>Bonifico Bancario</td>
+                            <td><button class="btn btn-small">📥 Scarica</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 6: EVENTI E CORSI AVANZATI
+             ======================================================================== -->
+        <section id="eventi" style="display: none;">
+            <h2 class="section-title">Eventi e Corsi Avanzati</h2>
+
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-button active">Prossimi Eventi</button>
+                    <button class="tab-button">Corsi Disponibili</button>
+                    <button class="tab-button">I Miei Iscritti</button>
+                </div>
+
+                <div class="tab-content active">
+                    <h3 style="margin-bottom: 20px; color: #1f4e78;">Eventi Prossimi</h3>
+                    <div style="display: grid; gap: 20px;">
+                        <div style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid #3498db;">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div>
+                                    <h4 style="color: #1f4e78; margin-bottom: 8px;">Webinar: Comunicazione Consapevole con i Clienti</h4>
+                                    <p style="color: #666; margin-bottom: 12px; font-size: 0.9rem;">
+                                        📅 25 gennaio 2025 • ⏰ 18:00-19:30 • 🌐 Online (Zoom)
+                                    </p>
+                                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">
+                                        Scopri le tecniche di comunicazione consapevole per migliorare la relazione con i clienti e il feedback delle sessioni.
+                                    </p>
+                                    <button class="btn btn-small">📝 Iscriviti</button>
+                                    <button class="btn btn-small btn-secondary">ℹ️ Dettagli</button>
+                                </div>
+                                <div style="background: #d1ecf1; color: #0c5460; padding: 12px 15px; border-radius: 8px; text-align: center; min-width: 80px;">
+                                    <div style="font-size: 0.8rem; font-weight: 600;">Posti Liberi</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700;">8/20</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid #3498db;">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div>
+                                    <h4 style="color: #1f4e78; margin-bottom: 8px;">Workshop In Presenza: Tecniche Avanzate - Zona Parietale</h4>
+                                    <p style="color: #666; margin-bottom: 12px; font-size: 0.9rem;">
+                                        📅 15-16 febbraio 2025 • ⏰ 09:00-17:00 • 📍 Milano
+                                    </p>
+                                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">
+                                        Perfeziona le tecniche avanzate di stimolazione della zona parietale. Pratica supervisionata con esperti dell'Academy.
+                                    </p>
+                                    <button class="btn btn-small">📝 Iscriviti</button>
+                                    <button class="btn btn-small btn-secondary">ℹ️ Dettagli</button>
+                                </div>
+                                <div style="background: #fff3cd; color: #856404; padding: 12px 15px; border-radius: 8px; text-align: center; min-width: 80px;">
+                                    <div style="font-size: 0.8rem; font-weight: 600;">Posti Liberi</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700;">3/12</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid #3498db;">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div>
+                                    <h4 style="color: #1f4e78; margin-bottom: 8px;">Corso Specialista: Business Head Spa - Sessione 2</h4>
+                                    <p style="color: #666; margin-bottom: 12px; font-size: 0.9rem;">
+                                        📅 Inizia 1° marzo 2025 • ⏰ Sabato 09:00-13:00 (6 settimane) • 🌐 Blended
+                                    </p>
+                                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">
+                                        Impara a gestire il business di un centro Head Spa: marketing, gestione, finanza, legale.
+                                    </p>
+                                    <button class="btn btn-small">📝 Iscriviti</button>
+                                    <button class="btn btn-small btn-secondary">ℹ️ Dettagli</button>
+                                </div>
+                                <div style="background: #d4edda; color: #155724; padding: 12px 15px; border-radius: 8px; text-align: center; min-width: 80px;">
+                                    <div style="font-size: 0.8rem; font-weight: 600;">Posti Liberi</div>
+                                    <div style="font-size: 1.5rem; font-weight: 700;">5/15</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" style="display: none;">
+                    <p>Sezione Corsi Disponibili - Ulteriori 8 corsi specializzati</p>
+                </div>
+
+                <div class="tab-content" style="display: none;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Evento/Corso</th>
+                                <th>Data Inizio</th>
+                                <th>Stato</th>
+                                <th>Ore</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Webinar: Comunicazione Consapevole</td>
+                                <td>25 gennaio 2025</td>
+                                <td><span class="badge badge-pending">Iscritto</span></td>
+                                <td>1.5</td>
+                            </tr>
+                            <tr>
+                                <td>Corso Specialista: Stress Management</td>
+                                <td>20 marzo 2024</td>
+                                <td><span class="badge badge-active">Completato</span></td>
+                                <td>60</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 7: NOTIFICHE
+             ======================================================================== -->
+        <section id="notifiche" style="display: none;">
+            <h2 class="section-title">Notifiche Centro</h2>
+
+            <div class="notifications-panel">
+                <div class="notification-item important">
+                    <div class="notification-icon">⚠️</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Quota Associativa Scaduta</div>
+                        <div class="notification-desc">La tua quota associativa per il 2024 è scaduta il 31 dicembre 2024. Rinnova entro 30 giorni per mantenere la certificazione attiva.</div>
+                        <div class="notification-date">3 gennaio 2025 alle 09:15</div>
+                    </div>
+                </div>
+
+                <div class="notification-item event">
+                    <div class="notification-icon">📅</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Nuovo Webinar Disponibile</div>
+                        <div class="notification-desc">È disponibile una nuova sessione del webinar "Comunicazione Consapevole" il 25 gennaio 2025. Posti limitati a 20.</div>
+                        <div class="notification-date">20 dicembre 2024 alle 14:30</div>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">📚</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Nuovo Materiale Didattico</div>
+                        <div class="notification-desc">È stata pubblicata la versione aggiornata del "Manuale Completo Head Spa Olistico® v2.1" con le linee guida 2024.</div>
+                        <div class="notification-date">15 novembre 2024 alle 11:00</div>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">✅</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Pagamento Ricevuto</div>
+                        <div class="notification-desc">Il tuo pagamento della quota associativa per il 2024 (€350,00) è stato elaborato con successo.</div>
+                        <div class="notification-date">5 gennaio 2024 alle 15:45</div>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">🎓</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Certificato Disponibile</div>
+                        <div class="notification-desc">Il tuo certificato per il "Corso Specialista: Stress Management" è ora disponibile per il download.</div>
+                        <div class="notification-date">20 marzo 2024 alle 10:20</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================
+             SEZIONE 8: SUPPORTO
+             ======================================================================== -->
+        <section id="supporto" style="display: none;">
+            <h2 class="section-title">Supporto e Aiuto</h2>
+
+            <div style="background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+                <h3 style="color: #1f4e78; margin-bottom: 20px;">Come Possiamo Aiutarti?</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">📧 Email di Supporto</h4>
+                        <p style="margin-bottom: 15px; color: #666;">
+                            <a href="mailto:support@headspaitalia.it" style="color: #1f4e78; font-weight: 600;">support@headspaitalia.it</a>
+                        </p>
+                        <p style="font-size: 0.9rem; color: #999;">Rispondiamo entro 24 ore negli orari di ufficio</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 10px;">📞 Telefono Supporto</h4>
+                        <p style="margin-bottom: 15px; color: #666;">
+                            <a href="tel:+390212345678" style="color: #1f4e78; font-weight: 600;">+39 02 1234 5678</a>
+                        </p>
+                        <p style="font-size: 0.9rem; color: #999;">Lun-Ven 9:00-18:00 | Sab 10:00-14:00</p>
+                    </div>
+                </div>
+
+                <h3 style="color: #1f4e78; margin-bottom: 20px; margin-top: 40px;">Domande Frequenti</h3>
+                <div style="display: grid; gap: 15px;">
+                    <details style="cursor: pointer;">
+                        <summary style="padding: 12px; background-color: #f9f9f9; border-radius: 6px; font-weight: 600; color: #1f4e78;">Come posso scaricare i miei attestati?</summary>
+                        <div style="padding: 15px; background-color: #f0f0f0; margin-top: 5px; border-radius: 6px; color: #666;">
+                            Accedi alla sezione "Attestati" nel menu laterale. Troverai tutti i tuoi certificati con la possibilità di scaricare il PDF.
+                        </div>
+                    </details>
+                    <details style="cursor: pointer;">
+                        <summary style="padding: 12px; background-color: #f9f9f9; border-radius: 6px; font-weight: 600; color: #1f4e78;">Come posso iscrivermi a un corso avanzato?</summary>
+                        <div style="padding: 15px; background-color: #f0f0f0; margin-top: 5px; border-radius: 6px; color: #666;">
+                            Vai alla sezione "Eventi e Corsi" e seleziona il corso di interesse. Clicca su "Iscriviti" e segui i passaggi. L'iscrizione è automatica.
+                        </div>
+                    </details>
+                    <details style="cursor: pointer;">
+                        <summary style="padding: 12px; background-color: #f9f9f9; border-radius: 6px; font-weight: 600; color: #1f4e78;">Come rinnovo la mia quota associativa?</summary>
+                        <div style="padding: 15px; background-color: #f0f0f0; margin-top: 5px; border-radius: 6px; color: #666;">
+                            Accedi a "Quote Associative" e clicca su "Procedi al Pagamento". Puoi pagare tramite bonifico bancario o carta di credito.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ========================================================================
+     FOOTER AREA RISERVATA
+     ======================================================================== -->
+<div class="reserved-footer">
+    <p>
+        © 2024 Head Spa Italia® - Area Riservata Operatori | 
+        <a href="#">Privacy & Sicurezza</a> | 
+        <a href="#">Documenti Legali</a> | 
+        <a href="#">Contatti Supporto</a>
+    </p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">
+        Ultimo accesso: Oggi alle 14:32 | 
+        IP: 192.168.1.1 | 
+        Browser: Chrome 121.0
+    </p>
+</div>
+
+<!-- ========================================================================
+     JAVASCRIPT: INTERATTIVITÀ
+     ======================================================================== -->
+<script>
+    // Toggle Nav Items
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remove active from all
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            document.querySelectorAll('[id]').forEach(section => {
+                if (section.tagName === 'SECTION') section.style.display = 'none';
+            });
+            
+            // Add active to clicked
+            item.classList.add('active');
+            const target = item.getAttribute('href').slice(1);
+            document.getElementById(target).style.display = 'block';
+        });
+    });
+
+    // Toggle Tab Contents
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const container = e.target.closest('.tabs-container');
+            
+            // Remove active from all buttons and contents
+            container.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Add active to clicked button and corresponding content
+            const index = Array.from(container.querySelectorAll('.tab-button')).indexOf(e.target);
+            e.target.classList.add('active');
+            container.querySelectorAll('.tab-content')[index].classList.add('active');
+        });
+    });
+
+    // Logout Button
+    document.querySelector('.btn-logout').addEventListener('click', () => {
+        if (confirm('Sei sicuro di voler uscire?')) {
+            alert('Logout eseguito. Reindirizzamento a pagina home...');
+            // Redirect to home
+        }
+    });
+</script>
+
+</body>
+</html>
